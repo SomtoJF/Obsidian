@@ -1,0 +1,14 @@
+* Your Idea in one sentence
+	* It's a system that automates your job application process in a way that allows you to troubleshoot unsuccessful methods and duplicated successful techniques at each time.
+* Who would benefit from your idea?
+	* Every single job seeker stands to benefit from this idea. The potential impact is massive: in Nigeria alone, it could reach 9 million people. Globally, the International Labor Organization estimates there are 402 million people looking for work. And that staggering figure doesn't even include the millions of currently employed professionals who are actively looking to make a career switch.
+* What challenges will be solved with your idea?
+	1. People forget the jobs they apply to. We fix this by tracking the applications
+	2. Job Seekers barely have any way to trouble shoot their application strategy. We fix this by providing users with the application data for each application so that they can troubleshoot tweak their strategy.
+	3. Job Applications are so repetitive, yet so time consuming. We fix this by giving users job search and one click apply in one platform. If they find a job outside of our platform, they can also paste the link and our bot will apply on their behalf.
+	4. Job boards have limited jobs for certain roles. We pull data in real-time from multiple sources so the system isn't constrained by the limitations of a single source
+	5. Tailoring CV to each application takes too much time. We will fix this by having our bot automatically tailor the CV for each application to the Job Description before uploading the CV to the application. 
+>>Job hunting today is fragmented and exhausting. We solve the core challenges seekers face daily: losing track of applied roles, relying on blind application strategies without data to improve, wasting hours on repetitive forms, missing out due to siloed job boards, and the grueling task of manually tailoring CVs for every role. Our platform automates and centralizes this entire process.
+* How will you bring your idea to life?
+	* As a Software Engineer with 3+ years of experience, I am actively building this platform. It uses a React frontend and a robust Golang/Temporal backend for resilient bot automation. Users will have a centralized dashboard to search for jobs, track all application statuses, view performance analytics, and customize their AI-generated cover letters to match their personal style. This changed because in the pitch it said **How it works**
+	* The User: 1. Creates an account 2. Uploads their resume 3. Fills out their application profile 4. Searches for jobs they're interested in or pastes a link to a job they found online 5. Applies to jobs with on click 6. Views all the application data sent out for a job The user can also: 1. Tweak cover letter writing style to improve responses 2. View analytics for each resume and cover letter
