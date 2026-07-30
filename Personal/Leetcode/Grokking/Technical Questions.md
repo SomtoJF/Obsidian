@@ -1,9 +1,60 @@
-1. [[#How to Prepare]]
-2. [[#Must have knowledge]]
-	-  [[#Powers of 2 table]]
-3. [[#Walking Through a Problem]]
-4.  [[#The 7-Step Interview Flowchart]]
-5.  [[#Optimisation technique 1 BUD]]
+**Table Of Contents**
+
+- [[#How to Prepare|How to Prepare]]
+- [[#Must have knowledge|Must have knowledge]]
+	- [[#Must have knowledge#Powers of 2 table|Powers of 2 table]]
+		- [[#Powers of 2 table#The Golden Rule of Memory Units|The Golden Rule of Memory Units]]
+		- [[#Powers of 2 table#The Exponent Split Trick|The Exponent Split Trick]]
+- [[#Walking Through a Problem|Walking Through a Problem]]
+- [[#The 7-Step Interview Flowchart|The 7-Step Interview Flowchart]]
+	- [[#The 7-Step Interview Flowchart#Step 1: Listen Carefully|Step 1: Listen Carefully]]
+	- [[#The 7-Step Interview Flowchart#Step 2: Draw an Example|Step 2: Draw an Example]]
+	- [[#The 7-Step Interview Flowchart#Step 3: State a Brute Force|Step 3: State a Brute Force]]
+	- [[#The 7-Step Interview Flowchart#Step 4: Optimize (Using BUD & Patterns)|Step 4: Optimize (Using BUD & Patterns)]]
+	- [[#The 7-Step Interview Flowchart#Step 5: Walk Through Your Algorithm|Step 5: Walk Through Your Algorithm]]
+	- [[#The 7-Step Interview Flowchart#Step 6: Implement (Write the Code)|Step 6: Implement (Write the Code)]]
+	- [[#The 7-Step Interview Flowchart#Step 7: Test|Step 7: Test]]
+- [[#Optimisation technique 1 : BUD|Optimisation technique 1 : BUD]]
+	- [[#Optimisation technique 1 : BUD#Bottleneck|Bottleneck]]
+		- [[#Bottleneck#1. A One-Time Heavy Operation (The "Upfront Cost")|1. A One-Time Heavy Operation (The "Upfront Cost")]]
+		- [[#Bottleneck#2. A Repeated Light Operation (The "Inner Loop Cost")|2. A Repeated Light Operation (The "Inner Loop Cost")]]
+	- [[#Optimisation technique 1 : BUD#Unnecessary Work|Unnecessary Work]]
+		- [[#Unnecessary Work#What is Unnecessary Work?|What is Unnecessary Work?]]
+		- [[#Unnecessary Work#Code with Unnecessary Work Removed:|Code with Unnecessary Work Removed:]]
+	- [[#Optimisation technique 1 : BUD#Duplicated Work|Duplicated Work]]
+		- [[#Duplicated Work#What is Duplicated Work?|What is Duplicated Work?]]
+		- [[#Duplicated Work#Code with Duplicated Work Removed:|Code with Duplicated Work Removed:]]
+- [[#Optimisation Technique 2: Do It Yourself|Optimisation Technique 2: Do It Yourself]]
+- [[#Optimisation Technique 3: Simplify and Generalize|Optimisation Technique 3: Simplify and Generalize]]
+- [[#Optimisation Technique 4: Base Case and Build|Optimisation Technique 4: Base Case and Build]]
+- [[#Optimize & Solve Technique #5: Data Structure Brainstorm|Optimize & Solve Technique #5: Data Structure Brainstorm]]
+	- [[#Optimize & Solve Technique #5: Data Structure Brainstorm#The Mental Inventory Checklist|The Mental Inventory Checklist]]
+	- [[#Optimize & Solve Technique #5: Data Structure Brainstorm#Step-by-Step Problem Walkthrough: Extreme Example|Step-by-Step Problem Walkthrough: Extreme Example]]
+		- [[#Step-by-Step Problem Walkthrough: Extreme Example#Problem|Problem]]
+- [[#Best Conceivable Runtime (BCR)|Best Conceivable Runtime (BCR)]]
+	- [[#Best Conceivable Runtime (BCR)#How BCR Is Used in Interviews|How BCR Is Used in Interviews]]
+	- [[#Best Conceivable Runtime (BCR)#Deriving BCRs Across Different Problems|Deriving BCRs Across Different Problems]]
+		- [[#Deriving BCRs Across Different Problems#Example 1: Print all pairs in an array that sum to $K$|Example 1: Print all pairs in an array that sum to $K$]]
+		- [[#Deriving BCRs Across Different Problems#Example 2: Find element in $M \times N$ matrix sorted along rows and columns|Example 2: Find element in $M \times N$ matrix sorted along rows and columns]]
+		- [[#Deriving BCRs Across Different Problems#Example 3: Find common elements in 2 sorted arrays of size $A$ and $B$|Example 3: Find common elements in 2 sorted arrays of size $A$ and $B$]]
+	- [[#Best Conceivable Runtime (BCR)#Detailed Walkthrough: Using BCR to Guide Optimization|Detailed Walkthrough: Using BCR to Guide Optimization]]
+		- [[#Detailed Walkthrough: Using BCR to Guide Optimization#Problem|Problem]]
+		- [[#Detailed Walkthrough: Using BCR to Guide Optimization#Step 1: Establish the BCR|Step 1: Establish the BCR]]
+		- [[#Detailed Walkthrough: Using BCR to Guide Optimization#Step 2: State Brute Force & Compute Complexity|Step 2: State Brute Force & Compute Complexity]]
+		- [[#Detailed Walkthrough: Using BCR to Guide Optimization#Step 3: Optimize to Match BCR Using Data Structures|Step 3: Optimize to Match BCR Using Data Structures]]
+- [[#What Good Coding Looks Like|What Good Coding Looks Like]]
+	- [[#What Good Coding Looks Like#Core Pillars of Good Interview Code|Core Pillars of Good Interview Code]]
+		- [[#Core Pillars of Good Interview Code#1. Correctness & Robustness|1. Correctness & Robustness]]
+		- [[#Core Pillars of Good Interview Code#2. Cleanliness & Readability|2. Cleanliness & Readability]]
+		- [[#Core Pillars of Good Interview Code#3. Modularity|3. Modularity]]
+		- [[#Core Pillars of Good Interview Code#4. Error & Boundary Handling|4. Error & Boundary Handling]]
+	- [[#What Good Coding Looks Like#Code Comparison: Poor vs. Good|Code Comparison: Poor vs. Good]]
+		- [[#Code Comparison: Poor vs. Good#Problem Statement|Problem Statement]]
+		- [[#Code Comparison: Poor vs. Good#❌ Bad Code (Hard to Read, Poor Naming, Fragile)|❌ Bad Code (Hard to Read, Poor Naming, Fragile)]]
+			- [[#❌ Bad Code (Hard to Read, Poor Naming, Fragile)#Weaknesses in Bad Code:|Weaknesses in Bad Code:]]
+		- [[#Code Comparison: Poor vs. Good#✅ Good Code (Clean, Production-Ready, Robust)|✅ Good Code (Clean, Production-Ready, Robust)]]
+			- [[#✅ Good Code (Clean, Production-Ready, Robust)#Strengths of Good Code:|Strengths of Good Code:]]
+
 ## How to Prepare
 
 Many candidates just read through problems and solutions. That's like trying to learn calculus by reading a problem and its answer. You need to practice solving problems. Memorizing solutions won't help you much.
@@ -334,3 +385,347 @@ We can solve the simplified ransom note problem with characters by simply creati
 When we generalize the algorithm, we do a very similar thing. This time, rather than creating an array with character counts, we create a hash table that maps from a word to its frequency.
 ## Optimisation Technique 4: Base Case and Build
 With Base Case and Build, we solve the problem first for a base case (e.g., $n = 1$) and then try to build up from there. When we get to more complex/interesting cases (often $n = 3$ or $n = 4$), we try to build those using the prior solutions.
+
+> Example: Design an algorithm to print all permutations of a string. For simplicity, assume all characters are unique.
+
+Consider a test string $abcdefg$.
+
+```
+Case "a" --> {"a"}
+
+Case "ab" - -> {"ab", "ba"}
+
+Case "abc" --> ?
+```
+
+This is the first "interesting" case. If we had the answer to P ("ab"), how could we generate P ("abc")?
+
+Well, the additional letter is "c," so we can just stick c in at every possible point. That is:
+
+```
+P("abc") = insert "c" into all locations of all strings in P("ab")
+
+P("abc") = insert "c" into all locations of all strings in {"ab","ba"}
+
+P("abc") = merge({"cab", ""acb", "abc"}, {"cba", abca", bac"})
+
+P("abc") = {"cab", "acb", "abc", "cba", "bca", bac"}
+```
+
+Now that we understand the pattern, we can develop a general recursive algorithn1:We generate all permutations of a string $S_1 ••• S_n$ by "chopping off" the last character and generating all permutations of $s_1 •••s_{n-1}$
+
+Once we have the list of all permutations of $s_1 •••s_{n-1}$ ,
+
+we iterate through this list. For each string in it, we insert $S_n$ into every location of the string.
+
+Base Case and Build algorithms often lead to natural recursive algorithms.
+
+## Optimize & Solve Technique #5: Data Structure Brainstorm
+
+**Data Structure Brainstorming** is the practice of systematically walking through fundamental data structures to see which one fits the problem's bottlenecks or structural requirements.
+
+Instead of guessing blindly when an initial approach is too slow, look at what your algorithm needs to do frequently (e.g., _look up elements_, _keep items ordered_, _track minimums/maximums_) and pair those requirements with the ideal data structure.
+
+### The Mental Inventory Checklist
+
+When stuck on an optimization step, run through these core structures and ask how each impacts time and space:
+
+```
+                  ┌──────────────────────────────┐
+                  │    DATA STRUCTURE CHEAT SHEET │
+                  └──────────────┬───────────────┘
+                                 │
+   ┌─────────────────────────────┼─────────────────────────────┐
+   ▼                             ▼                             ▼
+【 Hash Table 】             【 Trees / Heaps 】            【 Other Linear 】
+• O(1) Lookups              • Red-Black / BST:            • Stack: LIFO (parsing)
+• O(1) Insert / Delete        O(log N) search/order       • Queue: FIFO (BFS)
+• Unordered                 • Min/Max Heap:               • Trie: Prefix matches
+                              O(1) find, O(log N) push    • Vectors / Arrays
+```
+
+|**Data Structure**|**Primary Strengths / Operations**|**Common Problem Triggers**|
+|---|---|---|
+|**Hash Map / Set**|$O(1)$ expected lookup, insert, deletion.|Need to check presence, count frequencies, or match complements ($K - A$).|
+|**Array / Vector**|Contiguous memory, $O(1)$ random access by index.|Static sizes, index-based mapping, prefix sums, two-pointer techniques.|
+|**LinkedList**|$O(1)$ insertion/deletion at pointers; dynamic sizing.|Implementing queues, LRU caches, splitting/merging sequences without shifting memory.|
+|**Stack**|$O(1)$ LIFO (Last-In, First-Out) operations.|Nested structures, string parsing, expression evaluation, balancing parentheses, tracking local maxima.|
+|**Queue / Deque**|$O(1)$ FIFO (First-In, First-Out) operations; double-ended access.|Breadth-First Search (BFS), sliding window maximums, order-preserving processing.|
+|**Binary Search Tree (BST)**|$O(\log N)$ search, insertion, deletion; maintains sorted order.|Range queries, finding nearest elements, maintaining dynamic sorted order.|
+|**Heap / Priority Queue**|$O(1)$ min/max retrieval, $O(\log N)$ insertion and deletion.|Top $K$ elements, running median, scheduling tasks, Dijkstra's algorithm.|
+|**Trie (Prefix Tree)**|$O(L)$ search/insert where $L$ is key length; shared prefix storage.|Auto-complete, prefix matching, word dictionary searches, bitwise XOR problems.|
+
+### Step-by-Step Problem Walkthrough: Extreme Example
+
+#### Problem
+
+> Example: Numbers are randomly generated and stored into an (expanding) array. How would you keep track of the median?
+
+Our data structure brainstorm might look like the following:
+
+- Linked list? Probably not. Linked lists tend not to do very well with accessing and sorting numbers.
+
+- Array? Maybe, but you already have an array. Could you somehow keep the elements sorted? That's probably expensive. Let's hold off on this and return to it if it's needed.
+
+- Binary tree? This is possible, since binary trees do fairly well with ordering. In fact, if the binary search tree is perfectly balanced, the top might be the median. But, be careful-if there's an even number of elements, the median is actually the average of the middle two elements. The middle two elements can't both be at the top. This is probably a workable algorithm, but let's come back to it.
+
+- Heap? A heap is really good at basic ordering and keeping track of max and mins. This is actually interesting-if you had two heaps, you could keep track of the bigger half and the smaller half of the elements. The bigger half is kept in a min heap, such that the smallest element in the bigger half is at the root. The smaller half is kept in a max heap, such that the biggest element of the smaller half is at the root. Now, with these data structures, you have the potential median elements at the roots. If the heaps are no longer the same size, you can quickly "rebalance" the heaps by popping an element off the one heap and pushing it onto the other.
+
+Note that the more problems you do, the more developed your instinct on which data structure to apply will be. You will also develop a more finely tuned instinct as to which of these approaches is the most useful.
+
+## Best Conceivable Runtime (BCR)
+
+The **Best Conceivable Runtime (BCR)** is the absolute fastest theoretical runtime an algorithm could _possibly_ achieve for a given problem statement—without even knowing the final algorithm.
+
+> **Key Premise:** BCR is defined by the physical limits of reading input or delivering output. You cannot solve a problem faster than the time it takes to look at the data necessary to answer it.
+
+### How BCR Is Used in Interviews
+
+```
+1. DERIVE BCR ──► 2. COMPUTE BRUTE FORCE ──► 3. BRIDGE THE GAP (BUD)
+(Lower Bound)        (Upper Bound)          (Target Optimization)
+```
+
+1. **Establishes a Target (The Stop Sign):** Once your optimized algorithm matches the BCR, you know you cannot improve the asymptotic time complexity further. You can stop trying to optimize Big-O and focus on implementation.
+    
+2. **Highlights the Gap:** If your brute-force algorithm runs in $O(N^3)$ and your BCR is $O(N)$, you have a concrete optimization goal ($O(N^3) \rightarrow O(N)$).
+    
+3. **Drives Bottleneck Analysis (BUD):** It forces you to ask: _"What operations am I doing that exceed my BCR, and how can I replace them?"_
+    
+
+### Deriving BCRs Across Different Problems
+
+#### Example 1: Print all pairs in an array that sum to $K$
+
+- **Input:** Array of size $N$.
+    
+- **Derivation:** You must inspect every element at least once to know if it can pair with another. Reading $N$ elements takes $O(N)$ operations.
+    
+- **BCR:** $\mathbf{O(N)}$
+    
+
+#### Example 2: Find element in $M \times N$ matrix sorted along rows and columns
+
+- **Input:** Matrix of size $M \times N$.
+    
+- **Derivation:** Because the matrix is sorted, you do not need to look at every element. Using search properties across rows/cols, you can eliminate rows or columns.
+    
+- **BCR:** $\mathbf{O(M + N)}$ or $\mathbf{O(\log(M \cdot N))}$ depending on exact search capabilities.
+    
+
+#### Example 3: Find common elements in 2 sorted arrays of size $A$ and $B$
+
+- **Input:** Array $A$ (length $A$), Array $B$ (length $B$).
+    
+- **Derivation:** You must potentially check elements across both arrays to establish membership.
+    
+- **BCR:** $\mathbf{O(A + B)}$
+    
+
+### Detailed Walkthrough: Using BCR to Guide Optimization
+
+#### Problem
+
+> Given an array of $N$ integers and a target value $K$, count all unique pairs $(x, y)$ such that $x - y = K$.
+
+#### Step 1: Establish the BCR
+
+- You must read all $N$ elements at least once.
+    
+- **$\text{BCR} = \mathbf{O(N)}$**.
+    
+
+#### Step 2: State Brute Force & Compute Complexity
+
+Compare every pair with nested loops:
+
+Java
+
+```
+int count = 0;
+for (int i = 0; i < n; i++) {
+    for (int j = i + 1; j < n; j++) {
+        if (Math.abs(arr[i] - arr[j]) == k) {
+            count++;
+        }
+    }
+}
+```
+
+- **Brute Force Time:** $O(N^2)$
+    
+- **Space:** $O(1)$
+    
+- **Gap to BCR:** Current $O(N^2)$ vs. BCR $O(N)$. We need to drop a factor of $N$.
+    
+
+#### Step 3: Optimize to Match BCR Using Data Structures
+
+- **Identify the Bottleneck:** For each element $x$, we run an $O(N)$ inner search for $y = x - K$ or $y = x + K$.
+    
+- **Ask:** _"How can we turn an $O(N)$ lookup into $O(1)$ to match the BCR?"_
+    
+- **Apply Data Structure Brainstorm:** Use a **Hash Set**.
+    
+
+Java
+
+```
+public static int countPairsWithDiffK(int[] arr, int k) {
+    Set<Integer> set = new HashSet<>();
+    for (int num : arr) {
+        set.add(num);
+    }
+
+    int count = 0;
+    for (int x : arr) {
+        if (set.contains(x + k)) {
+            count++;
+        }
+    }
+    return count;
+}
+```
+
+- **Optimized Time:** $O(N)$ (Building set $O(N)$ + lookups $O(N)$).
+    
+- **Optimized Space:** $O(N)$.
+    
+- **Result:** Time complexity matches the **BCR of $O(N)$**. We are done.
+    
+
+## What Good Coding Looks Like
+
+Writing code in an interview differs from writing competitive programming solutions or quick scripts. Interviewers evaluate code on maintainability, correctness, and structure—qualities expected in production engineering environments.
+
+### Core Pillars of Good Interview Code
+
+```
+                         ┌───────────────────────────┐
+                         │   PILLARS OF GOOD CODE    │
+                         └─────────────┬─────────────┘
+                                       │
+     ┌───────────────────┬─────────────┴─────────────┬───────────────────┐
+     ▼                   ▼                           ▼                   ▼
+【 Correctness 】     【 Cleanliness 】           【 Modularity 】     【 Error Handling 】
+• Handles inputs    • Descriptive names         • Helper methods     • Null checks
+• Solves edges      • Consistent style          • Single responsibility • Bounds checks
+```
+
+#### 1. Correctness & Robustness
+
+- Handles standard inputs correctly.
+    
+- Manages edge cases gracefully without throwing uncaught exceptions.
+    
+
+#### 2. Cleanliness & Readability
+
+- Clear variable and function names (`leftPointer`, `currentSum` instead of `p1`, `temp`, `s`).
+    
+- Consistent indentation and code formatting.
+    
+- Logical layout (declaring variables close to where they are used).
+    
+
+#### 3. Modularity
+
+- Breaking complex logic into helper functions instead of creating massive, monolithic methods.
+    
+- Writing reusable, self-contained subroutines.
+    
+
+#### 4. Error & Boundary Handling
+
+- Checking for null, empty arrays, zero lengths, or unexpected inputs upfront.
+    
+
+### Code Comparison: Poor vs. Good
+
+#### Problem Statement
+
+> Given an array of numbers, return the average of all even numbers. If no even numbers exist, return 0.0.
+
+#### ❌ Bad Code (Hard to Read, Poor Naming, Fragile)
+
+Java
+
+```
+class Solution {
+    public double avg(int[] a) {
+        if (a == null) return 0;
+        int s = 0;
+        int c = 0;
+        for(int i=0; i<a.length; i++) {
+            if(a[i]%2==0) {
+                s = s + a[i];
+                c++;
+            }
+        }
+        if (c == 0) return 0;
+        return s / c; // BUG: Integer division truncates double result! (e.g., 6 / 4 = 1.0 instead of 1.5)
+    }
+}
+```
+
+##### Weaknesses in Bad Code:
+
+1. **Uninformative Names:** Variables `a`, `s`, `c` force the reader to mental-trace what they represent.
+    
+2. **Integer Division Bug:** `s / c` performs integer division before casting to `double`, producing incorrect fractional averages.
+    
+3. **Messy Formatting:** Inconsistent spacing around operators and control structures.
+    
+
+#### ✅ Good Code (Clean, Production-Ready, Robust)
+
+Java
+
+```
+public class NumberUtils {
+
+    /**
+     * Calculates the average of all even integers in the provided array.
+     * 
+     * @param numbers Input array of integers.
+     * @return Average of even numbers as a double, or 0.0 if array is empty or contains no evens.
+     */
+    public static double calculateEvenAverage(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            return 0.0;
+        }
+
+        long evenSum = 0; // Using long to prevent integer overflow on large sums
+        int evenCount = 0;
+
+        for (int number : numbers) {
+            if (isEven(number)) {
+                evenSum += number;
+                evenCount++;
+            }
+        }
+
+        if (evenCount == 0) {
+            return 0.0;
+        }
+
+        return (double) evenSum / evenCount; // Explicit double cast for precision
+    }
+
+    private static boolean isEven(int value) {
+        return value % 2 == 0;
+    }
+}
+```
+
+##### Strengths of Good Code:
+
+1. **Self-Documenting Names:** `evenSum`, `evenCount`, and `calculateEvenAverage` make intent immediately clear.
+    
+2. **Overflow Safety:** Uses `long` for `evenSum` to avoid integer overflow when summing many large values.
+    
+3. **Explicit Type Casting:** `(double) evenSum / evenCount` computes true floating-point division.
+    
+4. **Modularity:** Extracts `isEven()` logic into a helper function to keep the primary loop clean.
+    
+5. **Defensive Checks:** Handles `null` and empty array cases upfront cleanly.

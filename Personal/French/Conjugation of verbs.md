@@ -1,3 +1,21 @@
+## Table Of Contents
+
+- [[#The Three Regular Verb Families|The Three Regular Verb Families]]
+	- [[#The Three Regular Verb Families#-ER verb groups|-ER verb groups]]
+		- [[#-ER verb groups#Parler - To Speak|Parler - To Speak]]
+		- [[#-ER verb groups#Habite - To Live|Habite - To Live]]
+		- [[#-ER verb groups#Écouter - To Listen|Écouter - To Listen]]
+	- [[#The Three Regular Verb Families#IR Verb groups - (regular verbs)|IR Verb groups - (regular verbs)]]
+		- [[#IR Verb groups - (regular verbs)#Choisir - To choose|Choisir - To choose]]
+		- [[#IR Verb groups - (regular verbs)#Réussir - To succeed|Réussir - To succeed]]
+		- [[#IR Verb groups - (regular verbs)#Important Heads-Up: The "Short" -IR Verbs|Important Heads-Up: The "Short" -IR Verbs]]
+			- [[#Important Heads-Up: The "Short" -IR Verbs#The Big 4 Short -IR Verbs|The Big 4 Short -IR Verbs]]
+	- [[#The Three Regular Verb Families#RE verb groups|RE verb groups]]
+		- [[#RE verb groups#1. _Vendre_ (To Sell)|1. _Vendre_ (To Sell)]]
+		- [[#RE verb groups#Attendre (To wait)|Attendre (To wait)]]
+		- [[#RE verb groups#Other Common Regular -RE Verbs|Other Common Regular -RE Verbs]]
+- [[#Key insights|Key insights]]
+
 ## The Three Regular Verb Families
 
 - **[[#-ER verb groups]]:** Regular verbs like _parler_ (to speak). Drop the _-er_ and add present endings: _-e, -es, -e, -ons, -ez, -ent_. 

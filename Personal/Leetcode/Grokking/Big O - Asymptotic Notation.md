@@ -1,3 +1,20 @@
+## Table Of Contents
+
+- [[#Introduction|Introduction]]
+- [[#Amortized Time|Amortized Time]]
+- [[#Log N Runtimes|Log N Runtimes]]
+- [[#Recursive Runtimes|Recursive Runtimes]]
+	- [[#Recursive Runtimes#Why is the space complexity $O(N)$?|Why is the space complexity $O(N)$?]]
+- [[#Important Details|Important Details]]
+			- [[#The Sum of Arithmetic Series (Gauss's Pairing)|The Sum of Arithmetic Series (Gauss's Pairing)]]
+			- [[#The Sum of Geometric Series|The Sum of Geometric Series]]
+	- [[#Important Details#The Runtime of Loops|The Runtime of Loops]]
+		- [[#The Runtime of Loops#Framework A: Constant / Uniform Work per Step $\longrightarrow$ **Multiply**|Framework A: Constant / Uniform Work per Step $\longrightarrow$ **Multiply**]]
+		- [[#The Runtime of Loops#Framework B: Changing / Scaling Work per Step $\longrightarrow$ **Sum the Series**|Framework B: Changing / Scaling Work per Step $\longrightarrow$ **Sum the Series**]]
+	- [[#Important Details#The Golden Rule for Series in Big-O|The Golden Rule for Series in Big-O]]
+
+
+## Introduction
 * **Big O notation** is ==a mathematical way to show how fast an algorithm's running time or memory usage grows as the amount of data (input size) increases==.
 * Big-O doesn't measure _if_ runtime increases—==it measures **at what rate** it increases relative to $N$==
 * Some of the most common runtimes are
@@ -31,17 +48,17 @@ to compare the strings. Each string comparison takes $O(s)$ time. There are $O(a
 
 This is it. There is no way to reduce it further.
 ![[Screenshot 2026-07-20 at 23.08.27.png]]
-#### Amortized Time
+## Amortized Time
 **Amortized time** is the **guaranteed average time per operation** over a sequence of $N$ operations, even when a few individual operations in that sequence are very expensive.
 
 An `ArrayList` is a dynamically resizing array (unlike a regular array). When the array is full, a new array is created with double the size of the original array and all the elements are copied to the new array.
 
 Without copying, insertions are typically $O(1)$. While when we have to copy an array of $n$ elements, insertions become $O(n)$. Since resizing only happens when the size of the array is a power of 2, the total number of copies will be $1 + 2+ 4+8+16+32+64+...+X$. If we reverse this, we have $X+x/2+x/4+x/8+...+1$. This results in $2X$ operations. If $X$ is the size of the final array i.e total number of elements, then the cost of each operation is $O({2X}/X) = 2$ which rounds out to $O(1)$. 
 
-#### Log N Runtimes
+## Log N Runtimes
 * When you see a problem where the **number of elements in the problem space gets halved** each time, ==that will likely be a $O( log N)$ runtime.==
 * The base of the log doesn't matter for the purpose of Big O
-#### Recursive Runtimes
+## Recursive Runtimes
 Given this code, what is it's runtime?
 ```python
 def f(n: int) -> int:
@@ -57,7 +74,7 @@ When you have a recursive function that makes multiple calls, the runtime will o
 
 The space complexity of this algorithm will be $O(N)$. Although we have $O(2^N)$ nodes in the tree total, only $O(N)$ exist at any given time. Therefore, we would only need to have $O(N)$ memory available.
 
-##### Why is the space complexity $O(N)$?
+### Why is the space complexity $O(N)$?
 Here is the secret: ==the algorithm does NOT explore the entire tree at once.== It explores Depth-First Search (DFS) style, one path at a time.
 
 1. It goes all the way down the **far left edge** of the tree to $f(1)$. Stack height = $N$.
@@ -77,7 +94,7 @@ Basically because it's a DFS Algorithm, the right side doesn't enter the stack u
 
 > Supposing the operation at each level of the recursive function is $O(1)$, the space complexity of a DFS algorithm is always $O(N)$ and of a BFS algorithm $O(branches^{depth})$?
 
-#### Important Details
+## Important Details
 ##### The Sum of Arithmetic Series (Gauss's Pairing)
 An **arithmetic series** is the sum of a sequence of numbers where the difference between consecutive terms is always constant (like $2 + 4 + 6 + 8$). To quickly find the total sum without adding every number individually, you multiply the **number of terms** by the **average of the first and last term**. This works because of a clever symmetry: pairing numbers from opposite ends of the sequence (first + last, second + second-to-last) always yields the exact same sum. For the simple sequence $1 + 2 + 3 + \dots + N$, this gives the famous formula:
 
