@@ -1,4 +1,4 @@
-**Table Of Contents**
+## Table Of Contents
 
 - [[#How to Prepare|How to Prepare]]
 - [[#Must have knowledge|Must have knowledge]]
@@ -54,6 +54,12 @@
 			- [[#❌ Bad Code (Hard to Read, Poor Naming, Fragile)#Weaknesses in Bad Code:|Weaknesses in Bad Code:]]
 		- [[#Code Comparison: Poor vs. Good#✅ Good Code (Clean, Production-Ready, Robust)|✅ Good Code (Clean, Production-Ready, Robust)]]
 			- [[#✅ Good Code (Clean, Production-Ready, Robust)#Strengths of Good Code:|Strengths of Good Code:]]
+	- [[#What Good Coding Looks Like#Use Data Structures Generously|Use Data Structures Generously]]
+	- [[#What Good Coding Looks Like#Appropriate Code Reuse|Appropriate Code Reuse]]
+	- [[#What Good Coding Looks Like#Writing Modular Code|Writing Modular Code]]
+	- [[#What Good Coding Looks Like#Flexible and Robust|Flexible and Robust]]
+	- [[#Error Checking|Error Checking]]
+	- [[#Don't Give Up|Don't Give Up]]
 
 ## How to Prepare
 
@@ -729,3 +735,109 @@ public class NumberUtils {
 4. **Modularity:** Extracts `isEven()` logic into a helper function to keep the primary loop clean.
     
 5. **Defensive Checks:** Handles `null` and empty array cases upfront cleanly.
+### Use Data Structures Generously
+Sometimes instead of using a primitive data structure like strings, arrays etc, it might be better to build your own data structure. 
+> Imagine you are writing code to swap the minimum and maximum element in an integer array.
+
+==Note:== This is not the best way to do this, just wrote it to pass the point across. _also felt like writing code icl_
+```go
+type ArrayElement struct{
+	Index int
+	Value int
+}
+
+func swapMinMax (arr []int) []int{
+	// Guard clause for empty or single-element slices
+	if len(arr) <= 1 { return arr }
+
+	minElement := getMinElement(arr)
+	maxElement := getMaxElement(arr)
+	
+	arr[minElement.Index] = maxElement.Value
+	arr[maxElement.Index] = minElement.Value
+}
+
+func getMinElement (arr []int) ArrayElement{
+	min := arr[0]
+	minIndex := 0
+	for i,elem := range arr{
+		if elem < min {
+			min = elem
+			minIndex = i
+		}
+	}
+	return ArrayElement{
+		Index: minIndex,
+		Value: min
+	}
+}
+
+func getMaxElement (arr []int) ArrayElement{
+	max := arr[0]
+	maxIndex := 0
+	for i,elem := range arr{
+		if elem > max {
+			max = elem
+			maxIndex = i
+		}
+	}
+	return ArrayElement{
+		Index: maxIndex,
+		Value: max
+	}
+}
+
+```
+### Appropriate Code Reuse
+> Suppose you were asked to write a function to check if the value of a binary number (passed as a string) equals the hexadecimal representation of a string.
+
+```go
+func compareBintoHex(bin string, hex string)bool{
+	convertedBin := convertFromBase(bin, 2)
+	convertedHex := convertFromBase(bin, 16)
+	
+	if (convertedBin || convertedHex == -1) {
+		return false
+	}
+	return convertedBin == convertedHex;
+}
+// 100 121
+func convertFromBase(val string, base int){
+	// impl here
+	if (base < 2 || (base > 10 && base < 16)) {
+		return -1
+	}
+	int value = 0
+	
+	for i,digit := range val{
+		if (digit < 0 || digit > base){
+			return -1
+		}
+	
+		digitInt := strconv.Atoi(digit)
+		value += Math.pow(digit, len(val) - 1 - i)
+	}
+	
+	return value
+}
+```
+We could've implemented two different functions to convert from Binary and from Hexadecimal. However, that would make our code harder to write and more difficult to maintain.
+### Writing Modular Code
+Writing modular code means separating isolated chunks of code out into their own methods. This helps keep the code more maintainable, readable, and testable. A clear example is the [[#Use Data Structures Generously]] code snippet. 
+
+While the non-modular code isn't particularly awful, the nice thing about the modular code is that it's easily testable because each component can be verified separately.
+### Flexible and Robust
+Just because your interviewer only asks you to write code to check if a normal tic-tac-toe board has a winner, doesn't mean you must assume that it's a 3x3 board. Why not write the code in a more general way that implements it for an NxN board?
+
+Writing flexible, general-purpose code may also mean using variables instead of hard-coded values or using templates/ generics to solve a problem. If we can write our code to solve a more general problem, we should.
+
+Of course, there is a limit. If the solution is much more complex for the general case, and it seems unnecessary at this point in time, it may be better just to implement the simple, expected case.
+### Error Checking
+One sign of a careful coder is that she doesn't make assumptions about the input. Instead, she validates that the input is what it should be, either through ASSERT statements or if-statements.
+For example, recall the earlier code to convert a number from its base i (e.g., base 2 or base 16) representation to an int.
+
+Notice the code block in [[#Appropriate Code Reuse]] how in line 2 of the convertFromBase function we check to see that base is valid (we assume that bases greater than 10, other than base 16, have no standard representation in string form). Checks like these are critical in production code and, therefore, in interview code as well.
+### Don't Give Up
+I know interview questions can be overwhelming, but that's part of what the interviewer is testing. Do you rise to a challenge, or do you shrink back in fear? It's important that you step up and eagerly meet a tricky problem head-on. After all, remember that interviews are supposed to be hard. It shouldn't be a surprise when you get a really tough problem.
+
+For extra "points;' show excitement about solving hard problems.
