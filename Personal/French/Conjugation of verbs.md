@@ -15,11 +15,33 @@
 		- [[#RE verb groups#Attendre (To wait)|Attendre (To wait)]]
 		- [[#RE verb groups#Other Common Regular -RE Verbs|Other Common Regular -RE Verbs]]
 - [[#Key insights|Key insights]]
+## Common Verbs and Their Meanings
+
+| Verb         | Meaning              |
+| ------------ | -------------------- |
+| Écouter      | To Listen            |
+| Perdre       | To Lose (something)  |
+| Mordre       | To Bite              |
+| Répondre     | To Respond/To Answer |
+| Attendre     | To Wait For          |
+| Correspondre | To Match             |
+| Faire        | To do/To make        |
+| Aller        | To Go                |
+| Dire         | To Say               |
+| Venir        | To Come              |
+| Prendre      | To Take              |
+| Vendre       | To Sell              |
+| Vouloir      | To Want              |
+| Aimer        | To Like              |
+| Être         | To Be                |
+| Avoir        | To Have              |
+| Entendre     | To Hear              |
+| Fondre       | To Melt              |
 
 ## The Three Regular Verb Families
 
 - **[[#-ER verb groups]]:** Regular verbs like _parler_ (to speak). Drop the _-er_ and add present endings: _-e, -es, -e, -ons, -ez, -ent_. 
-- **[[#IR Verb groups - (regular verbs)]]:** Regular verbs like _finir_ (to finish). Drop the _-ir_ and add present endings: _-is, -is, -it, -issons, -issez, -issent_. 
+- **[[#IR Verb groups - (regular verbs)]]:** Regular verbs like _finir_ (to finish). Drop the _-ir_ and add Fpresent endings: _-is, -is, -it, -issons, -issez, -issent_. 
 - **Third Group (-re / irregular):** Includes irregular verbs like _être_ (to be), _avoir_ (to have), and _aller_ (to go). These do not follow a single uniform pattern and must be memorized individually. 
 ![[Pasted image 20260727151655.png]]
 ### -ER verb groups
