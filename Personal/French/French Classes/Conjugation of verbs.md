@@ -1,6 +1,5 @@
 ## Table Of Contents
 
-- [[#Common Verbs and Their Meanings|Common Verbs and Their Meanings]]
 - [[#Conjugation of Avoir and Être|Conjugation of Avoir and Être]]
 	- [[#Conjugation of Avoir and Être#Avoir (To Have)|Avoir (To Have)]]
 	- [[#Conjugation of Avoir and Être#Être (To Be)|Être (To Be)]]
@@ -19,39 +18,9 @@
 		- [[#RE verb groups#Attendre (To wait)|Attendre (To wait)]]
 		- [[#RE verb groups#Other Common Regular -RE Verbs|Other Common Regular -RE Verbs]]
 - [[#Key insights|Key insights]]
+- [[#Note:|Note:]]
 
-## Common Verbs and Their Meanings
 
-| Verb         | Meaning                    |
-| ------------ | -------------------------- |
-| Écouter      | To Listen                  |
-| Perdre       | To Lose (something)        |
-| Mordre       | To Bite                    |
-| Répondre     | To Respond/To Answer       |
-| Attendre     | To Wait For                |
-| Correspondre | To Match                   |
-| Faire        | To do/To make              |
-| Aller        | To Go                      |
-| Dire         | To Say                     |
-| Venir        | To Come                    |
-| Prendre      | To Take                    |
-| Vendre       | To Sell                    |
-| Vouloir      | To Want                    |
-| Aimer        | To Like                    |
-| Être         | To Be                      |
-| Avoir        | To Have                    |
-| Entendre     | To Hear                    |
-| Fondre       | To Melt                    |
-| Chanter      | To Sing                    |
-| Danser       | To Dance                   |
-| Regarder     | To Watch                   |
-| Savoir       | To Know (how to do things) |
-| Pouvoir      | Can                        |
-| Lire         | To Read                    |
-| Mourir       | To Die                     |
-| Échouer      | To Fail                    |
-| Connaitre    | To Know (people/places)    |
-| Donner       | To Give                    |
 ## Conjugation of Avoir and Être
 ### Avoir (To Have)
 - _J'ai_ (I have)
@@ -188,3 +157,6 @@ Once you know _vendre_, you can instantly conjugate all of these:
 ## Key insights
 - In spoken French, the singular forms—==**Je**, **Tu**, and **Il / Elle / On**—sound **100% identical**== across almost every single verb in the language!
 - Even though written French forces you to spell them with different endings (**-e/-es/-e**, **-is/-is/-it**, or **-s/-s/-d**), ==spoken French ignores those trailing consonants entirely==.
+
+## Note:
+More words here: [[Common verbs and their meaning]]
