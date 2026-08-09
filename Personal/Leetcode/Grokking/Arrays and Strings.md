@@ -157,4 +157,89 @@ func main() {
 	}
 }
 ```
+
+## StringBuilder
+`StringBuilder` was introduced to solve a very specific problem: **the huge performance penalty of concatenating strings in a loop.**
+
+To understand why `StringBuilder` exists, you first have to understand how regular strings work under the hood.
+
+### The Problem: Strings are Immutable
+
+In languages like Java, C#, or Python, **strings are immutable**, meaning once a string object is created in memory, its characters can never be modified.
+
+When you write code like this:
+
+```java
+String sentence = "";
+for (String word : words) {
+    sentence = sentence + word; // String concatenation
+}
+```
+
+You might think you are simply appending `word` to the end of `sentence`. But because strings cannot be changed:
+
+1. On **every single iteration**, a brand-new string object is allocated in memory.
+    
+2. The computer must **copy every character** from the old `sentence` AND every character from `word` into the new memory location.
+### The Math Behind the String Concatenation Penalty
+
+Suppose you have $N$ strings, and each string has $x$ characters.
+
+- On iteration 1: Copy $x$ characters.
+    
+- On iteration 2: Copy $2x$ characters.
+    
+- On iteration 3: Copy $3x$ characters.
+    
+- ...
+    
+- On iteration $N$: Copy $Nx$ characters.
+
+To find the total time complexity, you sum up the work:
+
+$$\text{Total Copies} = x + 2x + 3x + \dots + Nx = x(1 + 2 + 3 + \dots + N)$$
+
+Using the sum formula $1 + 2 + \dots + N = \frac{N(N+1)}{2}$:
+
+$$\text{Total Time} = O(x \cdot N^2)$$
+
+> **Result:** Joining $N$ strings of length $x$ using standard concatenation takes **$O(N^2)$ time**! This creates a massive bottleneck if you are processing large text or joining thousands of strings.
+
+### The Solution: How `StringBuilder` Works
+
+`StringBuilder` avoids this $O(N^2)$ penalty by acting like a **resizable array (ArrayList) for characters**.
+
+Instead of creating a brand-new string on every append:
+
+1. `StringBuilder` creates a contiguous character array in memory with extra buffer capacity (e.g., space for 16 characters).
+    
+2. When you call `.append(word)`, it simply writes the new characters directly into the existing array slots in **$O(1)$ constant time**.
+    
+3. If the array runs out of space, `StringBuilder` automatically doubles its capacity (just like an `ArrayList`), copying old characters over in $O(N)$ amortized time.
+    
+4. When you are completely done appending, you call `.toString()`, which converts the internal array into a final, immutable string once at the very end.
+
+```java
+StringBuilder sentence = new StringBuilder();
+for (String word : words) {
+    sentence.append(word); // O(1) amortized time per word
+}
+String result = sentence.toString(); // Converted once at the end
+```
+
+## Implementing StringBuilder
+```go
+type StringBuilder struct{
+	array []byte
+}
+
+func (s *StringBuilder) Append(word string){
+	// you can append a string directly to bytes in golang
+	s.array = append(s.array, word...)
+}
+
+func (s *StringBuilder) ToString()string{
+	return string(s.array)
+}
+```
 _implement StringBuilder_

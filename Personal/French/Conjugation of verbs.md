@@ -1,5 +1,9 @@
 ## Table Of Contents
 
+- [[#Common Verbs and Their Meanings|Common Verbs and Their Meanings]]
+- [[#Conjugation of Avoir and Être|Conjugation of Avoir and Être]]
+	- [[#Conjugation of Avoir and Être#Avoir (To Have)|Avoir (To Have)]]
+	- [[#Conjugation of Avoir and Être#Être (To Be)|Être (To Be)]]
 - [[#The Three Regular Verb Families|The Three Regular Verb Families]]
 	- [[#The Three Regular Verb Families#-ER verb groups|-ER verb groups]]
 		- [[#-ER verb groups#Parler - To Speak|Parler - To Speak]]
@@ -15,29 +19,54 @@
 		- [[#RE verb groups#Attendre (To wait)|Attendre (To wait)]]
 		- [[#RE verb groups#Other Common Regular -RE Verbs|Other Common Regular -RE Verbs]]
 - [[#Key insights|Key insights]]
+
 ## Common Verbs and Their Meanings
 
-| Verb         | Meaning              |
-| ------------ | -------------------- |
-| Écouter      | To Listen            |
-| Perdre       | To Lose (something)  |
-| Mordre       | To Bite              |
-| Répondre     | To Respond/To Answer |
-| Attendre     | To Wait For          |
-| Correspondre | To Match             |
-| Faire        | To do/To make        |
-| Aller        | To Go                |
-| Dire         | To Say               |
-| Venir        | To Come              |
-| Prendre      | To Take              |
-| Vendre       | To Sell              |
-| Vouloir      | To Want              |
-| Aimer        | To Like              |
-| Être         | To Be                |
-| Avoir        | To Have              |
-| Entendre     | To Hear              |
-| Fondre       | To Melt              |
-
+| Verb         | Meaning                    |
+| ------------ | -------------------------- |
+| Écouter      | To Listen                  |
+| Perdre       | To Lose (something)        |
+| Mordre       | To Bite                    |
+| Répondre     | To Respond/To Answer       |
+| Attendre     | To Wait For                |
+| Correspondre | To Match                   |
+| Faire        | To do/To make              |
+| Aller        | To Go                      |
+| Dire         | To Say                     |
+| Venir        | To Come                    |
+| Prendre      | To Take                    |
+| Vendre       | To Sell                    |
+| Vouloir      | To Want                    |
+| Aimer        | To Like                    |
+| Être         | To Be                      |
+| Avoir        | To Have                    |
+| Entendre     | To Hear                    |
+| Fondre       | To Melt                    |
+| Chanter      | To Sing                    |
+| Danser       | To Dance                   |
+| Regarder     | To Watch                   |
+| Savoir       | To Know (how to do things) |
+| Pouvoir      | Can                        |
+| Lire         | To Read                    |
+| Mourir       | To Die                     |
+| Échouer      | To Fail                    |
+| Connaitre    | To Know (people/places)    |
+| Donner       | To Give                    |
+## Conjugation of Avoir and Être
+### Avoir (To Have)
+- _J'ai_ (I have)
+- _Tu as_ (You have - singular/informal)
+- _Il / Elle / On a_ (He / She / One has)
+- _Nous avons_ (We have)
+- _Vous avez_ (You have - plural/formal)
+- _Ils / Elles ont_ (They have)
+### Être (To Be)
+- _Je suis_ (I am)
+- _Tu es_ (You are - singular/informal)
+- _Il / Elle / On est_ (He / She / One is)
+- _Nous sommes_ (We are)
+- _Vous êtes_ (You are - plural/formal)
+- _Ils / Elles sont_ (They are)
 ## The Three Regular Verb Families
 
 - **[[#-ER verb groups]]:** Regular verbs like _parler_ (to speak). Drop the _-er_ and add present endings: _-e, -es, -e, -ons, -ez, -ent_. 

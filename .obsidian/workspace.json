@@ -8,17 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "236dedaba6d4a7a9",
+            "id": "75ee9a065544211f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog/Personal/I just got laid off.md",
+                "file": "HyperPersonal/Finance/Unemployment.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "I just got laid off"
+              "title": "Unemployment"
+            }
+          },
+          {
+            "id": "47dbb07da2474e59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Personal/French/Conjugation of verbs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Conjugation of verbs"
             }
           }
         ]
@@ -80,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 256.0078125,
-    "collapsed": true
+    "width": 256.0078125
   },
   "right": {
     "id": "4aa3782e8b83d72b",
@@ -198,33 +211,42 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "236dedaba6d4a7a9",
+  "active": "75ee9a065544211f",
   "lastOpenFiles": [
+    "HyperPersonal/Finance/Finance.md",
+    "HyperPersonal/Finance/Unemployment.md",
+    "Personal/French/French Classes/Video Presentation Scripts/AU MARCHÉ.md",
+    "Personal/French/Conjugation of verbs.md",
+    "Personal/Iris/Extension Design Diagram.md",
+    "Personal/French/French Classes/Video Presentation Scripts",
+    "Personal/Leetcode/Grokking/Exercise Tracker.md",
+    "Personal/Leetcode/Grokking/Technical Questions.md",
     "Personal/French/French Classes/Comment Questions.md",
+    "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+    "Personal/Leetcode/Grokking/Big O - Asymptotic Notation.md",
+    "Personal/Leetcode/Grokking/Arrays and Strings.md",
+    "Personal/Leetcode/Grokking/Rough",
     "Blog/Personal/I just got laid off.md",
+    "HyperPersonal/Nneoma Babcock Application Details.md",
+    "HyperPersonal/Job Application Tracker.md",
+    "ng.indeed.com.md",
+    "indeed.com.md",
+    "HyperPersonal/Untitled",
     "Blog/Professional",
     "Blog/Personal",
     "Blog",
-    "Personal/Leetcode/Grokking/Arrays and Strings.md",
-    "Personal/Leetcode/Grokking/Exercise Tracker.md",
     "SalesCopilots/Linkedin Automation Design Doc.md",
-    "Personal/French/Conjugation of verbs.md",
     "Personal/French/French Classes",
     "Personal/French/Pasted image 20260727151655.png",
     "Personal/Leetcode/Grokking/Index.md.md",
     "SalesCopilots/Next Steps.md",
-    "Personal/Iris/Extension Design Diagram.md",
     "Personal/Iris/Extension Design.md",
     "Excalidraw/Odin Architecture.md",
-    "Personal/Leetcode/Grokking/Technical Questions.md",
-    "Personal/Leetcode/Grokking/Big O - Asymptotic Notation.md",
     "Personal/Leetcode/Grokking/Tips/Using input constraints.md",
     "Personal/French/Pronunciation/Pronunciation of EU and ŒU.md",
     "TODOs.md",
     "Untitled 1.canvas",
     "Welcome.md",
-    "HyperPersonal/Finance/Finance.md",
-    "HyperPersonal/Nneoma Babcock Application Details.md",
     "HyperPersonal",
     "Personal/Leetcode/Grokking/Screenshot 2026-07-20 at 23.08.27.png",
     "Personal/Leetcode/Grokking/Screenshot 2026-07-27 at 23.00.16.png",
@@ -235,17 +257,8 @@
     "Personal/Leetcode/Grokking/Screenshot 2026-07-26 at 14.19.29.png",
     "Personal/Iris/RedBull Basement Nigeria.md",
     "Personal/Leetcode/Grokking/Tips",
-    "SalesCopilots/Work Notes.md",
-    "Personal/French/Pronunciation/Pronunciation of E.md",
-    "Personal/French/Pronunciation/Pronunciation of A Á and Â.md",
-    "Personal/French/Pronunciation/How French Vowels Change the Pronunciation of a Word.md",
-    "Personal/French/Pronunciation/International Phonetic Alphabet.md",
-    "Personal/French/Pronunciation/-IEN.md",
     "Personal/French/Pronunciation",
-    "HyperPersonal/CA",
-    "Personal/French",
     "Screenshot 2026-07-26 at 14.24.41.png",
-    "Personal/Leetcode/Grokking",
     "Pasted image 20260501135353.png",
     "Untitled.canvas"
   ]
