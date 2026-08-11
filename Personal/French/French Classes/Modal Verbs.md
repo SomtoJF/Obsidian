@@ -50,7 +50,7 @@ Il faut
 Aimer ...to like
 J'aime
 Tu aime
-Il ou elle ou on aime
+Il/elle/on aime
 Nous aimons
 Vouz aimez
 Ils ou elles aiment

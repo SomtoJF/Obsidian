@@ -1,7 +1,9 @@
 
-| Problem                | Progress after 20m (solved/failed) | Source       | Data Structure/Algo |
-| ---------------------- | ---------------------------------- | ------------ | ------------------- |
-| Implement a Hash Map   | solved                             | Grokking     | Array               |
-| Implement an ArrayList | failed                             | Grokking     | Array               |
-| Contains Duplicates    | solved                             | Leetcode 217 | Array & Maps        |
-| Valid Anagram          | solved                             | Leetcode 242 | Strings & Maps      |
+| Problem                | Progress after 20m (solved/failed) | Source        | Data Structure/Algo | Link                                              |
+| ---------------------- | ---------------------------------- | ------------- | ------------------- | ------------------------------------------------- |
+| Implement a Hash Map   | failed -> solved                   | Grokking      | Array               |                                                   |
+| Implement an ArrayList | failed -> solved                   | Grokking      | Array               |                                                   |
+| Contains Duplicates    | solved                             | Leetcode 217  | Array & Maps        |                                                   |
+| Valid Anagram          | solved                             | Leetcode 242  | Strings & Maps      |                                                   |
+| Thousand Separator     | failed -> solved                   | Leetcode 1556 | Strings             | https://leetcode.com/problems/thousand-separator/ |
+| Palindrome Permutation | solved                             | Grokking      | Strings & Maps      |                                                   |

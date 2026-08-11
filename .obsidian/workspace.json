@@ -4,49 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "72edff048f563a50",
+        "id": "904b538bdcca6e11",
         "type": "tabs",
         "children": [
           {
-            "id": "75ee9a065544211f",
+            "id": "f3605b87056566ab",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HyperPersonal/CA/Application Timeline.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Application Timeline"
-            }
-          },
-          {
-            "id": "47dbb07da2474e59",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Personal/French/French Classes/Conjugation of verbs.md",
+                "file": "Personal/French/French Classes/Modal Verbs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Conjugation of verbs"
-            }
-          },
-          {
-            "id": "83689b7f8b9f08f7",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "Modal Verbs"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -222,32 +197,39 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "47dbb07da2474e59",
+  "active": "f3605b87056566ab",
   "lastOpenFiles": [
-    "Personal/French/Common verbs and their meaning.md",
     "Personal/French/French Classes/Conjugation of verbs.md",
+    "Personal/French/French Classes/Comment Questions.md",
+    "Personal/French/French Classes/Asking Questions.md",
+    "Personal/French/French Classes/Modal Verbs.md",
+    "HyperPersonal/Resume/Bullet points.md",
+    "HyperPersonal/Motivation/Nick's Response.md",
+    "HyperPersonal/Motivation/Pasted image 20260810224044.png",
+    "HyperPersonal/Motivation/Pasted image 20260810224033.png",
+    "HyperPersonal/Motivation/Pasted image 20260810224020.png",
+    "HyperPersonal/Finance/Finance.md",
+    "HyperPersonal/Motivation",
+    "HyperPersonal/Job Application Tracker.md",
+    "HyperPersonal/Nneoma Babcock Application Details.md",
+    "Personal/Iris/Extension Design Diagram.md",
+    "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+    "Personal/Leetcode/Grokking/Arrays and Strings.md",
+    "Personal/Leetcode/Grokking/Exercise Tracker.md",
+    "HyperPersonal/CA/Application Timeline.md",
+    "Personal/French/Common verbs and their meaning.md",
+    "HyperPersonal/Resume",
     "Personal/French/Pasted image 20260727151655.png",
     "HyperPersonal/Finance/Severance Budget.md",
-    "Personal/French/French Classes/Modal Verbs.md",
     "Personal/French/French Classes/Pasted image 20260809200009.png",
-    "Personal/French/French Classes/Comment Questions.md",
-    "HyperPersonal/CA/Application Timeline.md",
-    "HyperPersonal/Finance/Finance.md",
     "Personal/French/French Classes/Video Presentation Scripts/AU MARCHÉ.md",
-    "Personal/Iris/Extension Design Diagram.md",
     "Personal/French/French Classes/Video Presentation Scripts",
-    "Personal/Leetcode/Grokking/Exercise Tracker.md",
     "Personal/Leetcode/Grokking/Technical Questions.md",
-    "Personal/Leetcode/Grokking/Rough/Rough Page.md",
     "Personal/Leetcode/Grokking/Big O - Asymptotic Notation.md",
-    "Personal/Leetcode/Grokking/Arrays and Strings.md",
     "Personal/Leetcode/Grokking/Rough",
     "Blog/Personal/I just got laid off.md",
-    "HyperPersonal/Nneoma Babcock Application Details.md",
-    "HyperPersonal/Job Application Tracker.md",
     "ng.indeed.com.md",
     "indeed.com.md",
-    "HyperPersonal/Untitled",
     "Blog/Professional",
     "Blog/Personal",
     "Blog",
@@ -255,9 +237,6 @@
     "Personal/French/French Classes",
     "Personal/Leetcode/Grokking/Index.md.md",
     "SalesCopilots/Next Steps.md",
-    "Personal/Iris/Extension Design.md",
-    "Excalidraw/Odin Architecture.md",
-    "Personal/Leetcode/Grokking/Tips/Using input constraints.md",
     "Untitled 1.canvas",
     "HyperPersonal",
     "Personal/Leetcode/Grokking/Screenshot 2026-07-20 at 23.08.27.png",
@@ -265,11 +244,7 @@
     "Personal/Leetcode/Grokking/Screenshot 2026-07-27 at 22.33.01.png",
     "Personal/Leetcode/Grokking/Screenshot 2026-07-27 at 23.14.51.png",
     "Personal/Leetcode/Grokking/Screenshot 2026-07-21 at 21.37.53.png",
-    "Personal/Leetcode/Grokking/Screenshot 2026-07-21 at 21.34.17.png",
-    "Personal/Leetcode/Grokking/Screenshot 2026-07-26 at 14.19.29.png",
     "Personal/Leetcode/Grokking/Tips",
-    "Personal/French/Pronunciation",
-    "Screenshot 2026-07-26 at 14.24.41.png",
     "Untitled.canvas"
   ]
 }
