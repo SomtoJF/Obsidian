@@ -128,3 +128,73 @@ def palindromePerm (input):
 
 ```
 Key insight here is that for a string to be the same forwards and backwards, each character must appear an even number of times with an exception for max 1 character where the odd character could be in the middle
+### String Compression
+Implement a method to perform basic string compression using the counts of repeated characters. For example, the string `aabcccccaaa` would become `a2blc5a3`. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters $(a - z)$.
+```python
+def compress_string(s):
+	"""
+	loop the string
+		count each occurence using a map
+	loop the map and build the final string using the frequencies from the map
+	
+	inputs: aabcccccaaa, abc, abcccc
+	outputs: a2blc5a3, a1b1c1, a1b1c4 -> abcccc
+	"""
+	
+	map = {}
+	for c in s:
+		# O(n)
+		if c in map:
+			map[c] += 1
+		else:
+			map[c] = 0
+	newStr = ""
+	for k,v in map:
+		vStr = str(v)
+		newStr += (k+vStr)
+		
+	if len(s) == len(newStr):
+		return s
+	else:
+		return newStr
+	
+```
+This algorithm runs in $O(n)$ time and $O(n)$ space.
+### One Away
+There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away.
+#### Notes
+- One replacement away means they must be same length.  `pale` -> `bale`
+- One insertion away means `s1` is one length difference away from `s2`. `apple` -> `aple`
+- One deletion away means `s1` is also one length difference away from `s2`. `apple` -> `aple`
+```python
+def one_away(s1, s2):
+	if len(s1) == len(s2):
+		return isReplacementAway(s1, s2)
+	if len(s1) > len(s2):
+		return isInsertionAway(s1, s2)
+	if len(s1) < len(s2):
+		return isInsertionAway(s2, s1)
+	return False
+	
+def isReplacementAway(s1, s2):
+	diffFound = False
+	i2 = 0
+	for c in s1:
+		if (c != s2[i2]):
+			if (diffFound):
+				return False
+			diffFound = True
+		i2 += 1
+	return True
+	
+def isInsertionAway(s1, s2):
+	i2 = 0
+	for i, c in enumerate(s1):
+		if (c != s2[i2]):
+			if (i != i2):
+				return False
+			continue #this should shift the index for i
+		i2 += 1
+	return True
+	
+```

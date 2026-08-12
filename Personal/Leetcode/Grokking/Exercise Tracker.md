@@ -7,3 +7,5 @@
 | Valid Anagram          | solved                             | Leetcode 242  | Strings & Maps      |                                                   |
 | Thousand Separator     | failed -> solved                   | Leetcode 1556 | Strings             | https://leetcode.com/problems/thousand-separator/ |
 | Palindrome Permutation | solved                             | Grokking      | Strings & Maps      |                                                   |
+| String Compression     | failed                             | Grokking      | Strings             |                                                   |
+| One Away               | solved                             | Grokking      | Strings             |                                                   |
