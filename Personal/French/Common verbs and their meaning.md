@@ -29,3 +29,6 @@
 | Échouer      | To Fail                    |
 | Connaitre    | To Know (people/places)    |
 | Donner       | To Give                    |
+| Écrire       | to Write                   |
+| Répéter      | To Repeat                  |
+| Réféchir     | To reflex                  |

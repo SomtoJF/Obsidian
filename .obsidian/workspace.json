@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Leetcode/Grokking/Exercise Tracker.md",
+                "file": "Personal/French/Common verbs and their meaning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exercise Tracker"
+              "title": "Common verbs and their meaning"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+                "file": "Personal/French/French Classes/Modal Verbs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Rough Page"
+              "title": "Modal Verbs"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -212,8 +211,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0272a6377b15ce22",
+  "active": "f3605b87056566ab",
   "lastOpenFiles": [
+    "Personal/French/French Classes/Comment Questions.md",
+    "Personal/French/French Classes/Conjugation of verbs.md",
+    "Personal/French/French Classes/Modal Verbs.md",
+    "Personal/French/French Classes/Pasted image 20260809200009.png",
+    "Personal/French/Common verbs and their meaning.md",
     "Personal/Leetcode/Grokking/Exercise Tracker.md",
     "Personal/Leetcode/Grokking/Rough/Rough Page.md",
     "HyperPersonal/Job Applications/Job Application Tracker.md",
@@ -223,10 +227,6 @@
     "SalesCopilots/Linkedin Automation Design Doc.md",
     "SalesCopilots/Next Steps.md",
     "SalesCopilots/Work Notes.md",
-    "Personal/French/Common verbs and their meaning.md",
-    "Personal/French/French Classes/Modal Verbs.md",
-    "Personal/French/French Classes/Conjugation of verbs.md",
-    "Personal/French/French Classes/Comment Questions.md",
     "Personal/French/French Classes/Asking Questions.md",
     "HyperPersonal/Motivation/Nick's Response.md",
     "HyperPersonal/Motivation/Pasted image 20260810224044.png",
@@ -241,14 +241,12 @@
     "HyperPersonal/Job Applications",
     "Personal/French/Pasted image 20260727151655.png",
     "HyperPersonal/Finance/Severance Budget.md",
-    "Personal/French/French Classes/Pasted image 20260809200009.png",
     "Personal/French/French Classes/Video Presentation Scripts/AU MARCHÉ.md",
     "Personal/French/French Classes/Video Presentation Scripts",
     "Personal/Leetcode/Grokking/Technical Questions.md",
     "Personal/Leetcode/Grokking/Big O - Asymptotic Notation.md",
     "Personal/Leetcode/Grokking/Rough",
     "Blog/Personal/I just got laid off.md",
-    "ng.indeed.com.md",
     "Blog/Professional",
     "Blog/Personal",
     "Blog",

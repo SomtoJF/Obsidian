@@ -133,30 +133,38 @@ Implement a method to perform basic string compression using the counts of repea
 ```python
 def compress_string(s):
 	"""
-	loop the string
-		count each occurence using a map
-	loop the map and build the final string using the frequencies from the map
+	init a character counter = 0
+	init a string list
+	loop index, c the string
+		if index > 0
+			if c != c + 1 
+				increment counter
+				append to string list "c+character counter"
+				set counter to 0
+				continue
+		increment counter
+	
 	
 	inputs: aabcccccaaa, abc, abcccc
 	outputs: a2blc5a3, a1b1c1, a1b1c4 -> abcccc
 	"""
 	
-	map = {}
-	for c in s:
-		# O(n)
-		if c in map:
-			map[c] += 1
-		else:
-			map[c] = 0
-	newStr = ""
-	for k,v in map:
-		vStr = str(v)
-		newStr += (k+vStr)
-		
-	if len(s) == len(newStr):
+	counter = 0
+	sArr = []
+	
+	for i,c in enumerate(s):
+		if i > 0:
+			if (i == (len(s) - 1)) or (c != s[i+1]):
+				counter += 1
+				sArr.append(c + str(counter))
+				counter = 0
+				continue
+		counter += 1
+	
+	if len(sArr) >= len(s):
 		return s
 	else:
-		return newStr
+		return "".join(sArr)
 	
 ```
 This algorithm runs in $O(n)$ time and $O(n)$ space.

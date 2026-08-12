@@ -7,5 +7,6 @@
 | Valid Anagram          | solved                             | Leetcode 242  | Strings & Maps      |                                                   |
 | Thousand Separator     | failed -> solved                   | Leetcode 1556 | Strings             | https://leetcode.com/problems/thousand-separator/ |
 | Palindrome Permutation | solved                             | Grokking      | Strings & Maps      |                                                   |
-| String Compression     | failed                             | Grokking      | Strings             |                                                   |
+| String Compression     | failed -> solved                   | Grokking      | Strings             |                                                   |
 | One Away               | solved                             | Grokking      | Strings             |                                                   |
+| Rotate Image           | failed                             | Leetcode 48   | Arrays              | https://leetcode.com/problems/rotate-image/       |
