@@ -4,13 +4,13 @@
 - [[#Amortized Time|Amortized Time]]
 - [[#Log N Runtimes|Log N Runtimes]]
 - [[#Recursive Runtimes|Recursive Runtimes]]
-	- [[#Recursive Runtimes#Why is the space complexity $O(N)$?|Why is the space complexity $O(N)$?]]
+	- [[#Recursive Runtimes#Why is the space complexity O(N)?|Why is the space complexity O(N)?]]
 - [[#Important Details|Important Details]]
 			- [[#The Sum of Arithmetic Series (Gauss's Pairing)|The Sum of Arithmetic Series (Gauss's Pairing)]]
 			- [[#The Sum of Geometric Series|The Sum of Geometric Series]]
 	- [[#Important Details#The Runtime of Loops|The Runtime of Loops]]
-		- [[#The Runtime of Loops#Framework A: Constant / Uniform Work per Step $\longrightarrow$ **Multiply**|Framework A: Constant / Uniform Work per Step $\longrightarrow$ **Multiply**]]
-		- [[#The Runtime of Loops#Framework B: Changing / Scaling Work per Step $\longrightarrow$ **Sum the Series**|Framework B: Changing / Scaling Work per Step $\longrightarrow$ **Sum the Series**]]
+		- [[#The Runtime of Loops#Framework A: Constant / Uniform Work per Step -> Multiply|Framework A: Constant / Uniform Work per Step -> Multiply]]
+		- [[#The Runtime of Loops#Framework B: Changing / Scaling Work per Step -> Sum the Series|Framework B: Changing / Scaling Work per Step -> Sum the Series]]
 	- [[#Important Details#The Golden Rule for Series in Big-O|The Golden Rule for Series in Big-O]]
 
 
@@ -74,7 +74,7 @@ When you have a recursive function that makes multiple calls, the runtime will o
 
 The space complexity of this algorithm will be $O(N)$. Although we have $O(2^N)$ nodes in the tree total, only $O(N)$ exist at any given time. Therefore, we would only need to have $O(N)$ memory available.
 
-### Why is the space complexity $O(N)$?
+### Why is the space complexity O(N)?
 Here is the secret: ==the algorithm does NOT explore the entire tree at once.== It explores Depth-First Search (DFS) style, one path at a time.
 
 1. It goes all the way down the **far left edge** of the tree to $f(1)$. Stack height = $N$.
@@ -142,7 +142,7 @@ $$\text{Total Work } (S) = 2^{n+1} - 2$$
 
 To solidify this forever, contrast how to treat loops based on what's inside them:
 
-#### Framework A: Constant / Uniform Work per Step $\longrightarrow$ **Multiply**
+#### Framework A: Constant / Uniform Work per Step -> Multiply
 
 If the work inside the loop stays roughly the same size at every iteration:
 
@@ -153,7 +153,7 @@ $$\text{Total Work} = \text{Loop Iterations} \times \text{Work per Step}$$
     $$N \times O(N \log N) = O(N^2 \log N)$$
     
 
-#### Framework B: Changing / Scaling Work per Step $\longrightarrow$ **Sum the Series**
+#### Framework B: Changing / Scaling Work per Step -> Sum the Series
 
 If the work inside the loop depends directly on $i$ (growing or shrinking as $i$ changes):
 
