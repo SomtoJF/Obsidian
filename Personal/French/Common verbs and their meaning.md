@@ -32,3 +32,5 @@
 | Écrire       | to Write                   |
 | Répéter      | To Repeat                  |
 | Réféchir     | To reflex                  |
+| Nettoyer     | To Clean                   |
+| Sortir       | To go out                  |

@@ -1,4 +1,4 @@
-## Table Of Contents
+ ## Table Of Contents
 
 - [[#Conjugation of Avoir and Être|Conjugation of Avoir and Être]]
 	- [[#Conjugation of Avoir and Être#Avoir (To Have)|Avoir (To Have)]]
