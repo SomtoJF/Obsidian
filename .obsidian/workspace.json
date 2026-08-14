@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog/Professional/Why leetcode is a bad test of coding ability.md",
+                "file": "Personal/Leetcode/Grokking/Technical Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Why leetcode is a bad test of coding ability"
+              "title": "Technical Questions"
             }
           },
           {
@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+                "file": "Personal/Leetcode/Grokking/Exercise Tracker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Rough Page"
+              "title": "Exercise Tracker"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -212,18 +213,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "faf0ffeaf4a90108",
+  "active": "78b75d79c52e643b",
   "lastOpenFiles": [
     "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+    "Personal/Leetcode/Grokking/Technical Questions.md",
+    "Personal/Leetcode/Grokking/Arrays and Strings.md",
     "Blog/Professional/Why leetcode is a bad test of coding ability.md",
     "Personal/French/Common verbs and their meaning.md",
     "HyperPersonal/Job Applications/Job Application Tracker.md",
     "Personal/System Design.md",
     "Personal/Leetcode/Grokking/Exercise Tracker.md",
     "Blog/Professional/Big O.md",
-    "Personal/Leetcode/Grokking/Technical Questions.md",
     "Personal/Leetcode/Grokking/Big O - Asymptotic Notation.md",
-    "Personal/Leetcode/Grokking/Arrays and Strings.md",
     "Personal/French/French Classes/Untitled.md",
     "Personal/French/French Classes/Modal Verbs.md",
     "Personal/French/French Classes/Conjugation of verbs.md",

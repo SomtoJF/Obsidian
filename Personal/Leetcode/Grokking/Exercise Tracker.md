@@ -9,4 +9,4 @@
 | Palindrome Permutation | solved                             | Grokking      | Strings & Maps      |                                                   |
 | String Compression     | failed -> solved                   | Grokking      | Strings             |                                                   |
 | One Away               | solved                             | Grokking      | Strings             |                                                   |
-| Rotate Image           | failed                             | Leetcode 48   | Arrays              | https://leetcode.com/problems/rotate-image/       |
+| Rotate Image           | failed/solved                      | Leetcode 48   | Arrays              | https://leetcode.com/problems/rotate-image/       |

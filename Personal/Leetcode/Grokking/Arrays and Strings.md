@@ -242,4 +242,4 @@ func (s *StringBuilder) ToString()string{
 	return string(s.array)
 }
 ```
-_implement StringBuilder_
+
