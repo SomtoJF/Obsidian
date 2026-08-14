@@ -127,7 +127,7 @@ def palindromePerm (input):
 	return True
 
 ```
-Key insight here is that for a string to be the same forwards and backwards, each character must appear an even number of times with an exception for max 1 character where the odd character could be in the middle
+>Key insight here is that for a string to be the same forwards and backwards, each character must appear an even number of times with an exception for max 1 character where the odd character could be in the middle
 ### String Compression
 Implement a method to perform basic string compression using the counts of repeated characters. For example, the string `aabcccccaaa` would become `a2blc5a3`. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters $(a - z)$.
 ```python
@@ -206,3 +206,44 @@ def isInsertionAway(s1, s2):
 	return True
 	
 ```
+### String Rotation
+Assume you have a method `isSubstring` which checks if one word is a substring of another. Given two strings, `s1` and `s2`, write code to check if `s2` is a rotation of `s1` using only one call to isSubstring (e.g., "waterbottle" is a rotation of"erbottlewat").
+#### Notes
+> `isSubstring` checks if one string occurs as a **contiguous sequence of characters** inside another.
+
+I know I could solve this using two pointers. But what two pointers will I use?. I was thinking of setting my first pointer at the beginning of `s1` , looking for the character in `s1` and looping through checking if both pointers point to the same character. But the problem with this is what if the letter occurs more than once in the strings? I could potentially find the wrong one? What if I reference the next character as well?
+#### Nope
+```python
+def isStringRotation(s1, s2):
+	return len(s1) == len(s2) and isSubstring(s1 + s1, s2)
+		
+
+
+def isSubString(s1, s2):
+	# dummy impl
+```
+Why?
+
+Take:
+
+```
+s1 = waterbottle
+s2 = erbottlewat
+```
+
+Double `s1`:
+
+```
+waterbottlewaterbottle
+```
+
+The rotation appears as a contiguous substring:
+
+```
+waterbottle[erbottlewat]erbottle
+              ↑
+```
+
+So if `s2` is a rotation of `s1`, it **must appear inside `s1 + s1`**.
+
+And this satisfies the requirement of using `isSubstring` only once.
