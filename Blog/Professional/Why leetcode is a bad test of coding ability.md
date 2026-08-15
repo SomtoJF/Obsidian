@@ -56,7 +56,7 @@ So if `s2` is a rotation of `s1`, it **must appear inside `s1 + s1`**.
 Again, No realisation == No optimal solution for you.
 
 ## Conclusion
-You can now see that no matter how strong your DSA foundation is, some of these questions are unsolvable without an *AHA!* moment. Moments that tend to be difficult to come by when you have the interview gods staring down at you with the sole purpose of identifying and noting down your mistakes. Candidates have clocked this and so the interview prep process has become a race to experience every possible *AHA!* moment before the interview so they can *LARP* the right *AHA!* moment when they need.
+You can now see that no matter how strong your DSA foundation is, some of these questions are unsolvable without an *AHA!* moment. Moments that tend to be difficult to come by when you have the interview gods staring down at you with the sole purpose of identifying and noting down your mistakes. Candidates have clocked this and so the interview prep process has become a race to experience every possible *AHA!* moment before the interview so they can *LARP* the right *AHA!* moment when they need to.
 ![[for_loyal_customer.png]]
 
  ==If you're an interviewer, ignore this article s'il vous plaît. I love leetcode!!! :>==
