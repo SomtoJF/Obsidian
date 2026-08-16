@@ -107,4 +107,14 @@ If we find one, we call a function that reads the DOM for the arguments to the C
 The latter problem was kind of a signal for me to rethink because I was getting zero insight into why the application was getting flagged. I didn't even know where to start from in solving the problem. I could've kept the Capsolver experiment going but to get access to more powerful tools from the API I would've had to pay more money and I couldn't afford an enterprise plan.
 
 ### Acceptance: My final decision
+I decided to pivot a bit. I will still keep on improving the browser agent and trying to solve the bot detection problem. However, In the last few weeks/months I feel like I have spent so much more time solving that bot detection than solving the main problem I was building it to solve. 
+
+> Speeding up the application process
+
+So I decided to go a different route. ==Assisted applications instead of completely autonomous==. Think cursor for job applications. Vision for this is basically having the Iris chrome extension in a sidebar like you have the cursor chat. And it handles the **applications in your own browser**. This is in no way an agent. It's a totally different workflow from the `JobApplicationWorkflow`. It has access to the job description, the fields on the page (so it can automatically fill them), your resumé as well as open tabs in your browser to pull additional context. If you come across a login page or a Captcha puzzle, you can handle those while the extension handles the rest.
 ![[Pasted image 20260816135846.png|373]]
+## Conclusion
+If you were expecting to hear a solution to the browser automation problem, I'm sorry. Nonetheless, I hope I was able to steer you in some direction with my experience. If you identified any mistakes I may have made, you're welcome! Now you know what not to do next time. if you think this entire article was crap, that's your business.
+![[Pasted image 20260816151453.png]]
+
+Thank you for reading!
