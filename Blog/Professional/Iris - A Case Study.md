@@ -1,8 +1,8 @@
 I have been working consistently on browser automation tasks for the past few months and I have come across the dreaded golden challenge. My credentials? check out [ApplyWithIris](https://applywithiris.com). It has a feature where we automatically apply to jobs for you by having AI handle the application in a browser on a VPS/VM. 
 
 Let's start by defining some core terms. We'll go with the simplest definitions possible here.
-- Agent: An LLM with tools that enable it act on the result of it's reasoning.
-- Browser-Use Agent: An Agent with browser based tools that allow it perform actions on the browser. 
+- **Agent**: An LLM with tools that enable it act on the result of it's reasoning.
+- **Browser-Use Agent**: An Agent with browser based tools that allow it perform actions on the browser. 
 
 ## The Architecture
 I think the best way to describe Iris' architecture is as both **Client-Server** and **Layered**. The core codebase (*excl. the chrome extension and marketing page*) are basically 3 main parts. 
@@ -69,18 +69,33 @@ Here's a rundown of the design. Job applications run inside of a Temporal workfl
 	- Takes screenshots of the page, tags the screenshots and pulls the page's accessibility tree.
 	- Feeds all the data into an LLM "planner"
 	- The planner calls tools that click buttons, type etc.
-The loop runs until the planner successfully submits the application. This is an extremely simplified explanation of things but you get the gist.
+The loop runs until the planner successfully submits the application. **This is an extremely simplified explanation of things** but you get the gist.
 
 ## The major challenge with browser automation
-While testing the initial prototype, I came across a recurring problem that wanted to take my life. I event get chills writing about it.
+While testing the initial prototype, I came across a recurring problem that wanted to take my life. I event get chills writing about it. **The problem of bot detection**.
 ![[Pasted image 20260816135317.png|435]]
 
-> Bot detection
+> **Bot detection**
 
 I went through the complete 5 stages of grief trying to solve this one. Let's talk about the two stages that lasted the most. 
 ### Denial: Solutions I tried
-> As you read this section picture me doing this every 30 minutes.
+> As you read this section picture me doing this every 30 minutes. 
 
 ![[Pasted image 20260816135819.png|320]]
+The first thing I did ...and what would probably be your first step on any browser automation projects you might have worked on would be to run the browser in **stealth mode**. Most browser libraries give you this out of the box or provide a plugin for this so it's not a problem to implement at all. ==I used go-rod==. The golden question:
+
+> Did it work?
+
+Of course not, if you solve a problem on the first try then it wasn't a problem _duh_. Honestly, I don't even think this does anything if you ask me. Then again, I've never not run an automated browser in stealth mode so I don't how the experience would've been without. 
+
+Next, I ran the browser in `NewUserMode`. This preset reuses the regular user data folder and login sessions (like existing cookies or extensions) so automation runs inside your established personal profile. I am aware of the danger of doing this. _Session pollution_ where one application's state pollutes another application. But that wasn't exactly possible in my setup. The agent didn't have the ability to perform any login operations, there were strict guardrails that stopped it from doing anything outside of the pages related to the job application it was filling and every application ran in an incognito context.
+
+> Still didn't work of course.
+
+Finally, I decided to approach it differently. Since it was impossible for the agent to completely avoid detection, let's give the agent the ability to solve captchas instead. So I got to researching. After a few days and couple of conversations with my mentors .*..ChatGPT, Claude and Gemini of course*, I was ready to build a tool to do this. The solution was to outsource the captcha tasks using either 2captcha or capsolver. Plan was simple enough. 
+
+> At every loop iteration, right after taking the screenshot, we will run a script to check the DOM for any captcha prompts. 
+
+If we find one, we call a function that reads the DOM for the arguments to the Capsolver API call and make the call in a Temporal Activity. Capsolver handles it and we get a code/token in return for us to feed back to the captcha iframe/element in the DOM. The challenge was that it is difficult to get the `TaskType` (one of the arguments needed for the Capsolver endpoint requires) from the DOM. To solve this problem, I had Claude Code run tens of applications I knew would trigger captchas and debug `TaskType` errors as they surfaced. With this, the agent was able to solve quite a number of captcha types reliably.
 ### Acceptance: My final decision
 ![[Pasted image 20260816135846.png|373]]
