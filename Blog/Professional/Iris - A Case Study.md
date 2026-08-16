@@ -1,4 +1,8 @@
-I have been working consistently on browser automation tasks for the past few months and I have come across the dreaded golden challenge. My credentials? check out [ApplyWithIris](https://applywithiris.com). It has a feature where we automatically apply to jobs for you by having AI handle the application in a browser on a VPS/VM. 
+I hate job applications. Its so time consuming and you basically have to echo the same information in so many forms. I tried tools like Sorce but quickly realised it wasn't built for people outside of the US. I couldn't find any jobs in Africa and even jobs in Europe we limited. The reason for this --I found was that they have crawlers that scrape the web. So I assume these crawlers have some set rules or paths they take to scrape the jobs and any job postings that don't align with those rules or lie along that path won't get picked up. 
+
+I wanted something that could pick up any job as long as it's on the internet. Something that I could use without feeling limited. 
+
+So I built [ApplyWithIris](https://applywithiris.com). It has a feature where we automatically apply to jobs for you by having AI handle the application in a browser on a VPS/VM. This feature will be the main talking-point today.
 
 Let's start by defining some core terms. We'll go with the simplest definitions possible here.
 - **Agent**: An LLM with tools that enable it act on the result of it's reasoning.
@@ -96,6 +100,11 @@ Finally, I decided to approach it differently. Since it was impossible for the a
 
 > At every loop iteration, right after taking the screenshot, we will run a script to check the DOM for any captcha prompts. 
 
-If we find one, we call a function that reads the DOM for the arguments to the Capsolver API call and make the call in a Temporal Activity. Capsolver handles it and we get a code/token in return for us to feed back to the captcha iframe/element in the DOM. The challenge was that it is difficult to get the `TaskType` (one of the arguments needed for the Capsolver endpoint requires) from the DOM. To solve this problem, I had Claude Code run tens of applications I knew would trigger captchas and debug `TaskType` errors as they surfaced. With this, the agent was able to solve quite a number of captcha types reliably.
+If we find one, we call a function that reads the DOM for the arguments to the Capsolver API call and make the call in a Temporal Activity. Capsolver handles it and we get a code/token in return for us to feed back to the captcha iframe/element in the DOM. The challenge was that it is difficult to get the `TaskType` (one of the arguments needed for the Capsolver endpoint requires) from the DOM. To solve this problem, I had Claude Code run tens of applications I knew would trigger captchas and debug `TaskType` errors as they surfaced. With this, the agent was able to solve quite a number of captcha types reliably. But this wasn't quite reliable enough.
+
+> We couldn't solve ReCaptchaV3Task (I wish I could explain what this means but there are no characteristics I can use to describe the task types. Plus you can't tell visually) types reliably and these came up quite a bit. Indeed was the worst ...The agent couldn't even open the website without being hit with an unsolvable one. There were also cases where the agent would solve the captcha but application would get flagged for automation from the backend so when you click the submit button you get an error message.
+
+The latter problem was kind of a signal for me to rethink because I was getting zero insight into why the application was getting flagged. I didn't even know where to start from in solving the problem. I could've kept the Capsolver experiment going but to get access to more powerful tools from the API I would've had to pay more money and I couldn't afford an enterprise plan.
+
 ### Acceptance: My final decision
 ![[Pasted image 20260816135846.png|373]]
