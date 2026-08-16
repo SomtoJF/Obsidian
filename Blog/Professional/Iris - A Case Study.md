@@ -23,7 +23,7 @@ When we look _inside_ the backend API itself, it uses a **Layered Architecture**
 ┌────────────────────────────────────────────────────────┐
 │ CLIENT (Next.js Frontend)                              │
 │ • Component Layer (UI / React)                         │
-│ • Data Fetching Layer (fetch calling the API)   │
+│ • Data Fetching Layer (fetch calling the API)          │
 └─────────────────────────┬──────────────────────────────┘
                           │ Network Request
                           ▼
