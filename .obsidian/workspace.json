@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog/Professional/Iris - A Case Study.md",
+                "file": "Personal/French/French Classes/Video Presentation Scripts/Au Restaurant.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Iris - A Case Study"
+              "title": "Au Restaurant"
+            }
+          },
+          {
+            "id": "b06915c5aa92e025",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Personal/French/French Classes/Video Presentation Scripts/AU MARCHÉ.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "AU MARCHÉ"
             }
           }
         ]
@@ -55,7 +69,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#excalidraw",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -80,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 256.0078125,
-    "collapsed": true
+    "width": 256.0078125
   },
   "right": {
     "id": "4aa3782e8b83d72b",
@@ -200,6 +213,11 @@
   },
   "active": "8cfaade178ece893",
   "lastOpenFiles": [
+    "Personal/French/Common verbs and their meaning.md",
+    "HyperPersonal/CA/Application Timeline.md",
+    "Personal/French/French Classes/Video Presentation Scripts/Au Restaurant.md",
+    "Personal/French/French Classes/Video Presentation Scripts/AU MARCHÉ.md",
+    "Blog/Professional/Iris - A Case Study.md",
     "Blog/Professional/Pasted image 20260816151453.png",
     "Blog/Professional/Pasted image 20260816135846.png",
     "Blog/Professional/Pasted image 20260816135819.png",
@@ -207,7 +225,6 @@
     "Blog/Professional/Pasted image 20260816134201.png",
     "Blog/Professional/Screenshot 2026-08-16 at 13.25.13.png",
     "ApplyWithIris.md",
-    "Blog/Professional/Iris - A Case Study.md",
     "Blog/Professional/for_loyal_customer.png",
     "HyperPersonal/Finance/Severance Budget.md",
     "HyperPersonal/Finance/Finance.md",
@@ -217,7 +234,6 @@
     "Personal/Leetcode/Grokking/Exercise Tracker.md",
     "Personal/Leetcode/Grokking/Rough/Rough Page.md",
     "Personal/Leetcode/Grokking/Arrays and Strings.md",
-    "Personal/French/Common verbs and their meaning.md",
     "Personal/System Design.md",
     "Blog/Professional/Big O.md",
     "Personal/Leetcode/Grokking/Big O - Asymptotic Notation.md",
@@ -230,12 +246,9 @@
     "HyperPersonal/Todos.md",
     "TODOs.md",
     "HyperPersonal/Job Applications/Resume Bullet Points.md",
-    "Personal/French/French Classes/Comment Questions.md",
     "Personal/French/French Classes/Pasted image 20260809200009.png",
-    "SalesCopilots/Work Notes.md",
     "HyperPersonal/Motivation/Pasted image 20260810224044.png",
     "HyperPersonal/Motivation/Pasted image 20260810224033.png",
-    "HyperPersonal/Motivation/Pasted image 20260810224020.png",
     "HyperPersonal/Motivation",
     "HyperPersonal/Job Applications",
     "Personal/French/French Classes/Video Presentation Scripts",
