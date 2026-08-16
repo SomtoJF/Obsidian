@@ -41,3 +41,46 @@ When we look _inside_ the backend API itself, it uses a **Layered Architecture**
 │ • Activity Layer (Heavy lifting / Third-party APIs)    │
 └────────────────────────────────────────────────────────┘
 ```
+
+> I'm going to skip explaining the frontend and the API. There's nothing interesting there. All the fun stuff happens in the Temporal worker.
+
+## A little about Temporal
+First of all, it has come to my attention that many of you 🫵🏽 don't use Temporal.
+![[Pasted image 20260816134201.png|320]]
+
+If you've never heard of or used Temporal before, you're missing out. What most people think about when they hear Temporal, or at least the first thing that comes up when you search it up is it's fault-tolerance and dynamic error handling. Which is in-fact at the core of it's functionalities. But temporal gives so much more. With AI agents, ==Temporal gives you visibility==. 
+
+It does this using two core constructs:
+- **Activities**: An Activity is a function that executes a single, small, well-defined task. This could be a DB operation, an API call etc. 
+- **Workflows**: A workflow is basically collection of activities (small tasks) that solve a problem. 
+
+In our specific case, the workflow was the Job Application and it called numerous smaller activities to achieve that goal.
+
+![[Screenshot 2026-08-16 at 13.25.13.png]]
+_Execution flow of a workflow in Temporal_
+
+Combine this with Sentry, PostHog and/or any other error tracking/monitoring tool and you have all you need to figure out what went wrong when something breaks.
+
+## Temporal, job applications and the browser-use agent
+Here's a rundown of the design. Job applications run inside of a Temporal workflow. In the workflow, which we'll call `JobApplicationWorkflow`, the core design is that of a perception loop. The workflow:
+- Loads the application data.
+- Spins up an incognito tab on the browser and opens the job application page.
+- Then in a loop:
+	- Takes screenshots of the page, tags the screenshots and pulls the page's accessibility tree.
+	- Feeds all the data into an LLM "planner"
+	- The planner calls tools that click buttons, type etc.
+The loop runs until the planner successfully submits the application. This is an extremely simplified explanation of things but you get the gist.
+
+## The major challenge with browser automation
+While testing the initial prototype, I came across a recurring problem that wanted to take my life. I event get chills writing about it.
+![[Pasted image 20260816135317.png|435]]
+
+> Bot detection
+
+I went through the complete 5 stages of grief trying to solve this one. Let's talk about the two stages that lasted the most. 
+### Denial: Solutions I tried
+> As you read this section picture me doing this every 30 minutes.
+
+![[Pasted image 20260816135819.png|320]]
+### Acceptance: My final decision
+![[Pasted image 20260816135846.png|373]]
