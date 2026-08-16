@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e29569b808e7e6e4",
+        "id": "4e0db1d26a236daf",
         "type": "tabs",
         "children": [
           {
-            "id": "faf0ffeaf4a90108",
+            "id": "8cfaade178ece893",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HyperPersonal/Finance/Severance Budget.md",
+                "file": "Blog/Professional/Iris - A Case Study.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Severance Budget"
+              "title": "Iris - A Case Study"
             }
           }
         ]
@@ -80,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 256.0078125
+    "width": 256.0078125,
+    "collapsed": true
   },
   "right": {
     "id": "4aa3782e8b83d72b",
@@ -197,11 +198,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "faf0ffeaf4a90108",
+  "active": "8cfaade178ece893",
   "lastOpenFiles": [
+    "ApplyWithIris.md",
+    "Blog/Professional/Iris - A Case Study.md",
+    "Blog/Professional/for_loyal_customer.png",
+    "HyperPersonal/Finance/Severance Budget.md",
     "HyperPersonal/Finance/Finance.md",
     "Blog/Professional/Why leetcode is a bad test of coding ability.md",
-    "Blog/Professional/for_loyal_customer.png",
     "HyperPersonal/Job Applications/Job Application Tracker.md",
     "Personal/Leetcode/Grokking/Technical Questions.md",
     "Personal/Leetcode/Grokking/Exercise Tracker.md",
@@ -224,12 +228,10 @@
     "Personal/French/French Classes/Pasted image 20260809200009.png",
     "SalesCopilots/Work Notes.md",
     "Personal/French/French Classes/Asking Questions.md",
-    "HyperPersonal/Motivation/Nick's Response.md",
     "HyperPersonal/Motivation/Pasted image 20260810224044.png",
     "HyperPersonal/Motivation/Pasted image 20260810224033.png",
     "HyperPersonal/Motivation/Pasted image 20260810224020.png",
     "HyperPersonal/Motivation",
-    "HyperPersonal/Nneoma Babcock Application Details.md",
     "HyperPersonal/Job Applications",
     "Personal/French/Pasted image 20260727151655.png",
     "Personal/French/French Classes/Video Presentation Scripts",
