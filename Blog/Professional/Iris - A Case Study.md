@@ -115,6 +115,6 @@ So I decided to go a different route. ==Assisted applications instead of complet
 ![[Pasted image 20260816135846.png|373]]
 ## Conclusion
 If you were expecting to hear a solution to the browser automation problem, I'm sorry. Nonetheless, I hope I was able to steer you in some direction with my experience. If you identified any mistakes I may have made, you're welcome! Now you know what not to do next time. if you think this entire article was crap, that's your business.
-![[Pasted image 20260816151453.png]]
+![[Pasted image 20260816151453.png|530]]
 
 Thank you for reading!
