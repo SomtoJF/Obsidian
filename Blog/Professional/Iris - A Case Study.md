@@ -114,7 +114,7 @@ I decided to pivot a bit. I will still keep on improving the browser agent and t
 So I decided to go a different route. ==Assisted applications instead of completely autonomous==. Think cursor for job applications. Vision for this is basically having the Iris chrome extension in a sidebar like you have the cursor chat. And it handles the **applications in your own browser**. This is in no way an agent. It's a totally different workflow from the `JobApplicationWorkflow`. It has access to the job description, the fields on the page (so it can automatically fill them), your resumé as well as open tabs in your browser to pull additional context. If you come across a login page or a Captcha puzzle, you can handle those while the extension handles the rest.
 ![[Pasted image 20260816135846.png|373]]
 ## Conclusion
-If you were expecting to hear a solution to the browser automation problem, I'm sorry. Nonetheless, I hope I was able to steer you in some direction with my experience. If you identified any mistakes I may have made, you're welcome! Now you know what not to do next time. if you think this entire article was crap, that's your business.
+If you were expecting to hear a solution to the browser automation problem, I'm sorry. However, I hope I was able to steer you in some (right or wrong doesn't matter as long as you learned something) direction with my experience. If you identified any mistakes I may have made, you're welcome! Now you know what **not** to do next time. And if you think this entire article was crap, that's your business.
 ![[Pasted image 20260816151453.png|530]]
 
 Thank you for reading!
