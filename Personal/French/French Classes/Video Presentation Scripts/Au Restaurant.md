@@ -1,6 +1,6 @@
 Bonjour!
 Ça va?
-Quelle vous avez?
+Quelles vous avez?
 D'accord
 Je peux voir le menu?
 Merci!

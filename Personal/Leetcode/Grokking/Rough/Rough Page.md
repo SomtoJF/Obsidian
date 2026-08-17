@@ -247,3 +247,44 @@ waterbottle[erbottlewat]erbottle
 So if `s2` is a rotation of `s1`, it **must appear inside `s1 + s1`**.
 
 And this satisfies the requirement of using `isSubstring` only once.
+## Remove Duplicates from an unsorted linked list
+Write code to remove duplicates from an unsorted linked list.
+```python
+"""
+nil
+a -> a
+a -> b
+a -> b -> a
+a -> a -> a
+"""
+buffer = set()
+def removeDuplicates(node):
+	if node is None:
+		return node
+		
+	if node.next is None:
+		return node
+		
+	buffer.add(node.value)
+	
+	if node.next.next is None:
+		if node.next.value in buffer:
+			node.next = node.next.next
+			return node
+		else
+			return node
+	else:
+		intermediate = node.next
+		if intermediate.next is not None:
+			while (intermediate.next is not None):
+				if intermediate.value in buffer:
+					intermediate = intermediate.next
+				else:
+					node.next = intermediate.next
+					break
+	
+	
+	removeDuplicates(node.next)
+		
+	return node
+```

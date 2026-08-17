@@ -1,8 +1,8 @@
-I hate job applications. Its so time consuming and you basically have to echo the same information in so many forms. I tried tools like Sorce but quickly realised it wasn't built for people outside of the US. I couldn't find any jobs in Africa and even jobs in Europe we limited. The reason for this --I found was that they have crawlers that scrape the web. So I assume these crawlers have some set rules or paths they take to scrape the jobs and any job postings that don't align with those rules or lie along that path won't get picked up. 
+I hate job applications. Its so time consuming and you basically have to echo the same information to so many forms. I tried tools like Sorce but quickly realised they weren't built for people outside of the Americas. I couldn't find any jobs in Africa and even jobs in Europe were limited. The reason for this I found, was that they have crawlers that scrape the web. So I assume these crawlers have some set rules or paths they take to scrape the jobs and any job postings that don't align with those rules or lie along that path don't get picked up. 
 
 I wanted something that could pick up any job as long as it's on the internet. Something that I could use without feeling limited. 
 
-So I built [ApplyWithIris](https://applywithiris.com). It has a feature where we automatically apply to jobs for you by having AI handle the application in a browser on a VPS/VM. This feature will be the main talking-point today.
+So I built [ApplyWithIris](https://applywithiris.com). It has a feature where a browser-use agent automatically applies to jobs for you in a browser on a VPS/VM. This feature will be the main talking-point today.
 
 Let's start by defining some core terms. We'll go with the simplest definitions possible here.
 - **Agent**: An LLM with tools that enable it act on the result of it's reasoning.
@@ -52,7 +52,7 @@ When we look _inside_ the backend API itself, it uses a **Layered Architecture**
 First of all, it has come to my attention that many of you 🫵🏽 don't use Temporal.
 ![[Pasted image 20260816134201.png|320]]
 
-If you've never heard of or used Temporal before, you're missing out. What most people think about when they hear Temporal, or at least the first thing that comes up when you search it up is it's fault-tolerance and dynamic error handling. Which is in-fact at the core of it's functionalities. But temporal gives so much more. With AI agents, ==Temporal gives you visibility==. 
+If you've never heard of or used Temporal before, you're missing out. What most people think about when they hear Temporal (or at least the first thing that comes up when you search it up) is it's fault-tolerance and dynamic error handling. Which is in-fact at the core of it's functionalities. But temporal gives so much more. With AI agents, ==Temporal gives you visibility==. 
 
 It does this using two core constructs:
 - **Activities**: An Activity is a function that executes a single, small, well-defined task. This could be a DB operation, an API call etc. 
@@ -76,12 +76,12 @@ Here's a rundown of the design. Job applications run inside of a Temporal workfl
 The loop runs until the planner successfully submits the application. **This is an extremely simplified explanation of things** but you get the gist.
 
 ## The major challenge with browser automation
-While testing the initial prototype, I came across a recurring problem that wanted to take my life. I event get chills writing about it. **The problem of bot detection**.
+While testing the initial prototype, I came across a recurring problem that wanted to take my life. I even get chills writing about it. **The problem of bot detection**.
 ![[Pasted image 20260816135317.png|435]]
 
 > **Bot detection**
 
-I went through the complete 5 stages of grief trying to solve this one. Let's talk about the two stages that lasted the most. 
+I went through the complete 5 stages of grief trying to solve this one. ==Let's talk about the two most long-lasting stages==. 
 ### Denial: Solutions I tried
 > As you read this section picture me doing this every 30 minutes. 
 
