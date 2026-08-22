@@ -4,24 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "f8aa3c5c288e279e",
+        "id": "464bcac5691c9d12",
         "type": "tabs",
         "children": [
           {
-            "id": "4061ad1e08259063",
+            "id": "a99769e304ce4290",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog/Professional/Iris - A Case Study.md",
+                "file": "HyperPersonal/Job Applications/Job Application Tracker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Iris - A Case Study"
+              "title": "Job Application Tracker"
+            }
+          },
+          {
+            "id": "46701c3b28b0d57c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Rough Page"
+            }
+          },
+          {
+            "id": "015321718d76b7d3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Personal/Leetcode/Grokking/Exercise Tracker.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Exercise Tracker"
+            }
+          },
+          {
+            "id": "d96e92f00101d20f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Personal/Leetcode/Leet Logs/0086-partition-list.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0086-partition-list"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -197,21 +240,33 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4061ad1e08259063",
+  "active": "d96e92f00101d20f",
   "lastOpenFiles": [
-    "Personal/French/French Classes/Video Presentation Scripts/Au Restaurant.md",
     "Personal/Leetcode/Grokking/Exercise Tracker.md",
+    "Personal/Leetcode/Leet Logs/0000-partition-list.md",
+    "Personal/Leetcode/Leet Logs/0086-partition-list.md.crswap",
+    "Personal/Leetcode/Leet Logs/0086-partition-list.md",
     "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+    "Personal/Leetcode/Leet Logs",
+    "HyperPersonal/Job Applications/Job Application Tracker.md",
+    "Personal/French/Focus This Weekend.md",
+    "Personal/French/Common verbs and their meaning.md",
+    "Personal/French/French Classes/Possessive.md",
+    "Personal/French/French Classes/Modal Verbs.md",
+    "Personal/Leetcode/Grokking/Rough/Screenshot 2026-08-19 at 15.11.53.png",
+    "Personal/French/French Classes/Conjugation of verbs.md",
+    "Personal/French/French Classes/Emotions and Feelings in French.md",
+    "Personal/Leetcode/Grokking/Arrays and Strings.md",
+    "HyperPersonal/Job Applications/Resume Bullet Points.md",
+    "Blog/Professional/Iris - A Case Study.md",
+    "Personal/French/French Classes/Video Presentation Scripts/Au Restaurant.md",
     "Personal/Leetcode/Grokking/Index.md.md",
     "Personal/Leetcode/Grokking/Linked Lists.md",
     "Personal/Leetcode/Grokking/Technical Questions.md",
     "Personal/Leetcode/Grokking/Big O - Asymptotic Notation.md",
-    "Personal/Leetcode/Grokking/Arrays and Strings.md",
     "Personal/Leetcode/Grokking/Screenshot 2026-08-16 at 21.12.41.png",
     "Personal/French/French Classes/Video Presentation Scripts/AU MARCHÉ.md",
-    "Personal/French/Common verbs and their meaning.md",
     "HyperPersonal/CA/Application Timeline.md",
-    "Blog/Professional/Iris - A Case Study.md",
     "Blog/Professional/Pasted image 20260816151453.png",
     "Blog/Professional/Pasted image 20260816135846.png",
     "Blog/Professional/Pasted image 20260816135819.png",
@@ -223,18 +278,7 @@
     "HyperPersonal/Finance/Severance Budget.md",
     "HyperPersonal/Finance/Finance.md",
     "Blog/Professional/Why leetcode is a bad test of coding ability.md",
-    "HyperPersonal/Job Applications/Job Application Tracker.md",
-    "Personal/System Design.md",
-    "Blog/Professional/Big O.md",
-    "Personal/French/French Classes/Untitled.md",
-    "Personal/French/French Classes/Modal Verbs.md",
-    "Personal/French/French Classes/Conjugation of verbs.md",
-    "SalesCopilots/Linkedin Automation Design Doc.md",
-    "SalesCopilots/Next Steps.md",
-    "Personal/Iris/Extension Design Diagram.md",
-    "HyperPersonal/Todos.md",
     "Personal/French/French Classes/Pasted image 20260809200009.png",
-    "HyperPersonal/Motivation/Pasted image 20260810224044.png",
     "HyperPersonal/Motivation",
     "HyperPersonal/Job Applications",
     "Personal/French/French Classes/Video Presentation Scripts",
@@ -244,8 +288,6 @@
     "Blog",
     "Personal/French/French Classes",
     "Untitled 1.canvas",
-    "HyperPersonal",
-    "Personal/Leetcode/Grokking/Tips",
     "Untitled.canvas"
   ]
 }

@@ -34,3 +34,4 @@
 | Réféchir     | To reflex                  |
 | Nettoyer     | To Clean                   |
 | Sortir       | To go out                  |
+| Dormir       | To sleep                   |

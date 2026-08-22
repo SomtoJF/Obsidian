@@ -257,34 +257,186 @@ a -> b
 a -> b -> a
 a -> a -> a
 """
-buffer = set()
-def removeDuplicates(node):
-	if node is None:
-		return node
-		
-	if node.next is None:
-		return node
-		
-	buffer.add(node.value)
+
+def main():
+	node = new_node() #stump
+	node = removeDuplicates(None, node, set())
+# prev and current are nodes
+def removeDuplicates(prev, current, buffer):
+	if current is None:
+		return None
 	
-	if node.next.next is None:
-		if node.next.value in buffer:
-			node.next = node.next.next
-			return node
-		else
-			return node
+	nextPrev = current
+	if current.value in buffer:
+		# prev cannot be null theoretically
+		prev.next = current.next
+		nextPrev = prev
 	else:
-		intermediate = node.next
-		if intermediate.next is not None:
-			while (intermediate.next is not None):
-				if intermediate.value in buffer:
-					intermediate = intermediate.next
-				else:
-					node.next = intermediate.next
-					break
+		buffer.add(current.value)
 	
-	
-	removeDuplicates(node.next)
+	removeDuplicates(nextPrev, current.next, buffer)
+	return current
 		
-	return node
+	
+
+```
+## Find the kth to last element of a singly linked list
+Implement an algorithm to find the kth to last element of a singly linked list.
+```python
+"""
+a -> b -> c -> nil | k = 2
+"""
+def kth_to_the_last(node, k):
+	fast = node
+	slow = node
+	i = 0
+	while i < k:
+		if fast is None:
+			return None
+		fast = fast.next
+	
+	while fast is not None:
+		slow = slow.next
+		fast = fast.next
+		
+	return slow
+```
+
+## Delete Middle Node
+Implement an algorithm to delete a node in the middle (i.e., any node but the first and last node, not necessarily the exact middle) of a singly linked list, given only access to that node.![[Screenshot 2026-08-19 at 15.11.53.png]]
+```python
+"""
+we can't go back from the middle node
+"""
+
+def deleteMiddleNode(node):
+	node.value = node.next.value
+	node.next = node.next.next
+```
+## Partition
+Write code to partition a linked list around a value x, such that ==all nodes less than x come before all nodes greater than or equal to x==. If x is contained within the list, the values of x only need to be after the elements less than x (see below). The partition element x can appear anywhere in the "right partition"; it does not need to appear between the left and right partitions.
+```python
+"""
+input = 3 -> 5 -> 10 -> 5 -> 8 -> 2 -> 1, x = 5
+output = 3 -> 2 -> 1 -> 5 -> 10 -> 5 -> 8
+
+approach here would be to have two additional nodes
+less list and more list
+if x < current node
+	append to less list else append to more list
+	advance current node pointer
+	
+connect the two lists with the tail of the less pointing to the head of more
+"""
+def partition(node, x)
+	current = node
+	less_dummy = Node(0)
+	less_tail = less_dummy
+	more_dummy = Node(0)
+	more_tail = more_dummy
+	
+	while current is not None:
+		new_current = current.next
+		if current.val < x:
+			temp = current
+			temp.next = None
+			
+			less_tail.next = temp
+			less_tail = less_tail.next
+		else:
+			temp = current
+			temp.next = None
+			
+			more_tail.next = temp
+			more_tail = more_tail.next
+			
+		current = new_current
+		
+	less_tail.next = more_dummy.next
+	return less_dummy.next
+```
+## Palindrome
+Implement a function to check if a linked list is a palindrome.
+> Palindrome is a word that is the same forwards and backwards
+```python
+"""
+c -> a -> t return False
+c -> a -> c return True
+d -> i -> v -> i -> d return True
+d i i d
+what if I used a stack (after the mid point the letters should be come off in reverse order they were added)
+
+iterate through the linked list while fast moves twice as fast as slow
+add slow to stack each step
+at the midpoint, iterate through the remaining nodes in the list and each item in the stack must come off in order
+"""
+def isPalindrome(node):
+	fast = node
+	slow = node
+	tracker = stack()
+	
+	while fast is not None and fast.next is not None:
+		tracker.add(slow.val)
+		slow = slow.next
+		fast = fast.next.next
+	
+	i = 0
+	while slow is not None:
+		tracker_curr = tracker.pop()
+		if i == 0 and tracker_curr != slow.val:
+			slow = slow.next
+			continue
+		
+		if slow.val != tracker_curr: return False
+		slow = slow.next
+	return True
+```
+## Intersection
+Given two (singly) linked lists, determine if the two lists intersect. Return the intersecting node. Note that the intersection is defined based on reference, not value. That is, if the kth node of the first linked list is the exact same node (by reference) as the jth node of the second linked list, then they are intersecting.
+```python
+"""
+determine if the two lists intersect
+return the intersecting node
+
+intersecting nodes are defined by reference i.e node1 == node2
+=====
+maybe we should use a nested loop linear search? O(n1 * n2) runtime and O(1) space
+
+can we use a hash map here? maybe. can a hash map key by memory address? more specifically can it happen in python?
+
+is there an approach where we won't use a hashmap? ordering doesnt matter so we can't use stacks or queues
+
+lets use a set
+
+O(n) time and space
+
+to achieve constant space we will do the nested loop
+
+"""
+
+def get_intersection(node1, node2):
+	cache = set()
+	while node1 is not None:
+		cache.add(node1)
+		node1 = node1.next
+	
+	# this whole implementation falls apart if we can't store memory address in a set
+	while node2 is not None:
+		if node2 in set(): return node2
+		node2 = node2.next
+	return None
+
+```
+## Loop Detection
+Given a circular linked list, implement an algorithm that returns the node at the beginning of the loop.
+
+>Circular linked list: A (corrupt) linked list in which a node's next pointer points to an earlier node, so as to make a loop in the linked list.
+
+```python
+"""
+input: A -> B -> C -> D (-> B -> C -> D)
+output: B
+input: A -> B -> C -> D -> E -> C
+output: C
+"""
 ```
