@@ -1,0 +1,11 @@
+{
+  "id": "job-search-tracker",
+  "name": "Job Search Tracker",
+  "version": "1.0.1",
+  "minAppVersion": "1.4.0",
+  "description": "Track job applications: companies, roles, application stages, contacts, and interview notes in a pipeline view.",
+  "author": "wesswart77",
+  "authorUrl": "https://github.com/wesswart77",
+  "fundingUrl": "https://www.buymeacoffee.com/wesswart77",
+  "isDesktopOnly": false
+}

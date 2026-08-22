@@ -422,7 +422,7 @@ def get_intersection(node1, node2):
 	
 	# this whole implementation falls apart if we can't store memory address in a set
 	while node2 is not None:
-		if node2 in set(): return node2
+		if node2 in cache: return node2
 		node2 = node2.next
 	return None
 

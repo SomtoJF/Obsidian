@@ -48,23 +48,8 @@
               "icon": "lucide-file",
               "title": "Exercise Tracker"
             }
-          },
-          {
-            "id": "d96e92f00101d20f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Personal/Leetcode/Leet Logs/0086-partition-list.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "0086-partition-list"
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -219,6 +204,16 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "8b1f0a10981669e2",
+            "type": "leaf",
+            "state": {
+              "type": "js-pipeline-view",
+              "state": {},
+              "icon": "briefcase",
+              "title": "Job Search"
+            }
           }
         ],
         "currentTab": 5
@@ -237,47 +232,51 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "job-search-tracker:Job Search Tracker": false
     }
   },
-  "active": "d96e92f00101d20f",
+  "active": "a99769e304ce4290",
   "lastOpenFiles": [
+    "Job Search/Applications/oyster-senior-ai-platform-engineer.md",
+    "Job Search/Applications/hire-overseas-ai-engineer.md",
+    "Job Search/Applications/backend-python-engineer-jobpilot-ng.md",
+    "Job Search/Applications/senior-software-engineer-weafriwork.md",
+    "Job Search/Applications/volvo-cars-software-engineer.md",
+    "HyperPersonal/Job Applications/Job Application Tracker.md",
+    "Job Search/Applications/volvo-cars-full-stack-developer.md",
+    "Job Search/Applications/revolut-graduate-program-2027-software-engineer-java.md",
+    "Job Search/Applications/irecharge-senior-software-engineer.md",
+    "Job Search/Applications/delivery-hero-engineer-ii-ml-go.md",
+    "Job Search/Applications/marketedge-backend-engineer.md",
+    "Job Search/Applications/busha-senior-backend-engineer.md",
+    "Job Search/Applications/schuberg-philis-backend-engineer.md",
+    "Job Search/Applications/voldex-games-software-engineer.md",
+    "Job Search/Applications/kuda-backend-engineer.md",
+    "Job Search/Applications/isds-frontend-engineer.md",
+    "Job Search/Applications",
+    "Job Search",
     "Personal/Leetcode/Grokking/Exercise Tracker.md",
+    "Personal/Leetcode/Leet Logs/0143-reorder-list.md",
+    "Personal/Leetcode/Leet Logs/0206-reverse-linked-list.md",
+    "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+    "Personal/Leetcode/Leet Logs/0160-intersection-of-two-linked-lists.md",
+    "Personal/Leetcode/Leet Logs/0086-partition-list.md",
     "Personal/Leetcode/Leet Logs/0000-partition-list.md",
     "Personal/Leetcode/Leet Logs/0086-partition-list.md.crswap",
-    "Personal/Leetcode/Leet Logs/0086-partition-list.md",
-    "Personal/Leetcode/Grokking/Rough/Rough Page.md",
     "Personal/Leetcode/Leet Logs",
-    "HyperPersonal/Job Applications/Job Application Tracker.md",
     "Personal/French/Focus This Weekend.md",
     "Personal/French/Common verbs and their meaning.md",
     "Personal/French/French Classes/Possessive.md",
-    "Personal/French/French Classes/Modal Verbs.md",
     "Personal/Leetcode/Grokking/Rough/Screenshot 2026-08-19 at 15.11.53.png",
-    "Personal/French/French Classes/Conjugation of verbs.md",
-    "Personal/French/French Classes/Emotions and Feelings in French.md",
-    "Personal/Leetcode/Grokking/Arrays and Strings.md",
-    "HyperPersonal/Job Applications/Resume Bullet Points.md",
-    "Blog/Professional/Iris - A Case Study.md",
-    "Personal/French/French Classes/Video Presentation Scripts/Au Restaurant.md",
-    "Personal/Leetcode/Grokking/Index.md.md",
-    "Personal/Leetcode/Grokking/Linked Lists.md",
-    "Personal/Leetcode/Grokking/Technical Questions.md",
-    "Personal/Leetcode/Grokking/Big O - Asymptotic Notation.md",
     "Personal/Leetcode/Grokking/Screenshot 2026-08-16 at 21.12.41.png",
-    "Personal/French/French Classes/Video Presentation Scripts/AU MARCHÉ.md",
-    "HyperPersonal/CA/Application Timeline.md",
     "Blog/Professional/Pasted image 20260816151453.png",
     "Blog/Professional/Pasted image 20260816135846.png",
     "Blog/Professional/Pasted image 20260816135819.png",
     "Blog/Professional/Pasted image 20260816135317.png",
     "Blog/Professional/Pasted image 20260816134201.png",
     "Blog/Professional/Screenshot 2026-08-16 at 13.25.13.png",
-    "ApplyWithIris.md",
     "Blog/Professional/for_loyal_customer.png",
-    "HyperPersonal/Finance/Severance Budget.md",
-    "HyperPersonal/Finance/Finance.md",
-    "Blog/Professional/Why leetcode is a bad test of coding ability.md",
     "Personal/French/French Classes/Pasted image 20260809200009.png",
     "HyperPersonal/Motivation",
     "HyperPersonal/Job Applications",
@@ -285,8 +284,6 @@
     "Personal/Leetcode/Grokking/Rough",
     "Blog/Professional",
     "Blog/Personal",
-    "Blog",
-    "Personal/French/French Classes",
     "Untitled 1.canvas",
     "Untitled.canvas"
   ]

@@ -46,7 +46,7 @@ total_runs: 3
 Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode%2086.%20Partition%20List)
 
 ## Attempt 1 · 2026-08-22 Sat
-⏱ start 16:17 → first submit 16:25 · coding 8 min → AC 16:25 · 1 submit / 1 AC · 3 runs
+⏱ start 16:17 → first submit 16:25 · coding 8 min → AC 16:25 · 1 submit / 1 AC · 3 runs · 24 min on problem
 
 ### ✅ Accepted · Python · 16:25 (3 ms · 12.5 MB)
 > [!success]- Code
