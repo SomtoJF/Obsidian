@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a99769e304ce4290",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HyperPersonal/Job Applications/Job Application Tracker.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Job Application Tracker"
-            }
-          },
-          {
             "id": "46701c3b28b0d57c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+                "file": "Personal/Leetcode/Leetlog Dashboard.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Rough Page"
+              "title": "Leetlog Dashboard"
             }
           },
           {
@@ -48,8 +34,23 @@
               "icon": "lucide-file",
               "title": "Exercise Tracker"
             }
+          },
+          {
+            "id": "0b0178817fbf0d35",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Rough Page"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -236,38 +237,39 @@
       "job-search-tracker:Job Search Tracker": false
     }
   },
-  "active": "a99769e304ce4290",
+  "active": "6ccfb43ef27c03cf",
   "lastOpenFiles": [
+    "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+    "Personal/Leetcode/Leetlog Dashboard.md",
+    "Personal/Leetcode/Leet Logs/0023-merge-k-sorted-lists.md",
+    "Personal/Leetcode/Leet Logs/0234-palindrome-linked-list.md",
+    "Personal/Leetcode/Grokking/Exercise Tracker.md",
+    "Personal/Leetcode/Leet Logs/0086-partition-list.md",
+    "Personal/Leetcode/Leet Logs/0143-reorder-list.md",
+    "Personal/Leetcode/Leet Logs/0141-linked-list-cycle.md",
+    "Personal/Leetcode/Leet Logs/0160-intersection-of-two-linked-lists.md",
+    "Personal/Leetcode/Leet Logs/0206-reverse-linked-list.md",
+    "SalesCopilots/Message Tuning/Matt's Messaging.md",
+    "Personal/Leetcode/Leet Logs/0143-reorder-list.md.crswap",
+    "SalesCopilots/Message Tuning/Joel's Messaging.md",
+    "SalesCopilots/Next Steps.md",
+    "SalesCopilots/Session Notes/Joel s3.md",
+    "SalesCopilots/Session Notes/Joel May 22.md",
+    "HyperPersonal/Job Applications/Job Application Tracker.md",
     "Job Search/Applications/oyster-senior-ai-platform-engineer.md",
     "Job Search/Applications/hire-overseas-ai-engineer.md",
     "Job Search/Applications/backend-python-engineer-jobpilot-ng.md",
     "Job Search/Applications/senior-software-engineer-weafriwork.md",
     "Job Search/Applications/volvo-cars-software-engineer.md",
-    "HyperPersonal/Job Applications/Job Application Tracker.md",
     "Job Search/Applications/volvo-cars-full-stack-developer.md",
     "Job Search/Applications/revolut-graduate-program-2027-software-engineer-java.md",
     "Job Search/Applications/irecharge-senior-software-engineer.md",
     "Job Search/Applications/delivery-hero-engineer-ii-ml-go.md",
     "Job Search/Applications/marketedge-backend-engineer.md",
-    "Job Search/Applications/busha-senior-backend-engineer.md",
-    "Job Search/Applications/schuberg-philis-backend-engineer.md",
-    "Job Search/Applications/voldex-games-software-engineer.md",
-    "Job Search/Applications/kuda-backend-engineer.md",
-    "Job Search/Applications/isds-frontend-engineer.md",
     "Job Search/Applications",
     "Job Search",
-    "Personal/Leetcode/Grokking/Exercise Tracker.md",
-    "Personal/Leetcode/Leet Logs/0143-reorder-list.md",
-    "Personal/Leetcode/Leet Logs/0206-reverse-linked-list.md",
-    "Personal/Leetcode/Grokking/Rough/Rough Page.md",
-    "Personal/Leetcode/Leet Logs/0160-intersection-of-two-linked-lists.md",
-    "Personal/Leetcode/Leet Logs/0086-partition-list.md",
-    "Personal/Leetcode/Leet Logs/0000-partition-list.md",
     "Personal/Leetcode/Leet Logs/0086-partition-list.md.crswap",
     "Personal/Leetcode/Leet Logs",
-    "Personal/French/Focus This Weekend.md",
-    "Personal/French/Common verbs and their meaning.md",
-    "Personal/French/French Classes/Possessive.md",
     "Personal/Leetcode/Grokking/Rough/Screenshot 2026-08-19 at 15.11.53.png",
     "Personal/Leetcode/Grokking/Screenshot 2026-08-16 at 21.12.41.png",
     "Blog/Professional/Pasted image 20260816151453.png",
@@ -283,7 +285,6 @@
     "Personal/French/French Classes/Video Presentation Scripts",
     "Personal/Leetcode/Grokking/Rough",
     "Blog/Professional",
-    "Blog/Personal",
     "Untitled 1.canvas",
     "Untitled.canvas"
   ]

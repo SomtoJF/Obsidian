@@ -6,5 +6,7 @@
   "todo-highlighter",
   "obsidian-git",
   "obsidian-plugin-toc",
-  "job-search-tracker"
+  "job-search-tracker",
+  "leetlog-bridge",
+  "dataview"
 ]

@@ -364,31 +364,38 @@ c -> a -> t return False
 c -> a -> c return True
 d -> i -> v -> i -> d return True
 d i i d
-what if I used a stack (after the mid point the letters should be come off in reverse order they were added)
-
-iterate through the linked list while fast moves twice as fast as slow
-add slow to stack each step
-at the midpoint, iterate through the remaining nodes in the list and each item in the stack must come off in order
+Idea here is split the linked list at its center and reverse the second half
+If the list is a palindrome, the values at the first list will be equal to the values in the second list (bar the middle value for odd number length lists)
 """
 def isPalindrome(node):
-	fast = node
-	slow = node
-	tracker = stack()
+	fast = head
+	slow = head
 	
-	while fast is not None and fast.next is not None:
-		tracker.add(slow.val)
+	while fast.next and fast.next.next:
 		slow = slow.next
 		fast = fast.next.next
+	  
+	second = slow.next
+	slow.next = None
 	
-	i = 0
-	while slow is not None:
-		tracker_curr = tracker.pop()
-		if i == 0 and tracker_curr != slow.val:
-			slow = slow.next
-			continue
-		
-		if slow.val != tracker_curr: return False
-		slow = slow.next
+	dummy = ListNode(0)
+
+	while second:
+		dummyNext = dummy.next
+		secondNext = second.next
+
+		dummy.next = second
+		second.next = dummyNext
+
+		second = secondNext
+		second = dummy.next
+
+	while second:
+		if second.val != head.val: return False
+
+		second = second.next
+		head = head.next
+
 	return True
 ```
 ## Intersection
@@ -438,5 +445,30 @@ input: A -> B -> C -> D (-> B -> C -> D)
 output: B
 input: A -> B -> C -> D -> E -> C
 output: C
+
+
+We will use floyd's cycle detection algorithm
 """
+
+def detect_loop(head):
+	# chech if there is a cycle
+	fast = head
+	slow = head
+	hasCycle = False
+	while fast.next and fast.next.next:
+		if slow == fast: 
+			hasCycle = true
+			break
+		slow = slow.next
+		fast = fast.next.next
+		
+	if !hasCycle: return None
+	
+	# keep fast at the collision
+	slow = head
+	while slow != fast:
+		slow = slow.next
+		fast = fast.next
+		
+	return slow
 ```
