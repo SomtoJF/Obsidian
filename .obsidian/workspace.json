@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Leetcode/Leetlog Dashboard.md",
+                "file": "HyperPersonal/Blog/I just got laid off.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Leetlog Dashboard"
+              "title": "I just got laid off"
             }
           },
           {
@@ -238,11 +238,12 @@
   },
   "active": "46701c3b28b0d57c",
   "lastOpenFiles": [
+    "Personal/Leetcode/Leetlog Dashboard.md",
+    "HyperPersonal/Blog",
     "Personal/Leetcode/Grokking/Rough/Rough Page.md",
     "Personal/Leetcode/Leet Logs/0142-linked-list-cycle-ii.md",
     "Personal/French/French Classes/Asking Questions.md",
     "Personal/Leetcode/Grokking/Exercise Tracker.md",
-    "Personal/Leetcode/Leetlog Dashboard.md",
     "Personal/Leetcode/Leet Logs/0023-merge-k-sorted-lists.md",
     "Personal/Leetcode/Leet Logs/0234-palindrome-linked-list.md",
     "Personal/Leetcode/Leet Logs/0086-partition-list.md",
@@ -264,7 +265,6 @@
     "Job Search/Applications/volvo-cars-software-engineer.md",
     "Job Search/Applications/volvo-cars-full-stack-developer.md",
     "Job Search/Applications/revolut-graduate-program-2027-software-engineer-java.md",
-    "Job Search/Applications/irecharge-senior-software-engineer.md",
     "Job Search/Applications",
     "Job Search",
     "Personal/Leetcode/Leet Logs/0086-partition-list.md.crswap",
@@ -283,7 +283,6 @@
     "HyperPersonal/Job Applications",
     "Personal/French/French Classes/Video Presentation Scripts",
     "Personal/Leetcode/Grokking/Rough",
-    "Blog/Professional",
     "Untitled 1.canvas",
     "Untitled.canvas"
   ]
