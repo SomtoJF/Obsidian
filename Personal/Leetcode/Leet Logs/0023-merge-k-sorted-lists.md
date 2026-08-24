@@ -63,7 +63,7 @@ total_runs: 8
 Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode%2023.%20Merge%20k%20Sorted%20Lists)
 
 ## Attempt 1 · 2026-08-23 Sun
-⏱ start 00:04 → first submit 00:30 · coding 27 min · 1 submitted (no AC yet) · 8 runs
+⏱ start 00:04 → first submit 00:30 · coding 27 min · 1 submitted (no AC yet) · 8 runs · 27 min on problem
 
 ### 💭 Thoughts & insights
 -

@@ -456,11 +456,11 @@ def detect_loop(head):
 	slow = head
 	hasCycle = False
 	while fast.next and fast.next.next:
+		slow = slow.next
+		fast = fast.next.next
 		if slow == fast: 
 			hasCycle = true
 			break
-		slow = slow.next
-		fast = fast.next.next
 		
 	if !hasCycle: return None
 	

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Leetcode/Grokking/Exercise Tracker.md",
+                "file": "Personal/French/French Classes/Asking Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exercise Tracker"
+              "title": "Asking Questions"
             }
           },
           {
@@ -49,8 +49,7 @@
               "title": "Rough Page"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -237,13 +236,15 @@
       "job-search-tracker:Job Search Tracker": false
     }
   },
-  "active": "6ccfb43ef27c03cf",
+  "active": "46701c3b28b0d57c",
   "lastOpenFiles": [
     "Personal/Leetcode/Grokking/Rough/Rough Page.md",
+    "Personal/Leetcode/Leet Logs/0142-linked-list-cycle-ii.md",
+    "Personal/French/French Classes/Asking Questions.md",
+    "Personal/Leetcode/Grokking/Exercise Tracker.md",
     "Personal/Leetcode/Leetlog Dashboard.md",
     "Personal/Leetcode/Leet Logs/0023-merge-k-sorted-lists.md",
     "Personal/Leetcode/Leet Logs/0234-palindrome-linked-list.md",
-    "Personal/Leetcode/Grokking/Exercise Tracker.md",
     "Personal/Leetcode/Leet Logs/0086-partition-list.md",
     "Personal/Leetcode/Leet Logs/0143-reorder-list.md",
     "Personal/Leetcode/Leet Logs/0141-linked-list-cycle.md",
@@ -264,8 +265,6 @@
     "Job Search/Applications/volvo-cars-full-stack-developer.md",
     "Job Search/Applications/revolut-graduate-program-2027-software-engineer-java.md",
     "Job Search/Applications/irecharge-senior-software-engineer.md",
-    "Job Search/Applications/delivery-hero-engineer-ii-ml-go.md",
-    "Job Search/Applications/marketedge-backend-engineer.md",
     "Job Search/Applications",
     "Job Search",
     "Personal/Leetcode/Leet Logs/0086-partition-list.md.crswap",
