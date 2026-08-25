@@ -5,4 +5,4 @@
 - Quand - When
 - Comment - How
 - Qui - Who
-- Quoi - What
+- Quoi / Quel / Quelle - What

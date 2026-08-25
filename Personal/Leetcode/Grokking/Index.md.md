@@ -2,6 +2,7 @@
 1. [[Big O - Asymptotic Notation]]
 2. [[Technical Questions]]
 3. [[Arrays and Strings]]
+4. [[Stacks and Queues]]
 ### Additional Information
 #### Tips
 - [[Using input constraints]]
