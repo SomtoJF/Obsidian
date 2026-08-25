@@ -80,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 256.0078125
+    "width": 256.0078125,
+    "collapsed": true
   },
   "right": {
     "id": "4aa3782e8b83d72b",
@@ -208,7 +209,7 @@
       "job-search-tracker:Job Search Tracker": false
     }
   },
-  "active": "6ccfb43ef27c03cf",
+  "active": "9153d3792c5a1191",
   "lastOpenFiles": [
     "Job Search/Plan.md",
     "Job Search/Applications/schuberg-philis-backend-engineer.md",

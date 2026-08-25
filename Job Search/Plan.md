@@ -67,6 +67,14 @@ P.S congrats on your graduation. I graduated from babcock as well in 2024.
 Hello Seun, saw Kuda has an backend opening and thought to connect. I’ve worked across automotive, fintech and salestech, built software supporting 40k+ users at Volvo, and most recently worked at a startup servicing Oracle and other Fortune 50 companies. Would love an intro to the hiring team!
 ```
 This was the only way I was able to get my shit to fit the 300 word limit
+### Unsure/Familiar
+```
+How far Samuel, not sure if your workplace(s) have any openings but I'm currently looking for a new role and would appreciate a referral if possible!
+
+  
+
+I have worked across multiple industries (automotive, fintech and salestech), built software supporting over 40k users at Volvo and most recently worked at a startup servicing users at Oracle and other fortune 50 companies.
+```
 ### Companies so far
 - Kuda
 - Shara (Fintech)
