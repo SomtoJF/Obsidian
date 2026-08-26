@@ -472,3 +472,81 @@ def detect_loop(head):
 		
 	return slow
 ```
+## Three in One
+Explain how you would use a single array to implement 3 stacks.
+### Explanation
+The most intuitive approach would be to divide an array into contiguous regions. But that raises a problem. On every pop, we would move/reassign the head of the respective stack.
+```
+             ONE ARRAY
+┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+│     │     │     │     │     │     │     │     │     │
+└─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
+  ↑                 ↑                 ↑
+Stack 1          Stack 2           Stack 3
+```
+>What happens when a stack maxes out it's allocated capacity?
+
+We would resize the array. To do this, we would double the capacity if the current underlying array by copying all elements to a new array twice the size of the current. It's as simple as that. Because resizing happens exponentially infrequently, we are able to amortize the cost of resizing and achieve $O(1)$ pushes and $O(1)$ pops.
+
+### Resize `push`
+
+When the array is full:
+
+```
+[ A ][ B ][ C ][ D ][ E ][ F ][ G ][ H ]
+```
+
+you allocate a new array:
+
+```
+[ A ][ B ][ C ][ D ][ E ][ F ][ G ][ H ][ _ ][ _ ][ _ ][ _ ][ _ ][ _ ][ _ ][ _ ]
+```
+
+and copy the elements.
+## Stack Min
+Design a stack that, in addition to `push`, `pop`, and `peek`, can return the minimum element in **O(1)** time.
+### Explanation
+There are two ways to handle this. First way would be to keep a second stack and track the mins there. The invariant in this approach is that the top of the stack always represents the smallest number in the main stack. So when we pop that number from the main stack, we should pop it from the min stack as well so the min stack holds the next smallest number. If we push a number to the stack and it is smaller than the top of the min stack, we should push it to the min stack as well.
+```
+Main stack:       Min stack:
+
+  1 ← top           1 ← top
+  7                 2
+  2                 5
+  5
+```
+#### Solution 2
+An alternative solution is that in addition to each node storing it's current value and  pointing to the next node, it could also store the `min_so_far`.
+```
+┌──────────────┐
+│ value = 1    │
+│ min = 1      │
+└──────────────┘
+       ↓
+┌──────────────┐
+│ value = 7    │
+│ min = 2      │
+└──────────────┘
+       ↓
+┌──────────────┐
+│ value = 2    │
+│ min = 2      │
+└──────────────┘
+       ↓
+┌──────────────┐
+│ value = 5    │
+│ min = 5      │
+└──────────────┘
+```
+
+Then `min()` is ridiculously simple:
+
+```
+def min(self):
+    if self.stack is None:
+        return None
+
+    return self.stack.min
+```
+
+Because **the top node always knows the minimum of everything beneath it**.

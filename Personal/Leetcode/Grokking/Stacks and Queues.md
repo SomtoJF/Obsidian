@@ -1,10 +1,10 @@
 A stack is a linear data structure (like an array) that stores data using LIFO (last-in-first-out) ordering. A queue is a linear data structure that stores data using FIFO (first-in-first-out) ordering. Both stacks and queues can be implemented using arrays or a linked list.
 ## Stack Operations
 Stacks have the following operations.
-- Push: To add an item to the top of the stack
-- Pop: To remove an item from the top of the stack
-- IsEmpty: To check if the stack is empty
-- Peek: To view the item at the top of the stack without removing it
+- **Push**: To add an item to the top of the stack
+- **Pop**: To remove an item from the top of the stack
+- **IsEmpty**: To check if the stack is empty
+- **Peek**: To view the item at the top of the stack without removing it
 ## Implementing a stack
 ```python
 class Stack:
