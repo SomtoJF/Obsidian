@@ -36,3 +36,4 @@
 | Sortir       | To go out                  |
 | Dormir       | To sleep                   |
 | Demander     | To ask                     |
+| Exprimer     | To express                 |
