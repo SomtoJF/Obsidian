@@ -53,6 +53,7 @@ AI engineering — LLMs, embeddings, vector stores, RAG. Comfortable building ag
 
 ## Shots
 I shot my shot with this one hahaha --how's it looking
+### Saw a job posting
 ```
 Hello Anthony,
 
@@ -75,10 +76,33 @@ How far Samuel, not sure if your workplace(s) have any openings but I'm currentl
 
 I have worked across multiple industries (automotive, fintech and salestech), built software supporting over 40k users at Volvo and most recently worked at a startup servicing users at Oracle and other fortune 50 companies.
 ```
+### Unsure: No job posting
+```
+Hi Abraham, thanks so much for connecting!
+
+I’m currently exploring new opportunities and have always admired what Moniepoint is doing for African businesses.
+
+I’ve worked across automotive, fintech and salestech, built software supporting 40k+ users at Volvo, and most recently worked at a startup servicing users at Oracle and other Fortune 50 companies.
+
+If there are any relevant openings on your team, I’d be happy to send over my resume and chat further.
+```
+### Nigerian in High places
+```
+Hi Tobi, thanks for connecting!
+
+I came across your profile and was immediately inspired. It feels really good seeing someone of a similar background succeeding because it makes me feel like I can succeed as well.
+
+I'm currently on the leetcode grind to get into big tech and I'd appreciate any words of advice/encouragement you can throw my way.
+
+Either way, you're doing great work and I wish you more success!
+```
 ### Companies so far
 - Kuda
 - Shara (Fintech)
 - Tezza Business Solutions
+- Risevest -- Need to shoot more
+- Opay -- Need to shoot
 ### Companies to shoot
 - Risevest
+- Opay
 
