@@ -88,13 +88,13 @@ If there are any relevant openings on your team, I’d be happy to send over my 
 ```
 ### Nigerian in High places
 ```
-Hi Tobi, thanks for connecting!
+Hello Chieloka, thanks for connecting!
 
-I came across your profile and was immediately inspired. It feels really good seeing someone of a similar background succeeding because it makes me feel like I can succeed as well.
+I came across your profile and was deeply inspired. It feels really good seeing someone of a similar background succeeding because it makes me feel like I can succeed as well.
 
-I'm currently on the leetcode grind to get into big tech and I'd appreciate any words of advice/encouragement you can throw my way.
+I'm currently studying hard to get into big tech and I'd appreciate any words of advice/encouragement you can throw my way.
 
-Either way, you're doing great work and I wish you more success!
+Either way, congrats on your sustained career success!
 ```
 ### Companies so far
 - Kuda
