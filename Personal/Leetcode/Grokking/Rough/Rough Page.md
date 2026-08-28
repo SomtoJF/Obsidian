@@ -550,3 +550,146 @@ def min(self):
 ```
 
 Because **the top node always knows the minimum of everything beneath it**.
+## Stack of Plates
+```python
+class Stack:
+	def __init__(self, capacity):
+		self.capacity = capacity
+		self.__arr = []
+		self.__head = 0
+		self.__hsize = 0
+		# sizeMap tracks the size of each element in the underlying array
+		self.__sizeMap = {}
+		
+	def pop(self):
+		h = self.__head
+		if h == 0:
+			if self.__arr[h] is None:
+				return None
+			
+		if h in self.__sizeMap:
+			
+		
+	def push(self, val):
+		h = self.__head
+		new = ListNode(val)
+		
+		if self.__sizeMap[h] >= capacity:
+			self.__arr.append(None)
+			self.__head += 1
+		
+		if self._arr[h] is None:
+			self.__arr[h] = new
+			self.__sizeMap[h] = 1
+			return
+			
+		new.next = self.__arr[h]
+		self.__arr[h] = new
+		self.__sizeMap[h] += 1
+		return
+```
+## Sort Stack
+Write a program to sort a stack such that the smallest items are on the top. You can use an additional temporary stack, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: push, pop, peek, and is Empty
+```python
+"""
+2 <- 1
+2 <- 1 <- 4 <- 3 | 3 4 1 2
+
+in sorting, the key thing to achieve the ordering is to keep push the largest number first. How will I track the largest number. I can move everything to temp stack and track the max as I move it. 
+
+pop everything to the temp stack
+track the largest number 
+push the largest number to the main stack first and push the rest
+	when you get to the largest value, pop it from the temp stack (dont add it back to the main)
+	do this until the temp stack is empty
+"""
+def sort_stack(stack):
+	temp = []
+	i = 0
+	size = 0
+	# guarantees it runs at least once and isEmpty check
+	while i > 0 and size - i > 0:
+		max = 0
+		j = 0
+		while len(stack) > 0 and (size - i) - j > 0:
+			popped = stack.pop()
+			temp.push(popped)
+			if (popped > max): max = popped
+			if i == 0: size += 1
+			j += 1
+			
+		stack.push(max)
+		while len(temp) > 0:
+			popped = temp.pop()
+			if popped != max: stack.push(popped)
+		i += 1
+		
+	return stack
+	
+```
+## Animal Shelter
+An animal shelter, which holds only dogs and cats, operates on a strictly =="first in, first out"== basis. People must adopt either the "oldest" (based on arrival time) of all animals at the shelter, or they can select whether they would prefer a dog or a cat (and will receive the oldest animal of that type). They cannot select which specific animal they would like. Create the data structures to maintain this system and implement operations such as enqueue, dequeueAny, dequeueDog, and dequeueCat. You may use the built-in Linked list data structure.
+```python
+class AnimalShelter:
+	def __init__(self):
+		self.__queue = None # known as q from now on
+		self.__tail = None # known as tail from now on
+		
+	def enqueue(self, animal):
+		if q is None:
+			q = ListNode(animal)
+			tail = q
+			return
+		tail.next = ListNode(animal)
+		tail = tail.next
+		
+	def dequeueAny(self):
+		animal = q
+		q = q.next
+		animal.next = None
+		
+		if q is None: tail = None
+		return animal
+		
+	def dequeueDog(self, animal):
+		curr = q
+		prev = None
+		if curr is None: return None
+		
+		while curr and curr.type != "dog":
+			curr = curr.next
+			prev = curr
+		
+		if prev is None:
+			q = q.next
+			return curr
+			
+		prev.next = curr.next
+		
+		# Always remember to check cases where you remove the last element
+		if curr == tail:
+			tail = prev
+		return curr
+		
+	def dequeueCat(self, animal):
+		curr = q
+		prev = None
+		
+		if curr is None: return None
+		
+		while curr and curr.type != "cat":
+			curr = curr.next
+			prev = curr
+		
+		if prev is None:
+			q = q.next
+			return curr
+			
+		prev.next = curr.next
+		
+		# Always remember to check cases where you remove the last element
+		if curr == tail:
+			tail = prev
+			
+		return curr
+```

@@ -62,7 +62,7 @@ total_runs: 8
 Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode%20142.%20Linked%20List%20Cycle%20II)
 
 ## Attempt 1 · 2026-08-24 Mon
-⏱ start 11:08 → first submit 11:26 · coding 17 min → AC 11:26 · 1 submit / 1 AC · 8 runs
+⏱ start 11:08 → first submit 11:26 · coding 17 min → AC 11:26 · 1 submit / 1 AC · 8 runs · 17 min on problem
 
 ### ✅ Accepted · Python · 11:26 (31 ms · 18.8 MB)
 > [!success]- Code
