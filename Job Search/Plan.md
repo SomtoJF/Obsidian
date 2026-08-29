@@ -65,7 +65,7 @@ P.S congrats on your graduation. I graduated from babcock as well in 2024.
 ```
 ### Shot Template - Linkedin Connect
 ```
-Hello Seun, saw Kuda has an backend opening and thought to connect. I’ve worked across automotive, fintech and salestech, built software supporting 40k+ users at Volvo, and most recently worked at a startup servicing Oracle and other Fortune 50 companies. Would love an intro to the hiring team!
+Hello Seun, saw Kuda has a backend opening and thought to connect. I’ve worked across automotive, fintech and salestech, built software supporting 40k+ users at Volvo, and most recently worked at a startup servicing Oracle and other Fortune 50 companies. Would love an intro to the hiring team!
 ```
 This was the only way I was able to get my shit to fit the 300 word limit
 ### Unsure/Familiar
