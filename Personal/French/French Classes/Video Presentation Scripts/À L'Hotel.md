@@ -14,12 +14,26 @@ Thank you.
 
 ## French
 Bonjour,
+R: Bonjour
+
 Qu'est-ce que chambres est disponible ?
+R: Nous avons les chambres exécutive, standard et premium
+
 D'accord combien ça coute la chambre exécutive ?
-La chambre dispose-t-elle de serviettes et de produits de toilette ?
+R: un nuit dans la chambre executive est vingt euros
+
+Est-ce que La chambre dispose-t-elle de serviettes et de produits de toilette ?
+R: Oui 
+
 D'accord très bien
 Je prends ça
+R: D'accord
 
-Bonjour, je voir la chambre et le climatiseur ne fonctionne pas
-Est-ce que je peux prendre une autre chambre ?
-Merçi beaucoup
+Bonjour, je vois la chambre et le climatiseur ne fonctionne pas
+R: Oh je suis désolé. Est-ce que vous pouvez prendre une autre chambre ?
+
+Oui je peux
+R: D'accord
+R: Votre nouveau chambre est la chambre cent deux. Nous apporterons votre valise.
+
+Merci

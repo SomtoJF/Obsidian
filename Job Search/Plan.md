@@ -102,7 +102,11 @@ Either way, congrats on your sustained career success!
 - Tezza Business Solutions
 - Risevest -- Need to shoot more
 - Opay -- Need to shoot
+- Moniepoint
 ### Companies to shoot
 - Risevest
 - Opay
+- Huawei
+- Paystack
+- Commercial Banks
 
