@@ -552,78 +552,87 @@ def min(self):
 Because **the top node always knows the minimum of everything beneath it**.
 ## Stack of Plates
 ```python
-class Stack:
-	def __init__(self, capacity):
-		self.capacity = capacity
-		self.__arr = []
-		self.__head = 0
-		self.__hsize = 0
-		# sizeMap tracks the size of each element in the underlying array
-		self.__sizeMap = {}
+class StackNode(Stack):
+	def __init__(self):
+		push
 		
-	def pop(self):
-		h = self.__head
-		if h == 0:
-			if self.__arr[h] is None:
-				return None
-			
-		if h in self.__sizeMap:
-			
+class SetOfStacks:
+	def __init__(self, capacity):
+		self.stacks = [] # call stacks
+		self.hCap = 0 # head capacity // call hc
+		self.capacity = capacity # call cap
+		self.hindex = 0
 		
 	def push(self, val):
-		h = self.__head
-		new = ListNode(val)
-		
-		if self.__sizeMap[h] >= capacity:
-			self.__arr.append(None)
-			self.__head += 1
-		
-		if self._arr[h] is None:
-			self.__arr[h] = new
-			self.__sizeMap[h] = 1
+		node = StackNode(val)
+		if stacks[hindex] is None:	
+			stacks.append(node)
+			hc = 1
 			return
-			
-		new.next = self.__arr[h]
-		self.__arr[h] = new
-		self.__sizeMap[h] += 1
+		if hc == cap:
+			hindex += 1
+			hc = 0
+			return self.push(val)
+		
+		stacks[hindex].push(node)
+		hc += 1
 		return
+		
+	def pop(self):
+		if hCap == 0:
+			if hindex <= 0:
+				return none
+			hindex -= 1
+		hCap -= 1
+		return stacks[hindex].pop()
+	
 ```
 ## Sort Stack
-Write a program to sort a stack such that the smallest items are on the top. You can use an additional temporary stack, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: push, pop, peek, and is Empty
+Write a program to sort a stack such that the smallest items are on the top. You can use an additional temporary stack, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: push, pop, peek, and is Empty. Key insight here is to maintain sorted order on the temp stack.
 ```python
 """
-2 <- 1
-2 <- 1 <- 4 <- 3 | 3 4 1 2
-
-in sorting, the key thing to achieve the ordering is to keep push the largest number first. How will I track the largest number. I can move everything to temp stack and track the max as I move it. 
-
-pop everything to the temp stack
-track the largest number 
-push the largest number to the main stack first and push the rest
-	when you get to the largest value, pop it from the temp stack (dont add it back to the main)
-	do this until the temp stack is empty
+	LTR
+	1 4 2 5 6 -> 6 5 2 4 1 | max = 6
+	6 1 4 2 5 -> 5 2 4 1 | max = 5
 """
-def sort_stack(stack):
-	temp = []
-	i = 0
+
+def sortStack(stack):
 	size = 0
-	# guarantees it runs at least once and isEmpty check
-	while i > 0 and size - i > 0:
-		max = 0
-		j = 0
-		while len(stack) > 0 and (size - i) - j > 0:
-			popped = stack.pop()
-			temp.push(popped)
-			if (popped > max): max = popped
-			if i == 0: size += 1
-			j += 1
+	temp = Stack()
+	mx = None
+	while not stack.isEmpty():
+		n = stack.pop()
+		if mx is None:
+			mx = n
+		elif n > mx:
+			mx = n
 			
-		stack.push(max)
-		while len(temp) > 0:
-			popped = temp.pop()
-			if popped != max: stack.push(popped)
-		i += 1
+		temp.push(n)
+		size += 1
 		
+	if size == 0 or size == 1: return temp
+	i = 0
+	
+	while i < size:
+		while not temp.isEmpty():
+			n = temp.pop()
+			stack.push(max)
+			if n != max:
+				stack.push(n)
+		j = 0
+		mx = None		
+		while j < size-i:
+			n = stack.pop()
+			if mx is None:
+				mx = n
+			elif n > mx:
+				mx = n
+			temp.push(n)
+			j += 1
+		i += 1
+	
+	while not temp.isEmpty():
+		stack.push(temp.pop())	
 	return stack
 	
 ```
