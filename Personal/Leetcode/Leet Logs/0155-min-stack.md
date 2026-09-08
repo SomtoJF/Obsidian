@@ -60,7 +60,7 @@ total_runs: 19
 Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode%20155.%20Min%20Stack)
 
 ## Attempt 1 · 2026-08-27 Thu
-⏱ start 15:26 → first submit 15:48 · coding 22 min → AC 15:48 · 1 submit / 1 AC · 19 runs
+⏱ start 15:26 → first submit 15:48 · coding 22 min → AC 15:48 · 1 submit / 1 AC · 19 runs · 32 min on problem
 
 ### ✅ Accepted · Python · 15:48 (599 ms · 29.8 MB)
 > [!success]- Code

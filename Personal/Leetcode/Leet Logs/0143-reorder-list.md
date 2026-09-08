@@ -4,12 +4,12 @@ title: "Reorder List"
 url: https://leetcode.com/problems/reorder-list/description/
 difficulty: Medium
 tags: [Linked List, Two Pointers, Stack, Recursion]
-attempts: 1
+attempts: 2
 first_attempt: 2026-08-22
-last_attempt: 2026-08-22
-total_submissions: 1
-total_ac: 1
-total_runs: 11
+last_attempt: 2026-09-05
+total_submissions: 3
+total_ac: 2
+total_runs: 15
 ---
 
 # 143. Reorder List
@@ -111,6 +111,77 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >                 res_tail.next = head2
 >                 head2 = head2Next
 >                 res_tail = res_tail.next
+>
+>         return res.next
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-09-05 Sat
+⏱ start 20:10 → first submit 20:25 · coding 15 min → AC 20:27 · 2 submits / 1 AC · 4 runs · 19 min on problem
+
+### ✅ Accepted · Python · 20:27 (8 ms · 30 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode(object):
+> #     def __init__(self, val=0, next=None):
+> #         self.val = val
+> #         self.next = next
+> class Solution(object):
+>     def reorderList(self, head):
+>         """
+>         :type head: Optional[ListNode]
+>         :rtype: None Do not return anything, modify head in-place instead.
+>         """
+>         if not head or not head.next:
+>             return head
+>         slow = head
+>         fast = head
+>
+>         while fast.next and fast.next.next:
+>             slow = slow.next
+>             fast = fast.next.next
+>
+>         second = slow.next
+>         slow.next = None
+>         first = head
+>
+>         secondRev = None
+>         srTail = secondRev
+>         while second:
+>             secondNext = second.next
+>             second.next = secondRev
+>             secondRev = second
+>             second = secondNext
+>
+>
+>         # start with dummy
+>         res = ListNode(0)
+>         resTail = res
+>         second = secondRev
+>
+>         while first or second:
+>             if first:
+>                 firstNext = first.next
+>                 first.next = None
+>                 resTail.next = first
+>                 resTail = resTail.next
+>                 first = firstNext
+>             if second:
+>                 secondNext = second.next
+>                 second.next = None
+>                 resTail.next = second
+>                 resTail = resTail.next
+>                 second = secondNext
 >
 >         return res.next
 > ```

@@ -40,4 +40,5 @@
 | Deviner (Gaze) | To Gaze                    |
 | Repérez        | To Find                    |
 | Retourner      | To return                  |
+| Apprendre      | To learn                   |
 

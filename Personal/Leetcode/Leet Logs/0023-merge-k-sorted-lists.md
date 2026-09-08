@@ -4,12 +4,12 @@ title: "Merge k Sorted Lists"
 url: https://leetcode.com/problems/merge-k-sorted-lists/description/
 difficulty: Hard
 tags: [Linked List, Divide and Conquer, Heap (Priority Queue), Merge Sort, Tournament Sort]
-attempts: 1
+attempts: 2
 first_attempt: 2026-08-23
-last_attempt: 2026-08-23
+last_attempt: 2026-09-05
 total_submissions: 1
 total_ac: 0
-total_runs: 8
+total_runs: 16
 ---
 
 # 23. Merge k Sorted Lists
@@ -64,6 +64,19 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 ## Attempt 1 · 2026-08-23 Sun
 ⏱ start 00:04 → first submit 00:30 · coding 27 min · 1 submitted (no AC yet) · 8 runs · 27 min on problem
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-09-05 Sat
+⏱ start 21:11 · 8 runs · 25 min on problem
 
 ### 💭 Thoughts & insights
 -
