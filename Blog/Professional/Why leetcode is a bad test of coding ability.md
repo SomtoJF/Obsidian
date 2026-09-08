@@ -1,5 +1,5 @@
 ---
-description: companies that use leetcode can't be testing programming ability. I think leetcode tests something else.
+description: companies that use leetcode can't be testing programming ability. Leetcode surely tests something else.
 ---
 
 This argument represents a very fierce battle in the tech industry. There are obviously people on both sides of it. People argue that candidates grind it and are able to LARP their way into a job without actually knowing how to build software. Another argument is that the best candidates get dropped a lot. I hear it honestly. But I do understand the angle of the companies as well.

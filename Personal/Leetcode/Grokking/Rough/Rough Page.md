@@ -592,49 +592,54 @@ Write a program to sort a stack such that the smallest items are on the top. You
 ```python
 """
 	LTR
-	1 4 2 5 6 -> 6 5 2 4 1 | max = 6
-	6 1 4 2 5 -> 5 2 4 1 | max = 5
+	1 4 2 5 6 
+	4 2 5 6.   1
+	2 5 6.     4 1
+	4 5 6.     2 1
+	
+	1 4 2 5 3 6 
+	4 2 5 3 6.    1
+	2 5 3 6.      4 1
+	4 5 3 6.      2 1
+	5 3 6.        4 2 1
+	3 6.          5 4 2 1
+	4 5 6.        3 2 1
+	
+	1 -> correct
+	
+Idea here is to maintain a sorted stack in temp and then sort on a rolling bases.
+While the initial stack is not empty
+	we pop from the initial stack
+	if temp is empty, push to temp straight and continue
+	while popped value is less than temp peek, pop temp into stack
+	push popped into temp
+	
+while temp is not empty
+	pop from temp into stack
+	
+return stack
+O(n**2) runtime
 """
 
+
+
 def sortStack(stack):
-	size = 0
 	temp = Stack()
-	mx = None
+	if stack.isEmpty: return stack
 	while not stack.isEmpty():
 		n = stack.pop()
-		if mx is None:
-			mx = n
-		elif n > mx:
-			mx = n
+		if temp.isEmpty(): 
+			temp.push(n)
+			continue
+		
+		while n < temp.peek():
+			stack.push(temp.pop())
 			
 		temp.push(n)
-		size += 1
 		
-	if size == 0 or size == 1: return temp
-	i = 0
-	
-	while i < size:
-		while not temp.isEmpty():
-			n = temp.pop()
-			stack.push(max)
-			if n != max:
-				stack.push(n)
-		j = 0
-		mx = None		
-		while j < size-i:
-			n = stack.pop()
-			if mx is None:
-				mx = n
-			elif n > mx:
-				mx = n
-			temp.push(n)
-			j += 1
-		i += 1
-	
 	while not temp.isEmpty():
-		stack.push(temp.pop())	
+		stack.push(temp.pop())
 	return stack
-	
 ```
 ## Animal Shelter
 An animal shelter, which holds only dogs and cats, operates on a strictly =="first in, first out"== basis. People must adopt either the "oldest" (based on arrival time) of all animals at the shelter, or they can select whether they would prefer a dog or a cat (and will receive the oldest animal of that type). They cannot select which specific animal they would like. Create the data structures to maintain this system and implement operations such as enqueue, dequeueAny, dequeueDog, and dequeueCat. You may use the built-in Linked list data structure.

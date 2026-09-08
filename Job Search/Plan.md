@@ -100,15 +100,16 @@ Either way, congrats on your sustained career success!
 - Kuda
 - Shara (Fintech)
 - Tezza Business Solutions
-- Risevest -- Need to shoot more
+- Risevest
 - Opay -- Need to shoot
 - Moniepoint
+- Paystack
+- Flutterwave
 ### Companies to shoot
-- Risevest
 - Opay
 - Huawei
-- Paystack
 - Interswitch
 - Commercial Banks
-- Flutterwave
 - Piggyvest
+- Grey
+- Cowrywise

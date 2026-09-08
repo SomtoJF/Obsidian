@@ -1,4 +1,4 @@
-# 📗 LeetLog Dashboard
+******# 📗 LeetLog Dashboard
 
 > Requires the **Dataview** community plugin (enable *JavaScript queries* in its settings for
 > the tag table). Notes are read from the `LeetCode/` folder — if you changed the note folder

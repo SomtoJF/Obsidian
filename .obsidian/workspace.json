@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Job Search/Plan.md",
-                "mode": "preview",
+                "file": "Blog/Professional/Why leetcode is a bad test of coding ability.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Plan"
+              "title": "Why leetcode is a bad test of coding ability"
             }
           }
         ]
@@ -210,6 +210,9 @@
   },
   "active": "dcee84f976d15b49",
   "lastOpenFiles": [
+    "Blog/Professional/Iris - A Case Study.md",
+    "Blog/Professional/SSTables and LSM Trees.md",
+    "Job Search/Plan.md",
     "Personal/Leetcode/Leetlog Dashboard.md",
     "Personal/Leetcode/Leet Logs/0024-swap-nodes-in-pairs.md",
     "Personal/Leetcode/Leet Logs/0061-rotate-list.md",
@@ -219,10 +222,8 @@
     "Personal/Leetcode/Leet Logs/1971-find-if-path-exists-in-graph.md",
     "Personal/Leetcode/Leet Logs/0023-merge-k-sorted-lists.md",
     "Personal/Leetcode/Leet Logs/0019-remove-nth-node-from-end-of-list.md",
-    "Job Search/Plan.md",
     "Job Search/Applications/flutterwave-backend-engineer-c.md",
     "Personal/Leetcode/Leet Logs/0232-implement-queue-using-stacks.md",
-    "Blog/Professional/SSTables and LSM Trees.md",
     "Personal/French/Common verbs and their meaning.md",
     "Personal/Leetcode/Grokking/Exercise Tracker.md",
     "Personal/Leetcode/Grokking/Rough/Rough Page.md",
@@ -236,7 +237,6 @@
     "Job Search/Applications/home-fairy-technologies-limited-senior-full-stack-software-developer.md",
     "Job Search/Applications/sage-capita-software-engineer.md",
     "Job Search/Applications/kredete-frontend-engineer.md",
-    "Job Search/Applications/passa-frontend-software-engineer.md",
     "Personal/French/French Classes/Screenshot 2026-08-26 at 08.58.02.png",
     "Personal/French/Pasted image 20260727151655.png",
     "HyperPersonal/Blog",
