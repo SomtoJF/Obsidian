@@ -1,3 +1,7 @@
+---
+description: how I built applywithiris.com and the challenges I faced.
+---
+
 I hate job applications. Its so time consuming and you basically have to echo the same information to so many forms. I tried tools like Sorce but quickly realised they weren't built for people outside of the Americas. I couldn't find any jobs in Africa and even jobs in Europe were limited. The reason for this I found, was that they have crawlers that scrape the web. So I assume these crawlers have some set rules or paths they take to scrape the jobs and any job postings that don't align with those rules or lie along that path don't get picked up. 
 
 I wanted something that could pick up any job as long as it's on the internet. Something that I could use without feeling limited. 
