@@ -4,12 +4,12 @@ title: "Swap Nodes in Pairs"
 url: https://leetcode.com/problems/swap-nodes-in-pairs/description/
 difficulty: Medium
 tags: [Linked List, Recursion]
-attempts: 1
+attempts: 3
 first_attempt: 2026-09-07
-last_attempt: 2026-09-07
+last_attempt: 2026-09-13
 total_submissions: 0
 total_ac: 0
-total_runs: 5
+total_runs: 7
 ---
 
 # 24. Swap Nodes in Pairs
@@ -57,6 +57,32 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 ## Attempt 1 · 2026-09-07 Mon
 ⏱ start 23:11 · 5 runs · 29 min on problem
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-09-08 Tue
+⏱ start 20:58 · 1 min on problem
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 3 · 2026-09-13 Sun
+⏱ start 11:54 · 2 runs · 3 min on problem
 
 ### 💭 Thoughts & insights
 -

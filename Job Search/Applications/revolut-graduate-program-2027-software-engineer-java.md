@@ -1,12 +1,12 @@
 ---
-type: "application"
-company: "Revolut"
+type: application
+company: Revolut
 role: "Graduate Program 2027: Software Engineer Java"
-location: "UK"
-url: "https://www.revolut.com/careers/position/graduate-programme-2027-software-engineer-java-3b79c804-b7e0-4b1a-9ef6-2fd69723dc7a/"
-source: "Company site"
-status: "applied"
-date_applied: "2026-08-22"
+location: UK
+url: https://www.revolut.com/careers/position/graduate-programme-2027-software-engineer-java-3b79c804-b7e0-4b1a-9ef6-2fd69723dc7a/
+source: Company site
+status: rejected
+date_applied: 2026-08-22
 ---
 # Graduate Program 2027: Software Engineer Java @ Revolut
 

@@ -1,12 +1,12 @@
 ---
-type: "application"
-company: "ISDS"
-role: "Frontend Engineer"
-location: "Remote,Nigeria"
-url: "https://isdserviced.org/career/frontend"
-source: "LinkedIn"
-status: "applied"
-date_applied: "2026-08-22"
+type: application
+company: ISDS
+role: Frontend Engineer
+location: Remote,Nigeria
+url: https://isdserviced.org/career/frontend
+source: LinkedIn
+status: rejected
+date_applied: 2026-08-22
 ---
 # Frontend Engineer @ ISDS
 

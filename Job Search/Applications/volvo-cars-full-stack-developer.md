@@ -1,12 +1,12 @@
 ---
-type: "application"
-company: "Volvo Cars"
-role: "Full Stack Developer"
-location: "Gothenburg Sweden"
-url: "https://jobs.volvocars.com/job/Gothenburg-Full-Stack-Developer-40531/1413279233/"
-source: "Company site"
-status: "applied"
-date_applied: "2026-08-22"
+type: application
+company: Volvo Cars
+role: Full Stack Developer
+location: Gothenburg Sweden
+url: https://jobs.volvocars.com/job/Gothenburg-Full-Stack-Developer-40531/1413279233/
+source: Company site
+status: rejected
+date_applied: 2026-08-22
 ---
 # Full Stack Developer @ Volvo Cars
 

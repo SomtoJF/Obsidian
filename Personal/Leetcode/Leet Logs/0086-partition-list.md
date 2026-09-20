@@ -4,12 +4,12 @@ title: "Partition List"
 url: https://leetcode.com/problems/partition-list/description/
 difficulty: Medium
 tags: [Linked List, Two Pointers]
-attempts: 1
+attempts: 2
 first_attempt: 2026-08-22
-last_attempt: 2026-08-22
-total_submissions: 1
-total_ac: 1
-total_runs: 3
+last_attempt: 2026-09-11
+total_submissions: 2
+total_ac: 2
+total_runs: 10
 ---
 
 # 86. Partition List
@@ -96,3 +96,64 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 
 
+
+
+## Attempt 2 · 2026-09-11 Fri
+⏱ start 14:19 → first submit 14:37 · coding 19 min → AC 14:37 · 1 submit / 1 AC · 7 runs · 19 min on problem
+
+### ✅ Accepted · Python · 14:37 (4 ms · 12.3 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode(object):
+> #     def __init__(self, val=0, next=None):
+> #         self.val = val
+> #         self.next = next
+> class Solution(object):
+>     def partition(self, head, x):
+>         """
+>         :type head: Optional[ListNode]
+>         :type x: int
+>         :rtype: Optional[ListNode]
+>
+>         we will use a dummy node
+>         iterate through the main list
+>             every node less than x add to tail of dummy and remove from main list
+>
+>         in the end we will append the dummy to the main (the main will have all the less nodes removed)
+>         """
+>
+>         dummy = ListNode(0)
+>         dummytail = dummy
+>         # greater dummy
+>         greater = ListNode(0)
+>         greatertail = greater
+>         main = head
+>
+>         while main:
+>             mainnext = main.next
+>             main.next = None
+>             if main.val < x:
+>                 print(main.val)
+>                 dummytail.next = main
+>                 dummytail = dummytail.next
+>             else:
+>                 greatertail.next = main
+>                 greatertail = greatertail.next
+>             main = mainnext
+>
+>         if dummy.next is None:
+>             return head
+>
+>         dummytail.next = greater.next
+>         return dummy.next
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-

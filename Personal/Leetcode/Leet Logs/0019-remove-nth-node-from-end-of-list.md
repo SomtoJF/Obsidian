@@ -4,12 +4,12 @@ title: "Remove Nth Node From End of List"
 url: https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 difficulty: Medium
 tags: [Linked List, Two Pointers]
-attempts: 1
+attempts: 2
 first_attempt: 2026-09-05
-last_attempt: 2026-09-05
-total_submissions: 4
-total_ac: 1
-total_runs: 5
+last_attempt: 2026-09-11
+total_submissions: 5
+total_ac: 2
+total_runs: 7
 ---
 
 # 19. Remove Nth Node From End of List
@@ -89,6 +89,56 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >
 >         if not slowPrev:
 >             return slow.next
+>         slowPrev.next = slow.next
+>         return head
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-09-11 Fri
+⏱ start 14:12 → first submit 14:17 · coding 5 min → AC 14:17 · 1 submit / 1 AC · 2 runs · 6 min on problem
+
+### ✅ Accepted · Python · 14:17 (0 ms · 12.4 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode(object):
+> #     def __init__(self, val=0, next=None):
+> #         self.val = val
+> #         self.next = next
+> class Solution(object):
+>     def removeNthFromEnd(self, head, n):
+>         """
+>         :type head: Optional[ListNode]
+>         :type n: int
+>         :rtype: Optional[ListNode]
+>         """
+>
+>         fast = head
+>         slow = head
+>         slowPrev = None
+>
+>         i = 0
+>         while fast and i < n:
+>             i += 1
+>             fast = fast.next
+>
+>         while fast:
+>             fast = fast.next
+>             slowPrev = slow
+>             slow = slow.next
+>
+>         if slowPrev is None:
+>             return slow.next
+>
 >         slowPrev.next = slow.next
 >         return head
 > ```

@@ -41,4 +41,6 @@
 | Repérez        | To Find                    |
 | Retourner      | To return                  |
 | Apprendre      | To learn                   |
+| Partir         | To Leave                   |
+| Raconte        | To Tell                    |
 

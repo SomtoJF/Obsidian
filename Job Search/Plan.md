@@ -105,11 +105,14 @@ Either way, congrats on your sustained career success!
 - Moniepoint
 - Paystack
 - Flutterwave
+- Grey
 ### Companies to shoot
 - Opay
 - Huawei
 - Interswitch
 - Commercial Banks
 - Piggyvest
-- Grey
 - Cowrywise
+- Bamboo
+- Camunda (applied here)
+## Shooting Backlog

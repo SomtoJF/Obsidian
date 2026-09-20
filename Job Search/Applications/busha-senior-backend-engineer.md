@@ -1,12 +1,12 @@
 ---
-type: "application"
-company: "Busha"
-role: "Senior Backend Engineer"
-location: "Lagos"
-url: "https://busha.breezy.hr/p/8bac4d430b0c01-senior-backend-engineer"
-source: "LinkedIn"
-status: "applied"
-date_applied: "2026-08-22"
+type: application
+company: Busha
+role: Senior Backend Engineer
+location: Lagos
+url: https://busha.breezy.hr/p/8bac4d430b0c01-senior-backend-engineer
+source: LinkedIn
+status: rejected
+date_applied: 2026-08-22
 ---
 # Senior Backend Engineer @ Busha
 
