@@ -11,12 +11,14 @@
             "id": "814ad294269e4cd6",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Personal/Iris/Iris New Design.md"
+                "file": "Personal/Leetcode/Leetlog Dashboard.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Iris New Design"
+              "icon": "lucide-file",
+              "title": "Leetlog Dashboard"
             }
           },
           {
@@ -220,10 +222,10 @@
       "job-search-tracker:Job Search Tracker": false
     }
   },
-  "active": "0272a6377b15ce22",
+  "active": "814ad294269e4cd6",
   "lastOpenFiles": [
-    "Excalidraw/Odin Architecture.md",
     "Personal/Iris/Iris New Design.md",
+    "Excalidraw/Odin Architecture.md",
     "Personal/Iris/Extension Design Diagram.md",
     "Blog/Professional/SSTables and LSM Trees.md",
     "Blog/Professional/Iris - A Case Study.md",

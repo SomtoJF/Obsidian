@@ -4,12 +4,12 @@ title: "Swap Nodes in Pairs"
 url: https://leetcode.com/problems/swap-nodes-in-pairs/description/
 difficulty: Medium
 tags: [Linked List, Recursion]
-attempts: 3
+attempts: 4
 first_attempt: 2026-09-07
-last_attempt: 2026-09-13
-total_submissions: 0
-total_ac: 0
-total_runs: 7
+last_attempt: 2026-09-20
+total_submissions: 1
+total_ac: 1
+total_runs: 13
 ---
 
 # 24. Swap Nodes in Pairs
@@ -83,6 +83,66 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 ## Attempt 3 · 2026-09-13 Sun
 ⏱ start 11:54 · 2 runs · 3 min on problem
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 4 · 2026-09-20 Sun
+⏱ start 18:34 → first submit 18:59 · coding 25 min → AC 18:59 · 1 submit / 1 AC · 6 runs
+
+### ✅ Accepted · Python · 18:59 (0 ms · 12.5 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode(object):
+> #     def __init__(self, val=0, next=None):
+> #         self.val = val
+> #         self.next = next
+> class Solution(object):
+>     def swapPairs(self, head):
+>         """
+>         :type head: Optional[ListNode]
+>         :rtype: Optional[ListNode]
+>
+>         1 -> 2 -> 3 = 2 -> 1 -> 3
+>         1 = 1
+>         1 -> 2 = 2 -> 1
+>
+>         check that list has at least 2 none-None nodes
+>         makeshift do while loop top make sure first iteration always executes
+>         """
+>         if not head or not head.next:
+>             return head
+>
+>         slow = head
+>         fast = head.next
+>         dummy = ListNode(0)
+>         dummytail = dummy
+>         while fast:
+>             fastNext = fast.next
+>
+>             fast.next = slow
+>             slow.next = None
+>
+>             dummytail.next = fast
+>             dummytail = dummytail.next.next
+>
+>             if fastNext is None or fastNext.next is None:
+>                 if fastNext:
+>                     dummytail.next = fastNext
+>                 return dummy.next
+>
+>             else:
+>                 slow = fastNext
+>                 fast = fastNext.next
+> ```
 
 ### 💭 Thoughts & insights
 -

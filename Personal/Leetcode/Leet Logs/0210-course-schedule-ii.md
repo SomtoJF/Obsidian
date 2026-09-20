@@ -4,12 +4,12 @@ title: "Course Schedule II"
 url: https://leetcode.com/problems/course-schedule-ii/description/
 difficulty: Medium
 tags: [Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort]
-attempts: 3
+attempts: 4
 first_attempt: 2026-09-14
-last_attempt: 2026-09-18
-total_submissions: 6
-total_ac: 0
-total_runs: 30
+last_attempt: 2026-09-20
+total_submissions: 9
+total_ac: 1
+total_runs: 38
 ---
 
 # 210. Course Schedule II
@@ -87,6 +87,65 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 ## Attempt 3 · 2026-09-18 Fri
 ⏱ start 19:34 → first submit 20:15 · coding 40 min · 3 submitted (no AC yet) · 20 runs
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 4 · 2026-09-20 Sun
+⏱ start 18:17 → first submit 18:30 · coding 13 min → AC 18:31 · 3 submits / 1 AC · 8 runs · 17 min on problem
+
+### ✅ Accepted · Python · 18:31 (6 ms · 13.4 MB)
+> [!success]- Code
+> ```python
+> class Solution(object):
+>     def findOrder(self, numCourses, prerequisites):
+>         """
+>         :type numCourses: int
+>         :type prerequisites: List[List[int]]
+>         :rtype: List[int]
+>
+>         Topological sort
+>         """
+>         adj = {i : [] for i in range(numCourses)}
+>         indegree = {i: 0 for i in range(numCourses)}
+>
+>         for edge in prerequisites:
+>             pre = edge[1]
+>             course = edge[0]
+>
+>             adj[pre].append(course)
+>             indegree[course] += 1
+>
+>         q = deque()
+>         res = []
+>
+>         for k,v in indegree.items():
+>             if v == 0:
+>                 q.append(k)
+>                 res.append(k)
+>
+>         while q:
+>             curr = q.popleft()
+>             for course in adj[curr]:
+>                 indegree[course] -= 1
+>                 if indegree[course] == 0:
+>                     q.append(course)
+>                     res.append(course)
+>
+>         if len(res) != numCourses:
+>             return []
+>         # print(adj)
+>         # print(indegree)
+>
+>         return res
+> ```
 
 ### 💭 Thoughts & insights
 -
