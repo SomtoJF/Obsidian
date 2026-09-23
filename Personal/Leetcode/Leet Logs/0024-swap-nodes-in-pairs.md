@@ -95,7 +95,7 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 
 ## Attempt 4 · 2026-09-20 Sun
-⏱ start 18:34 → first submit 18:59 · coding 25 min → AC 18:59 · 1 submit / 1 AC · 6 runs
+⏱ start 18:34 → first submit 18:59 · coding 25 min → AC 18:59 · 1 submit / 1 AC · 6 runs · 25 min on problem
 
 ### ✅ Accepted · Python · 18:59 (0 ms · 12.5 MB)
 > [!success]- Code
