@@ -30,7 +30,7 @@ This is as straightforward as it gets. But obviously, there's an issue with this
 
 > What if we store offsets for each key?
 ## Offsets
-Pretty straightforward. We store the offsets of each key in memory with a hash-map. When a query comes in, instead of scanning the whole DB for the data, we check the map keyed by the primary key for the offset (location of the data in the DB file), seek to that point in the file and read the data we need. Although we sacrifice extra space for the indexes, our `get()` runtime has drastically reduced from $O(n)$ to $O(1)$. A worthwhile tradeoff.
+We can store the offsets of each key in memory with a hash-map. When a query comes in, instead of scanning the whole DB for the data, we check the map keyed by the primary key for the offset (location of the data in the DB file), seek to that point in the file and read the data we need. Although we sacrifice extra space for the indexes, our `get()` runtime has drastically reduced from $O(n)$ to $O(1)$. A worthwhile tradeoff. However, there is also another obvious issue with this design, ==what happens to the data in memory when the database crashes or the connection is killed?==. We will talk about that in the later sections of this article.
 
 ```go
 type SomtoDB struct {
