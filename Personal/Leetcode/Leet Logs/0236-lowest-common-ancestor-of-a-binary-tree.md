@@ -71,7 +71,7 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 
 ## Attempt 2 · 2026-09-23 Wed
-⏱ start 13:35 → first submit 13:52 · coding 17 min → AC 14:03 · 4 submits / 1 AC · 9 runs
+⏱ start 13:35 → first submit 13:52 · coding 17 min → AC 14:03 · 4 submits / 1 AC · 9 runs · 36 min on problem
 
 ### ✅ Accepted · Python · 14:03 (229 ms · 64.9 MB)
 > [!success]- Code

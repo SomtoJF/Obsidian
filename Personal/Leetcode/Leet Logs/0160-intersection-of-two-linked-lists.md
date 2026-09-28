@@ -4,12 +4,12 @@ title: "Intersection of Two Linked Lists"
 url: https://leetcode.com/problems/intersection-of-two-linked-lists/description/
 difficulty: Easy
 tags: [Hash Table, Linked List, Two Pointers]
-attempts: 1
+attempts: 2
 first_attempt: 2026-08-22
-last_attempt: 2026-08-22
-total_submissions: 1
-total_ac: 1
-total_runs: 1
+last_attempt: 2026-09-25
+total_submissions: 2
+total_ac: 2
+total_runs: 3
 ---
 
 # 160. Intersection of Two Linked Lists
@@ -113,6 +113,70 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >         while node2 is not None:
 >             if node2 in cache: return node2
 >             node2 = node2.next
+>         return None
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-09-25 Fri
+⏱ start 23:11 → first submit 23:20 · coding 9 min → AC 23:20 · 1 submit / 1 AC · 2 runs · 10 min on problem
+
+### ✅ Accepted · Python · 23:20 (243 ms · 66.9 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode(object):
+> #     def __init__(self, x):
+> #         self.val = x
+> #         self.next = None
+>
+> class Solution(object):
+>     def getIntersectionNode(self, headA, headB):
+>         """
+>         :type head1, head1: ListNode
+>         :rtype: ListNode
+>
+>         determine the longer list
+>         advance the difference in the longer list
+>         iterate through both lists simultaneously, if they share a node we will arrive at the intersection at the same time.
+>         return the intersecting node
+>         """
+>         n1 = headA
+>         c1 = 0
+>         n2 = headB
+>         c2 = 0
+>         while n1:
+>             n1 = n1.next
+>             c1 += 1
+>         while n2:
+>             n2 = n2.next
+>             c2 += 1
+>
+>         if not c2 == c1:
+>             if c2 > c1:
+>                 while c2 > c1:
+>                     headB = headB.next
+>                     c2 -= 1
+>             else:
+>                 while c1 > c2:
+>                     headA = headA.next
+>                     c1 -= 1
+>
+>         while headA and headB:
+>             if headA == headB:
+>                 return headA
+>
+>             headA = headA.next
+>             headB = headB.next
+>
 >         return None
 > ```
 

@@ -4,12 +4,12 @@ title: "Reverse Linked List"
 url: https://leetcode.com/problems/reverse-linked-list/description/
 difficulty: Easy
 tags: [Linked List, Recursion]
-attempts: 1
+attempts: 2
 first_attempt: 2026-08-22
-last_attempt: 2026-08-22
-total_submissions: 1
-total_ac: 1
-total_runs: 1
+last_attempt: 2026-09-25
+total_submissions: 2
+total_ac: 2
+total_runs: 2
 ---
 
 # 206. Reverse Linked List
@@ -79,6 +79,44 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >             head = nextHead
 >
 >         return dummy.next
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-09-25 Fri
+⏱ start 23:01 → first submit 23:03 · coding 2 min → AC 23:03 · 1 submit / 1 AC · 1 run · 10 min on problem
+
+### ✅ Accepted · Python · 23:03 (3 ms · 14.5 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode(object):
+> #     def __init__(self, val=0, next=None):
+> #         self.val = val
+> #         self.next = next
+> class Solution(object):
+>     def reverseList(self, head):
+>         """
+>         :type head: Optional[ListNode]
+>         :rtype: Optional[ListNode]
+>         """
+>         dummy = None
+>         node = head
+>         while node:
+>             nodeNext = node.next
+>             node.next = dummy
+>             dummy = node
+>             node = nodeNext
+>
+>         return dummy
 > ```
 
 ### 💭 Thoughts & insights

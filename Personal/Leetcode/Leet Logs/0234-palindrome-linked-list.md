@@ -4,12 +4,12 @@ title: "Palindrome Linked List"
 url: https://leetcode.com/problems/palindrome-linked-list/description/
 difficulty: Easy
 tags: [Linked List, Two Pointers, Stack, Recursion]
-attempts: 1
+attempts: 2
 first_attempt: 2026-08-22
-last_attempt: 2026-08-22
-total_submissions: 1
-total_ac: 1
-total_runs: 5
+last_attempt: 2026-09-25
+total_submissions: 2
+total_ac: 2
+total_runs: 7
 ---
 
 # 234. Palindrome Linked List
@@ -88,6 +88,59 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >
 >             second = second.next
 >             head = head.next
+>         return True
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-09-25 Fri
+⏱ start 23:22 → first submit 23:30 · coding 8 min → AC 23:30 · 1 submit / 1 AC · 2 runs
+
+### ✅ Accepted · Python · 23:30 (131 ms · 66.4 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode(object):
+> #     def __init__(self, val=0, next=None):
+> #         self.val = val
+> #         self.next = next
+> class Solution(object):
+>     def isPalindrome(self, head):
+>         """
+>         :type head: Optional[ListNode]
+>         :rtype: bool
+>         """
+>         if not head or not head.next:
+>             return True
+>         fast = head
+>         slow = head
+>         while fast.next and fast.next.next:
+>             fast = fast.next.next
+>             slow = slow.next
+>
+>         sec = slow.next
+>         slow.next = None
+>         secRev = None
+>         while sec:
+>             secNext = sec.next
+>             sec.next = secRev
+>             secRev = sec
+>             sec = secNext
+>
+>         while head and secRev:
+>             if head.val != secRev.val:
+>                 return False
+>             head = head.next
+>             secRev = secRev.next
+>
 >         return True
 > ```
 
