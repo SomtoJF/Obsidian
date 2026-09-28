@@ -102,7 +102,7 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 
 ## Attempt 2 · 2026-09-25 Fri
-⏱ start 23:22 → first submit 23:30 · coding 8 min → AC 23:30 · 1 submit / 1 AC · 2 runs
+⏱ start 23:22 → first submit 23:30 · coding 8 min → AC 23:30 · 1 submit / 1 AC · 2 runs · 15 min on problem
 
 ### ✅ Accepted · Python · 23:30 (131 ms · 66.4 MB)
 > [!success]- Code
