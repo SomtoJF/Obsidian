@@ -75,7 +75,7 @@ class Solution(object):
 
 
 ## Attempt 2 · 2026-09-28 Mon
-⏱ start 11:32 → first submit 11:32 · coding 1 min → AC 11:53 · 2 submits / 1 AC · 4 runs
+⏱ start 11:32 → first submit 11:32 · coding 1 min → AC 11:53 · 2 submits / 1 AC · 4 runs · 87 min on problem
 
 ### ✅ Accepted · Python · 11:53 (83 ms · 12.6 MB)
 > [!success]- Code
