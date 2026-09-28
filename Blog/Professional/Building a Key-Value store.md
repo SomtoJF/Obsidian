@@ -26,7 +26,7 @@ db_get 42 {"name":"San Francisco","attractions":["Golden Gate Bridge"]}
 ```
 *Reading and writing to the DB*
 
-This is as straightforward as it gets. But obviously, there's an issue with this. Writes are pretty efficient but the reads have a runtime of $O(n)$. Meaning, we have to read the entire DB file to find the data we need. But how do we actually do this?
+This is as straightforward as it gets. But obviously, there's an issue with this. Writes are pretty efficient but the reads have a runtime of $O(n)$. Meaning, we have to read the entire DB file to find the data we need. In must real-world applications, majority of the DB operations are reads so having a linear time read is a big issue. We will have to figure out how to make our reads significantly more efficient. But how do we actually do this?
 
 > What if we store offsets for each key?
 ## Offsets
