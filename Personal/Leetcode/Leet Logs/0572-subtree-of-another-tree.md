@@ -4,12 +4,12 @@ title: "Subtree of Another Tree"
 url: https://leetcode.com/problems/subtree-of-another-tree/description/
 difficulty: Easy
 tags: [Tree, Depth-First Search, String Matching, Binary Tree, Hash Function]
-attempts: 2
+attempts: 3
 first_attempt: 2026-09-24
-last_attempt: 2026-09-28
-total_submissions: 4
-total_ac: 1
-total_runs: 14
+last_attempt: 2026-09-29
+total_submissions: 6
+total_ac: 2
+total_runs: 27
 ---
 
 # 572. Subtree of Another Tree
@@ -142,6 +142,49 @@ class Solution(object):
 >
 >         return res
 >         print(targets)
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 3 · 2026-09-29 Tue
+⏱ start 13:52 → first submit 14:09 · coding 17 min → AC 14:15 · 2 submits / 1 AC · 13 runs
+
+### ✅ Accepted · Python · 14:15 (19 ms · 13.9 MB)
+> [!success]- Code
+> ```python
+> # Definition for a binary tree node.
+> # class TreeNode(object):
+> #     def __init__(self, val=0, left=None, right=None):
+> #         self.val = val
+> #         self.left = left
+> #         self.right = right
+> class Solution(object):
+>     def isSubtree(self, root, subRoot):
+>         """
+>         :type root: Optional[TreeNode]
+>         :type subRoot: Optional[TreeNode]
+>         :rtype: bool
+>         """
+>         def serialize(root):
+>             if not root:
+>                 return ["#"]
+>
+>             left = serialize(root.left)
+>             right = serialize(root.right)
+>             return [",", str(root.val)] + left + right
+>
+>         rootSer = ",".join(serialize(root))
+>         subRootSer = ",".join(serialize(subRoot))
+>
+>         return subRootSer in rootSer
 > ```
 
 ### 💭 Thoughts & insights
