@@ -155,7 +155,7 @@ class Solution(object):
 
 
 ## Attempt 3 · 2026-09-29 Tue
-⏱ start 13:52 → first submit 14:09 · coding 17 min → AC 14:15 · 2 submits / 1 AC · 13 runs
+⏱ start 13:52 → first submit 14:09 · coding 17 min → AC 14:15 · 2 submits / 1 AC · 13 runs · 24 min on problem
 
 ### ✅ Accepted · Python · 14:15 (19 ms · 13.9 MB)
 > [!success]- Code

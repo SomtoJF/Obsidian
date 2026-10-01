@@ -4,12 +4,12 @@ title: "Linked List Cycle II"
 url: https://leetcode.com/problems/linked-list-cycle-ii/description/
 difficulty: Medium
 tags: [Hash Table, Linked List, Two Pointers, Floyd's Cycle Finding Algorithm]
-attempts: 1
+attempts: 2
 first_attempt: 2026-08-24
-last_attempt: 2026-08-24
-total_submissions: 1
-total_ac: 1
-total_runs: 8
+last_attempt: 2026-10-01
+total_submissions: 2
+total_ac: 2
+total_runs: 11
 ---
 
 # 142. Linked List Cycle II
@@ -102,6 +102,59 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >             fast = fast.next
 >
 >         return fast
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-10-01 Thu
+⏱ start 13:35 → first submit 13:41 · coding 6 min → AC 13:41 · 1 submit / 1 AC · 3 runs
+
+### ✅ Accepted · Python · 13:41 (35 ms · 18.7 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode(object):
+> #     def __init__(self, x):
+> #         self.val = x
+> #         self.next = None
+>
+> class Solution(object):
+>     def detectCycle(self, head):
+>         """
+>         :type head: ListNode
+>         :rtype: ListNode
+>         """
+>
+>         if not head or not head.next:
+>             return None
+>
+>         slow = head
+>         fast = head
+>
+>         collision = False
+>         while fast.next and fast.next.next:
+>             fast = fast.next.next
+>             slow = slow.next
+>             if slow == fast:
+>                 collision = True
+>                 break
+>
+>         if not collision: return None
+>
+>         slow = head
+>         while slow != fast:
+>             slow = slow.next
+>             fast = fast.next
+>
+>         return slow
 > ```
 
 ### 💭 Thoughts & insights

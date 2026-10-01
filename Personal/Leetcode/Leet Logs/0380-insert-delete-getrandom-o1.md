@@ -4,12 +4,12 @@ title: "Insert Delete GetRandom O(1)"
 url: https://leetcode.com/problems/insert-delete-getrandom-o1/description/
 difficulty: Medium
 tags: [Array, Hash Table, Math, Design, Randomized]
-attempts: 1
+attempts: 2
 first_attempt: 2026-09-25
-last_attempt: 2026-09-25
-total_submissions: 8
-total_ac: 0
-total_runs: 9
+last_attempt: 2026-10-01
+total_submissions: 11
+total_ac: 1
+total_runs: 19
 ---
 
 # 380. Insert Delete GetRandom O(1)
@@ -57,6 +57,77 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 ## Attempt 1 · 2026-09-25 Fri
 ⏱ start 23:37 → first submit 23:56 · coding 20 min · 8 submitted (no AC yet) · 9 runs · 39 min on problem
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-10-01 Thu
+⏱ start 12:29 → first submit 12:29 · coding 1 min → AC 12:53 · 3 submits / 1 AC · 10 runs · 25 min on problem
+
+### ✅ Accepted · Python · 12:53 (234 ms · 55.5 MB)
+> [!success]- Code
+> ```python
+> class RandomizedSet(object):
+>
+>     def __init__(self):
+>         self.arr = []
+>         self.map = {}
+>
+>
+>     def insert(self, val):
+>         """
+>         :type val: int
+>         :rtype: bool
+>         """
+>         if val in self.map: return False
+>         self.map[val] = len(self.arr)
+>         self.arr.append(val)
+>         return True
+>
+>
+>     def remove(self, val):
+>         """
+>         :type val: int
+>         :rtype: bool
+>
+>         [1,2,3,4]
+>         [1,4,3]
+>         """
+>         if val not in self.map: return False
+>         i = self.map[val]
+>         last = self.arr[len(self.arr) - 1]
+>
+>         self.arr[i] = last
+>         self.map[last] = i
+>
+>         self.arr.pop()
+>         del self.map[val]
+>
+>         return True
+>
+>
+>
+>     def getRandom(self):
+>         """
+>         :rtype: int
+>         """
+>         if len(self.arr) < 1: return None
+>         return random.choice(self.arr)
+>
+>
+> # Your RandomizedSet object will be instantiated and called as such:
+> # obj = RandomizedSet()
+> # param_1 = obj.insert(val)
+> # param_2 = obj.remove(val)
+> # param_3 = obj.getRandom()
+> ```
 
 ### 💭 Thoughts & insights
 -

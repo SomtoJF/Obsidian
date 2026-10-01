@@ -4,12 +4,12 @@ title: "Unique Binary Search Trees II"
 url: https://leetcode.com/problems/unique-binary-search-trees-ii/description/
 difficulty: Medium
 tags: [Dynamic Programming, Backtracking, Tree, Binary Search Tree, Binary Tree]
-attempts: 2
+attempts: 3
 first_attempt: 2026-09-23
-last_attempt: 2026-09-24
-total_submissions: 1
+last_attempt: 2026-10-01
+total_submissions: 2
 total_ac: 1
-total_runs: 3
+total_runs: 4
 ---
 
 # 95. Unique Binary Search Trees II
@@ -87,6 +87,19 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >
 >         return generate(1, n)
 > ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 3 · 2026-10-01 Thu
+⏱ start 12:54 → first submit 13:24 · coding 30 min · 1 submitted (no AC yet) · 1 run · 41 min on problem
 
 ### 💭 Thoughts & insights
 -
