@@ -127,7 +127,22 @@ I’ve worked across fintech, automotive, and salestech, built critical internal
 
 Outside of work, I am currently: building https://applywithiris.com (a platform to automate job applications), building https://onmuna.com (an AI virtual assistant) with my friends and a key/value B+ tree database with concurrency management and failure recovery using a WAL. I also publish articles on my website from time to time as a learn new things https://somtochukwu.com/blog.
   
-I just narrowly missed the application deadline but I'd be really excited if I were considered. If my background is a fit, I'd love to send over my resume and chat with someone on the team. 
+I just narrowly missed the application deadline but I'd be really excited if I were considered. If my background is a fit, I'd love to send over my resume and chat with someone on the team.
   
 Thanks again for connecting. Have a great day!
 ```
+## Fairmoney Check-in
+```
+Good afternoon Miss Jumai,
+
+Thanks so much for connecting.
+
+I recently received a referral from Mr. Chidiebube Onah, an Engineering Team Lead at Fairmoney, for the Software Engineer - RCL opening and wanted to check on the status of my application.
+
+I am very excited about this opportunity. Given my engineering background at Volvo Cars, my experience working with Fortune 50 users at Sales Copilot, and my passion projects ([Iris](https://applywithiris.com/) and [Muna](https://onmuna.com/)), I believe I am a strong fit for the team's goals.
+
+I would love to connect and chat if you need any additional details or a copy of my resume. Thank you for your time!
+
+Thanks again.
+```
+jumai.bakare@fairmoney.io

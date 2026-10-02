@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Leetcode/Leetlog Dashboard.md",
+                "file": "Job Search/Plan.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Leetlog Dashboard"
+              "title": "Plan"
             }
           }
         ]
@@ -210,12 +210,12 @@
   },
   "active": "3adc5fb1ef4b9788",
   "lastOpenFiles": [
+    "Personal/Leetcode/Leetlog Dashboard.md",
     "Personal/Leetcode/Leet Logs/0226-invert-binary-tree.md",
     "Personal/Leetcode/Leet Logs/0207-course-schedule.md",
     "Personal/Leetcode/Leet Logs/0104-maximum-depth-of-binary-tree.md",
     "Personal/Leetcode/Leet Logs/0142-linked-list-cycle-ii.md",
     "Personal/Leetcode/Leet Logs/0141-linked-list-cycle.md",
-    "Personal/Leetcode/Leetlog Dashboard.md",
     "Personal/Leetcode/Leet Logs/0095-unique-binary-search-trees-ii.md",
     "Personal/Leetcode/Leet Logs/0572-subtree-of-another-tree.md.crswap",
     "Personal/Leetcode/Leet Logs/0437-path-sum-iii.md.crswap",
