@@ -128,7 +128,7 @@ I’ve worked across fintech, automotive, and salestech, built critical internal
 Outside of work, I am currently: building https://applywithiris.com (a platform to automate job applications), building https://onmuna.com (an AI virtual assistant) with my friends and a key/value B+ tree database with concurrency management and failure recovery using a WAL. I also publish articles on my website from time to time as a learn new things https://somtochukwu.com/blog.
   
 I just narrowly missed the application deadline but I'd be really excited if I were considered. If my background is a fit, I'd love to send over my resume and chat with someone on the team.
-  
+
 Thanks again for connecting. Have a great day!
 ```
 ## Fairmoney Check-in
