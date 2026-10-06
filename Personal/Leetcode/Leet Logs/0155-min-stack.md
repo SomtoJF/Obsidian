@@ -4,12 +4,12 @@ title: "Min Stack"
 url: https://leetcode.com/problems/min-stack/description/
 difficulty: Medium
 tags: [Stack, Design]
-attempts: 1
+attempts: 2
 first_attempt: 2026-08-27
-last_attempt: 2026-08-27
-total_submissions: 1
-total_ac: 1
-total_runs: 19
+last_attempt: 2026-10-06
+total_submissions: 3
+total_ac: 2
+total_runs: 36
 ---
 
 # 155. Min Stack
@@ -113,6 +113,73 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >         :rtype: int
 >         """
 >         return self.stack.min_so_far
+>
+>
+>
+> # Your MinStack object will be instantiated and called as such:
+> # obj = MinStack()
+> # obj.push(value)
+> # obj.pop()
+> # param_3 = obj.top()
+> # param_4 = obj.getMin()
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-10-06 Tue
+⏱ start 14:46 → first submit 15:08 · coding 22 min → AC 15:08 · 2 submits / 1 AC · 17 runs · 25 min on problem
+
+### ✅ Accepted · Python · 15:08 (192 ms · 24.6 MB)
+> [!success]- Code
+> ```python
+> class MinStack(object):
+>
+>     def __init__(self):
+>         self.stack = []
+>         self.min = []
+>
+>     def push(self, value):
+>         """
+>         :type value: int
+>         :rtype: None
+>         """
+>         currMin = 0
+>         if len(self.min) == 0:
+>             currMin = value
+>         else:
+>             lastMin = self.min[len(self.min) -1]
+>             currMin = lastMin if lastMin < value else value
+>         self.min.append(currMin)
+>         self.stack.append(value)
+>
+>     def pop(self):
+>         """
+>         :rtype: None
+>         """
+>         self.min.pop(-1)
+>         return self.stack.pop(-1)
+>
+>
+>     def top(self):
+>         """
+>         :rtype: int
+>         """
+>         return self.stack[len(self.stack) -1]
+>
+>
+>     def getMin(self):
+>         """
+>         :rtype: int
+>         """
+>         return self.min[len(self.min)-1]
 >
 >
 >

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Job Search/Plan.md",
+                "file": "Personal/Leetcode/Leetlog Dashboard.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Plan"
+              "title": "Leetlog Dashboard"
             }
           }
         ]
@@ -210,7 +210,9 @@
   },
   "active": "3adc5fb1ef4b9788",
   "lastOpenFiles": [
+    "Personal/Leetcode/Leet Logs/0155-min-stack.md",
     "Personal/Leetcode/Leetlog Dashboard.md",
+    "Job Search/Plan.md",
     "Personal/Leetcode/Leet Logs/0226-invert-binary-tree.md",
     "Personal/Leetcode/Leet Logs/0207-course-schedule.md",
     "Personal/Leetcode/Leet Logs/0104-maximum-depth-of-binary-tree.md",
@@ -232,7 +234,6 @@
     "Personal/Leetcode/Leet Logs/0160-intersection-of-two-linked-lists.md",
     "Personal/Iris/Iris New Design.md",
     "Personal/Leetcode/Leet Logs/0236-lowest-common-ancestor-of-a-binary-tree.md.crswap",
-    "Job Search/Plan.md",
     "Excalidraw/Odin Architecture.md",
     "Personal/Iris/Extension Design Diagram.md",
     "Blog/Professional/Iris - A Case Study.md",
@@ -242,7 +243,6 @@
     "Personal/Leetcode/Leet Logs/0210-course-schedule-ii.md.crswap",
     "Job Search/Applications/ayden-https-careers-adyen-com-vacancies-7342888-software-engineer-i-java-invoicing-collections-locale-en.md",
     "Job Search/Applications/camunda-software-engineer-data-layer.md",
-    "Job Search/Applications/backend-python-engineer-jobpilot-ng.md",
     "Personal/Leetcode/Leet Logs/0023-merge-k-sorted-lists.md.crswap",
     "Personal/Leetcode/Leet Logs/0110-balanced-binary-tree.md.crswap",
     "Personal/Leetcode/Leet Logs/1971-find-if-path-exists-in-graph.md.crswap",

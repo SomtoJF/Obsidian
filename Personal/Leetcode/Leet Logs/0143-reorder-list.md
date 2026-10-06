@@ -4,12 +4,12 @@ title: "Reorder List"
 url: https://leetcode.com/problems/reorder-list/description/
 difficulty: Medium
 tags: [Linked List, Two Pointers, Stack, Recursion]
-attempts: 2
+attempts: 3
 first_attempt: 2026-08-22
-last_attempt: 2026-09-05
-total_submissions: 3
-total_ac: 2
-total_runs: 15
+last_attempt: 2026-10-06
+total_submissions: 4
+total_ac: 3
+total_runs: 17
 ---
 
 # 143. Reorder List
@@ -182,6 +182,79 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >                 resTail.next = second
 >                 resTail = resTail.next
 >                 second = secondNext
+>
+>         return res.next
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 3 · 2026-10-06 Tue
+⏱ start 14:35 → first submit 14:43 · coding 8 min → AC 14:43 · 1 submit / 1 AC · 2 runs · 11 min on problem
+
+### ✅ Accepted · Python · 14:43 (5 ms · 30.1 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode(object):
+> #     def __init__(self, val=0, next=None):
+> #         self.val = val
+> #         self.next = next
+> class Solution(object):
+>     def reorderList(self, head):
+>         """
+>         :type head: Optional[ListNode]
+>         :rtype: None Do not return anything, modify head in-place instead.
+>         """
+>
+>         if not head or not head.next:
+>             return head
+>
+>         # find mid
+>         slow = head
+>         fast = head
+>
+>         while fast.next and fast.next.next:
+>             fast = fast.next.next
+>             slow = slow.next
+>
+>         second = slow.next
+>         slow.next = None
+>
+>         # reverse second
+>         secrev = None
+>
+>         while second:
+>             secondNext = second.next
+>
+>             second.next = secrev
+>             secrev = second
+>
+>             second = secondNext
+>
+>         res = ListNode(0)
+>         restail = res
+>
+>         while head or secrev:
+>             headNext = head.next
+>             head.next = None
+>             restail.next = head
+>             restail = restail.next
+>             head = headNext
+>
+>             if secrev:
+>                 secNext = secrev.next
+>                 secrev.next = None
+>                 restail.next = secrev
+>                 restail = restail.next
+>                 secrev = secNext
 >
 >         return res.next
 > ```
