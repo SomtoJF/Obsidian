@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Leetcode/Leetlog Dashboard.md",
+                "file": "Personal/Leetcode/Leet Logs/0230-kth-smallest-element-in-a-bst.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Leetlog Dashboard"
+              "title": "0230-kth-smallest-element-in-a-bst"
             }
           }
         ]
@@ -210,8 +210,9 @@
   },
   "active": "3adc5fb1ef4b9788",
   "lastOpenFiles": [
-    "Personal/Leetcode/Leet Logs/0155-min-stack.md",
     "Personal/Leetcode/Leetlog Dashboard.md",
+    "Personal/Leetcode/Leet Logs/0230-kth-smallest-element-in-a-bst.md",
+    "Personal/Leetcode/Leet Logs/0155-min-stack.md",
     "Job Search/Plan.md",
     "Personal/Leetcode/Leet Logs/0226-invert-binary-tree.md",
     "Personal/Leetcode/Leet Logs/0207-course-schedule.md",
@@ -242,7 +243,6 @@
     "Personal/Leetcode/Leet Logs/0210-course-schedule-ii.md",
     "Personal/Leetcode/Leet Logs/0210-course-schedule-ii.md.crswap",
     "Job Search/Applications/ayden-https-careers-adyen-com-vacancies-7342888-software-engineer-i-java-invoicing-collections-locale-en.md",
-    "Job Search/Applications/camunda-software-engineer-data-layer.md",
     "Personal/Leetcode/Leet Logs/0023-merge-k-sorted-lists.md.crswap",
     "Personal/Leetcode/Leet Logs/0110-balanced-binary-tree.md.crswap",
     "Personal/Leetcode/Leet Logs/1971-find-if-path-exists-in-graph.md.crswap",
