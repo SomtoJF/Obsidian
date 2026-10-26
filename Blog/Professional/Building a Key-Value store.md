@@ -1,148 +1,200 @@
 ---
-date: 2026-09-02
-description: Walkthrough of a key-value store, their shortcomings and evolutionary solutions to those resulting problems. Heavily Inspired by the book, Designing Data Intensive Applications by Martin Kleppmann and Michael Greim.
+date: 2026-10-26
+description: A practical walkthrough of building an append-only key-value store, the problems that appear as it grows, and the design choices used to address them. Inspired by Designing Data-Intensive Applications by Martin Kleppmann and Michael Greim.
 ---
-## Intro
-In this article we will explore building an append-only key-value store according to the descriptions in the book, [Designing Data Intensive Applications](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/). I will talk about my interpretation of the book, my implementation and the challenges that led me to making certain design choices. You can find the code on my [github](https://github.com/somtojf/lsm-tree)
 
-## The most basic form of a DB
-According to the book, the most basic form a database is simply something that reads and writes to a file. For example,
+## Introduction
+
+In this article, I will walk through my implementation of a small append-only key-value store. The design is based on ideas from [Designing Data-Intensive Applications](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/), particularly the discussion of log-structured storage and indexing.
+
+I will explain my interpretation of those ideas, the implementation decisions I made, and the problems that led to each design change. The complete implementation is available on [GitHub](https://github.com/somtojf/lsm-tree).
+
+The project is intentionally simple. It is a learning and research project rather than a production database. The current implementation supports persistent reads and writes, in-memory indexes, concurrency control, segmentation, compaction, and index rebuilding when the database is reopened.
+
+## The most basic form of a database
+
+According to the book, the most basic form of a database is simply something that reads and writes to a file. For example:
+
 ```shell
 db_set () {
-	echo "$1,$2" >> database
+    echo "$1,$2" >> database
 }
 
 db_get () {
-	grep "^$1," database | sed -e "s/^$1,//" | tail -n 1
+    grep "^$1," database | sed -e "s/^$1,//" | tail -n 1
 }
 ```
-*Exact example from the book*
+
+*This is an approximation of the example from the book.*
+
 ```shell
 db_set 123456 '{"name":"London","attractions":["Big Ben","London Eye"]}'
 
 db_set 42 '{"name":"San Francisco","attractions":["Golden Gate Bridge"]}'
 
-db_get 42 {"name":"San Francisco","attractions":["Golden Gate Bridge"]}
+db_get 42
+{"name":"San Francisco","attractions":["Golden Gate Bridge"]}
 ```
-*Reading and writing to the DB*
 
-This is as straightforward as it gets. But obviously, there's an issue with this. Writes are pretty efficient but the reads have a runtime of $O(n)$. Meaning, we have to read the entire DB file to find the data we need. In must real-world applications, majority of the DB operations are reads so having a linear time read is a big issue. We will have to figure out how to make our reads significantly more efficient. But how do we actually do this?
+This design is straightforward. Writes are efficient because each record is appended to the file. Reads, however, require scanning the file to find the latest record for a key. The read cost is therefore `O(n)`, where `n` is the amount of data that must be scanned.
+
+In many real-world applications, reads make up a large portion of database operations, so a linear read path quickly becomes a problem. The next question is how to make reads more efficient without giving up the simplicity of append-only writes.
 
 > What if we store offsets for each key?
-## Offsets
-We can store the offsets of each key in memory with a hash-map. When a query comes in, instead of scanning the whole DB for the data, we check the map keyed by the primary key for the offset (location of the data in the DB file), seek to that point in the file and read the data we need. Although we sacrifice extra space for the indexes, our `get()` runtime has drastically reduced from $O(n)$ to $O(1)$. A worthwhile tradeoff. However, there is also another obvious issue with this design, ==what happens to the data in memory when the database crashes or the connection is killed?==. We will talk about that in the later sections of this article.
+
+## Indexes and offsets
+
+Instead of scanning the entire file for every read, we can store the location of each key in memory. The index maps a key to the byte offset and length of its record in the database file.
+
+When a `Get` request arrives, the database looks up the key in the map, seeks directly to the stored offset, and reads only the required number of bytes. Hash-map lookup is average-case `O(1)`, so this makes reads much faster at the cost of keeping an index in memory.
+
+The central tradeoff is that the data remains on disk, but the metadata needed to find it remains in memory. This also introduces a new problem: what happens to the in-memory index when the process exits or crashes?
+
+The current implementation addresses normal reopening by scanning the active file and rebuilding indexes from segment hint files. It does not yet provide complete crash-safe recovery or transactional durability.
+
+The core index structures look like this:
 
 ```go
 type SomtoDB struct {
-	filePath string
-	// maps keys to their corresponding value offsets in the file
-	indexes map[int]indexEntry
-	// number of bytes written to the file
-	fileSize int
-	// mutex to protect concurrent access to the database
-	mutex sync.Mutex
-	// max segment size in bytes
-	maxSegmentSize int
-	// db file
-	file *os.File
+    dbFileName string
+    dbDir      string
+    filePath   string
+
+    // Records in the active database file.
+    currIndexes map[int]indexEntry
+
+    // Records stored in immutable segment files.
+    segementedIndexes map[int]indexEntry
+
+    fileSize       int
+    mutex          sync.Mutex
+    maxSegmentSize int
+    file           *os.File
+    segmentCount   int
+    segmentDir     string
 }
 
 type indexEntry struct {
-	offset int
-	length int
-}
-
-func (db *SomtoDB) Get(key int) (string, error) {
-	indexData, err := db.readIndex(key)
-	if err != nil {
-		return "", err
-	}
-
-	readData, err := db.read(indexData)
-	if err != nil {
-		return "", err
-	}
-	
-	value := strings.TrimPrefix(string(readData), fmt.Sprintf("key: %d, value: ", key))
-	value = strings.TrimSuffix(value, "\n")
-
-	return value, nil
-}
-
-func (db *SomtoDB) readIndex(index int) (indexEntry, error) {
-	db.mutex.Lock()
-	defer db.mutex.Unlock()
-
-	indexData, ok := db.indexes[index]
-	if !ok {
-		return indexEntry{}, fmt.Errorf("key not found")
-	}
-
-	return indexData, nil
-}
-
-func (db *SomtoDB) read(indexData indexEntry) ([]byte, error) {
-	data := make([]byte, indexData.length)
-
-	_, err := db.file.ReadAt(data, int64(indexData.offset))
-	if err != nil {
-		return nil, err
-	}
-
-	return data, nil
+    offset      int
+    length      int
+    segmentName *string
 }
 ```
 
-Notice the `indexEntry` struct, we store the data byte length as well. We use this to know how many bytes to read when we want to read a particular value.
-## Concurrency Control
-Databases would be a lot easier to implement if reads and writes were completely sequential. However, **if wishes were horses beggars will ride**. Because this is almost always never the case, we have to make sure we handle issues that could occur when several processes read and write to the database at the same time. 
+The `segmentName` field is nil for records in the active file. For records in an older segment, it points to the segment data file that contains the record.
 
-> How do we do this?
-
-Notice the `sync.Mutex` in the `SomtoDB` struct? We use the mutex to control access to the DB so that two operations running concurrently don't corrupt the data. This is particularly useful for writes since they mutate the DB. 
-
-> What happens if a process is writing to the db and another process begins writing to the same file before the last operation is complete? This is why we need a lock.
+The read path first checks the active index and then the segmented index:
 
 ```go
-func (db *SomtoDB) write(key int, data []byte) error {
-	db.mutex.Lock()	
-	defer db.mutex.Unlock()
+func (db *SomtoDB) Get(key int) (string, error) {
+    db.mutex.Lock()
+    defer db.mutex.Unlock()
 
-	_, err := db.file.Write(data)
-	if err != nil {
-		return err
-	}
-	
-	dataLength := len(data)
-	entry := indexEntry{
-		offset: db.fileSize,
-		length: dataLength,
-	}
+    indexData, err := db.readIndex(key)
+    if err != nil {
+        return "", err
+    }
 
-	// store the offset of the value in the file	
-	db.indexes[key] = entry
-	
-	// increment the file size
-	db.fileSize += dataLength
-	
-	return nil
-}
+    readData, err := db.read(indexData)
+    if err != nil {
+        return "", err
+    }
 
-  
-
-func (db *SomtoDB) Set(key int, value string) (string, error) {
-	text := fmt.Sprintf("key: %d, value: %s\n", key, value)
-	textbytes := []byte(text)
-	
-	err := db.write(key, textbytes)
-	if err != nil {
-		return "", err
-	}
-
-	return text, nil
+    value := strings.TrimPrefix(
+        string(readData),
+        fmt.Sprintf("key: %d, value: ", key),
+    )
+    return strings.TrimSuffix(value, "\n"), nil
 }
 ```
-*Writes to the DB*
-## Segmentation and Compaction
-==to be continued==
 
+The active index takes precedence because a newer write must override an older value stored in a segment.
+
+## Concurrency control
+
+Databases would be simpler to implement if every operation happened sequentially. In practice, reads and writes can happen at the same time, so the database must protect shared state and file access.
+
+The `SomtoDB` struct uses a `sync.Mutex`. `Set`, `Get`, and `Close` acquire the mutex before accessing the file or the indexes. This prevents concurrent operations from observing partially updated state or writing conflicting records.
+
+The write path appends the record and then updates the corresponding index entry:
+
+```go
+func (db *SomtoDB) writeLocked(key int, data []byte) error {
+    if _, err := db.file.Seek(0, io.SeekEnd); err != nil {
+        return err
+    }
+
+    if _, err := db.file.Write(data); err != nil {
+        return err
+    }
+
+    db.currIndexes[key] = indexEntry{
+        offset: db.fileSize,
+        length: len(data),
+    }
+    db.fileSize += len(data)
+    return nil
+}
+```
+
+The helper assumes that the caller already holds the mutex. Keeping the locking at the public operation level makes the order of each database operation easier to follow.
+
+## Segmentation and compaction
+
+An append-only file grows forever. Even when a key is updated, the old record remains in the file. The in-memory index points to the newest record, but the obsolete records still consume disk space.
+
+To control this growth, the database uses an active-file threshold. The current threshold is 1,024 bytes. When adding a record would take the active file beyond that limit, the database compacts the current file into a new segment before continuing the write.
+
+Compaction performs the following steps:
+
+1. Create a segment data file and a matching binary `.hint` file.
+2. Copy the latest record for every key in the active index into the segment data file.
+3. Write each record's key, length, and offset to the hint file.
+4. Add those records to the segmented index.
+5. Truncate the active file and reset the active index.
+
+The segment data file contains the records themselves. The hint file contains fixed-size metadata entries, allowing the indexes to be reconstructed when the database is reopened without scanning every segment record.
+
+This is a simplified form of an LSM-style storage design: writes go to an active append-only file, and older data is periodically organized into immutable segments.
+
+## Persistence and reopening
+
+The database stores its active records in `data.txt` and its compacted records in a `segments` directory. On startup, it:
+
+- reads every segment hint file in segment order;
+- validates that each hint points to a valid range in its segment data file;
+- rebuilds the segmented index;
+- scans the active file and rebuilds the active index.
+
+This means ordinary shutdown and reopening preserve the database contents. The implementation also rejects malformed or truncated hint entries.
+
+This is not yet full crash recovery. For example, the implementation does not use a write-ahead log, atomic manifest updates, checksums, or a recovery protocol for partially completed compactions. Those are possible next steps.
+
+## Performance and the compaction tradeoff
+
+The database's speed depends heavily on both the active-file threshold and the amount of data being stored.
+
+Larger datasets produce more total writes and therefore more opportunities to trigger compaction. A smaller active-file threshold causes compaction to happen more frequently, even when the database is not very large. Since compaction reads and rewrites records, these additional compactions directly impact write speed and overall throughput.
+
+The threshold is therefore a tuning tradeoff:
+
+- A smaller threshold keeps the active file small but causes more frequent compactions.
+- A larger threshold reduces compaction frequency but allows the active file to grow larger before it is compacted.
+
+Reads are generally close to average-case `O(1)` after the indexes are built, but they still involve file I/O and may need to open a segment file. Writes are also usually efficient, but a write that triggers compaction is substantially more expensive than a normal append.
+
+The latest benchmark results are documented in [BENCHMARKS.md](https://github.com/somtojf/lsm-tree/blob/main/BENCHMARKS.md). They show that the implementation performs differently depending on the workload, concurrency level, machine, data size, and compaction frequency. The numbers should therefore be treated as measurements of this implementation under specific test conditions, not as universal performance guarantees.
+
+## Current limitations and next steps
+
+This project currently demonstrates the core mechanics of an indexed append-only key-value store, but it is intentionally incomplete. Important next steps include:
+
+- crash-safe recovery and durability guarantees;
+- safer, atomic compaction and segment publication;
+- more efficient locking, such as separate read and write coordination;
+- configurable segment thresholds;
+- deletion and tombstone support;
+- broader key and value formats;
+- more extensive benchmarking and failure testing.
+
+Building this store has been useful because each feature exposed another limitation in the previous design. The basic file-based implementation made reads too slow, the in-memory index introduced persistence concerns, and the growing append-only file required segmentation and compaction. That progression is the main lesson of the project: storage systems evolve by solving the problems created by their earlier optimizations.
