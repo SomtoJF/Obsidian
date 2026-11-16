@@ -35,8 +35,7 @@
               "title": "Building a Key-Value store"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -223,11 +222,12 @@
       "job-search-tracker:Job Search Tracker": false
     }
   },
-  "active": "171830aacbe966bc",
+  "active": "d5b264511c1a203f",
   "lastOpenFiles": [
+    "Blog/Professional/Building a Key-Value store.md",
+    "Personal/Leetcode/Leet Logs/0105-construct-binary-tree-from-preorder-and-inorder-traversal.md",
     "Blog/Professional/Crowdsourcing infra for model inference.md",
     "Personal/Leetcode/Leetlog Dashboard.md",
-    "Blog/Professional/Building a Key-Value store.md",
     "Blog/Professional/Iris - A Case Study.md",
     "HyperPersonal/Job Applications/Job Application Tracker.md",
     "Job Search/Plan.md",
@@ -254,7 +254,6 @@
     "Personal/Iris/Iris New Design.md",
     "Personal/Leetcode/Leet Logs/0236-lowest-common-ancestor-of-a-binary-tree.md.crswap",
     "Excalidraw/Odin Architecture.md",
-    "Personal/Iris/Extension Design Diagram.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "Personal/Leetcode/Leet Logs/0210-course-schedule-ii.md.crswap",

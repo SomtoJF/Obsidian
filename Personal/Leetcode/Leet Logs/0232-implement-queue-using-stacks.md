@@ -4,12 +4,12 @@ title: "Implement Queue using Stacks"
 url: https://leetcode.com/problems/implement-queue-using-stacks/description/
 difficulty: Easy
 tags: [Stack, Design, Queue]
-attempts: 1
+attempts: 2
 first_attempt: 2026-08-27
-last_attempt: 2026-08-27
-total_submissions: 3
-total_ac: 2
-total_runs: 7
+last_attempt: 2026-11-16
+total_submissions: 5
+total_ac: 4
+total_runs: 16
 ---
 
 # 232. Implement Queue using Stacks
@@ -171,6 +171,112 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >         :rtype: bool
 >         """
 >         return len(self.stack) == 0
+>
+>
+>
+> # Your MyQueue object will be instantiated and called as such:
+> # obj = MyQueue()
+> # obj.push(x)
+> # param_2 = obj.pop()
+> # param_3 = obj.peek()
+> # param_4 = obj.empty()
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-11-16 Mon
+⏱ start 13:04 → first submit 13:16 · coding 12 min → AC 13:16 · 2 submits / 2 AC · 9 runs
+
+### ✅ Accepted · Python3 · 13:17 (0 ms · 19.5 MB)
+> [!success]- Code
+> ```python
+> class MyQueue:
+>
+>     def __init__(self):
+>         self.s1 = []
+>         self.s2 = []
+>
+>     def push(self, x: int) -> None:
+>         self.s1.append(x)
+>
+>     def pop(self) -> int:
+>         res = None
+>         while len(self.s1) > 0:
+>             self.s2.append(self.s1.pop())
+>         val = self.s2.pop()
+>         if len(self.s1) == 0 and val:
+>             res = val
+>         while len(self.s2) > 0:
+>             self.s1.append(self.s2.pop())
+>         return res
+>
+>     def peek(self) -> int:
+>         res = None
+>         while len(self.s1) > 0:
+>             self.s2.append(self.s1.pop())
+>         val = self.s2.pop()
+>         if len(self.s1) == 0 and val:
+>             res = val
+>             self.s1.append(val)
+>         while len(self.s2) > 0:
+>             self.s1.append(self.s2.pop())
+>         return res
+>
+>     def empty(self) -> bool:
+>         if len(self.s1) == 0:
+>             return True
+>         return False
+>
+>
+>
+> # Your MyQueue object will be instantiated and called as such:
+> # obj = MyQueue()
+> # obj.push(x)
+> # param_2 = obj.pop()
+> # param_3 = obj.peek()
+> # param_4 = obj.empty()
+> ```
+
+### ✅ Accepted · Python3 · 13:16 (0 ms · 19.4 MB)
+> [!success]- Code
+> ```python
+> class MyQueue:
+>
+>     def __init__(self):
+>         self.s1 = []
+>         self.s2 = []
+>
+>     def push(self, x: int) -> None:
+>         self.s1.append(x)
+>
+>     def pop(self) -> int:
+>         val = self.s1.pop(0)
+>         return val
+>
+>     def peek(self) -> int:
+>         res = None
+>         while len(self.s1) > 0:
+>             self.s2.append(self.s1.pop())
+>         val = self.s2.pop()
+>         if len(self.s1) == 0 and val:
+>             res = val
+>             self.s1.append(val)
+>         while len(self.s2) > 0:
+>             self.s1.append(self.s2.pop())
+>         return res
+>
+>     def empty(self) -> bool:
+>         if len(self.s1) == 0:
+>             return True
+>         return False
 >
 >
 >
