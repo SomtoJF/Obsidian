@@ -4,12 +4,12 @@ title: "Find if Path Exists in Graph"
 url: https://leetcode.com/problems/find-if-path-exists-in-graph/description/
 difficulty: Easy
 tags: [Depth-First Search, Breadth-First Search, Union-Find, Graph Theory]
-attempts: 2
+attempts: 3
 first_attempt: 2026-09-06
-last_attempt: 2026-09-07
-total_submissions: 11
-total_ac: 1
-total_runs: 19
+last_attempt: 2026-11-16
+total_submissions: 13
+total_ac: 2
+total_runs: 33
 ---
 
 # 1971. Find if Path Exists in Graph
@@ -138,6 +138,57 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >         return False
 >
 >         print(adjList)
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 3 · 2026-11-16 Mon
+⏱ start 16:28 → first submit 16:48 · coding 20 min → AC 16:50 · 2 submits / 1 AC · 14 runs · 23 min on problem
+
+### ✅ Accepted · Python3 · 16:50 (8959 ms · 103.3 MB)
+> [!success]- Code
+> ```python
+> """
+> - undirected graph
+> """
+> class Solution:
+>     def validPath(self, n: int, edges: list[list[int]], source: int, destination: int) -> bool:
+>         adj = {i: [] for i in range(n)}
+>         for edge in edges:
+>             s = edge[0]
+>             d = edge[1]
+>
+>             if (source == s and d == destination) or (source == d and destination == s):
+>                 return True
+>
+>             adj[s].append(d)
+>             adj[d].append(s)
+>
+>         # print(adj)
+>         q = deque()
+>         q.append(source)
+>         visited = set()
+>
+>         while q:
+>             node = q.popleft()
+>             # print(node)
+>             if node == destination:
+>                 return True
+>             visited.add(node)
+>             for vertex in adj[node]:
+>                 if vertex in visited:
+>                     continue
+>                 q.append(vertex)
+>
+>         return False
 > ```
 
 ### 💭 Thoughts & insights

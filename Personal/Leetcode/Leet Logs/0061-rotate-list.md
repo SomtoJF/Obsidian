@@ -4,12 +4,12 @@ title: "Rotate List"
 url: https://leetcode.com/problems/rotate-list/description/
 difficulty: Medium
 tags: [Linked List, Two Pointers]
-attempts: 1
+attempts: 2
 first_attempt: 2026-09-07
-last_attempt: 2026-09-07
-total_submissions: 2
-total_ac: 1
-total_runs: 14
+last_attempt: 2026-11-16
+total_submissions: 5
+total_ac: 2
+total_runs: 18
 ---
 
 # 61. Rotate List
@@ -100,6 +100,58 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >         nhTail.next = head
 >
 >         return newHead
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-11-16 Mon
+⏱ start 13:21 → first submit 13:30 · coding 9 min → AC 13:35 · 3 submits / 1 AC · 4 runs · 17 min on problem
+
+### ✅ Accepted · Python3 · 13:35 (0 ms · 19.2 MB)
+> [!success]- Code
+> ```python
+> # Definition for singly-linked list.
+> # class ListNode:
+> #     def __init__(self, val=0, next=None):
+> #         self.val = val
+> #         self.next = next
+> class Solution:
+>     def rotateRight(self, head: ListNode | None, k: int) -> ListNode | None:
+>         if not head or k == 0:
+>             return head
+>         slow = head
+>         fast = head
+>
+>         length = 0
+>         while fast:
+>             length = length + 1
+>             fast = fast.next
+>
+>         fast = head
+>         shift = k % length
+>         if shift == 0:
+>             return head
+>         for i in range(shift):
+>             fast = fast.next
+>
+>         while fast and fast.next:
+>             slow = slow.next
+>             fast = fast.next
+>
+>         slownext = slow.next
+>         slow.next = None
+>         if not fast:
+>             return head
+>         fast.next = head
+>         return slownext
 > ```
 
 ### 💭 Thoughts & insights

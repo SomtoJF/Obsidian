@@ -193,7 +193,7 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 
 ## Attempt 2 · 2026-11-16 Mon
-⏱ start 13:04 → first submit 13:16 · coding 12 min → AC 13:16 · 2 submits / 2 AC · 9 runs
+⏱ start 13:04 → first submit 13:16 · coding 12 min → AC 13:16 · 2 submits / 2 AC · 9 runs · 17 min on problem
 
 ### ✅ Accepted · Python3 · 13:17 (0 ms · 19.5 MB)
 > [!success]- Code

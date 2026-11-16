@@ -4,12 +4,12 @@ title: "Convert Sorted Array to Binary Search Tree"
 url: https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
 difficulty: Easy
 tags: [Array, Divide and Conquer, Tree, Binary Search Tree, Binary Tree]
-attempts: 2
+attempts: 3
 first_attempt: 2026-09-06
-last_attempt: 2026-09-07
-total_submissions: 3
-total_ac: 1
-total_runs: 17
+last_attempt: 2026-11-16
+total_submissions: 4
+total_ac: 2
+total_runs: 21
 ---
 
 # 108. Convert Sorted Array to Binary Search Tree
@@ -91,6 +91,42 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >         node.right = self.sortedArrayToBST(nums[midIndex + 1:])
 >
 >         return node
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 3 · 2026-11-16 Mon
+⏱ start 13:39 → first submit 13:46 · coding 7 min → AC 13:46 · 1 submit / 1 AC · 4 runs · 169 min on problem
+
+### ✅ Accepted · Python3 · 13:46 (1 ms · 20.3 MB)
+> [!success]- Code
+> ```python
+> # Definition for a binary tree node.
+> # class TreeNode:
+> #     def __init__(self, val=0, left=None, right=None):
+> #         self.val = val
+> #         self.left = left
+> #         self.right = right
+> class Solution:
+>     def sortedArrayToBST(self, nums: list[int]) -> TreeNode | None:
+>         if len(nums) == 0:
+>             return None
+>         mid = len(nums) // 2
+>         # print(mid)
+>         head = TreeNode(nums[mid])
+>         head.left = self.sortedArrayToBST(nums[:mid])
+>         head.right = self.sortedArrayToBST(nums[mid + 1:])
+>         return head
+>
+>         # def generateBST(node: TreeNode, nums: list[int])
 > ```
 
 ### 💭 Thoughts & insights
