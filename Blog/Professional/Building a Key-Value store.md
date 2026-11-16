@@ -1,6 +1,6 @@
 ---
 date: 2026-10-26
-description: A practical walkthrough of building an append-only key-value store, the problems that appear as it grows, and the design choices used to address them. Inspired by Designing Data-Intensive Applications by Martin Kleppmann and Michael Greim.
+description: Building an append-only key-value store and solving its durability, indexing, compaction, and recovery challenges.
 ---
 
 ## Introduction
@@ -50,7 +50,7 @@ When a `Get` request arrives, the database looks up the key in the map, seeks di
 
 The central tradeoff is that the data remains on disk, but the metadata needed to find it remains in memory. This also introduces a new problem: what happens to the in-memory index when the process exits or crashes?
 
-The current implementation addresses normal reopening by scanning the active file and rebuilding indexes from segment hint files. It does not yet provide complete crash-safe recovery or transactional durability.
+The current implementation addresses reopening by scanning the active file and rebuilding indexes from segment hint files. That recovery path becomes more important as the database adds durability, segmentation, and compaction.
 
 The core index structures look like this:
 
@@ -120,10 +120,6 @@ The write path appends the record and then updates the corresponding index entry
 
 ```go
 func (db *SomtoDB) writeLocked(key int, data []byte) error {
-    if _, err := db.file.Seek(0, io.SeekEnd); err != nil {
-        return err
-    }
-
     if _, err := db.file.Write(data); err != nil {
         return err
     }
@@ -139,23 +135,75 @@ func (db *SomtoDB) writeLocked(key int, data []byte) error {
 
 The helper assumes that the caller already holds the mutex. Keeping the locking at the public operation level makes the order of each database operation easier to follow.
 
+## Durability changes the write path
+
+A plain `Write` is fast because it usually updates the operating system's page cache and returns before storage confirms persistence. After a process or machine crash, recently acknowledged data may therefore be lost.
+
+The durable write path is:
+
+```text
+queue request → encode record → append batch → Sync → acknowledge writers
+```
+
+`Sync` introduces a major performance cost because each acknowledgement waits for storage durability. This explains the benchmark drop from roughly tens of thousands of writes per second to roughly 100 sequential writes per second. The benefit is direct: successful writes now have a substantially stronger persistence guarantee.
+
+The design is WAL-like: writes are ordered and durable before they are acknowledged, but there is no separate WAL file. The append-only active file is the durable record log.
+
+### Why queue writes?
+
+Syncing every write independently would be inefficient:
+
+```text
+write → sync
+write → sync
+write → sync
+```
+
+The queue instead groups requests for up to 5 ms:
+
+```text
+write
+write  → one batch → one Sync
+write
+```
+
+One expensive sync serves multiple writes, concurrent callers share a single writer, file ordering stays centralized, and acknowledgements remain durability-aware. Burst workloads therefore achieve much better throughput. The tradeoff is that individual writes may wait briefly for the commit window, while isolated writes still pay most of the sync cost.
+
 ## Segmentation and compaction
 
 An append-only file grows forever. Even when a key is updated, the old record remains in the file. The in-memory index points to the newest record, but the obsolete records still consume disk space.
 
-To control this growth, the database uses an active-file threshold. The current threshold is 1,024 bytes. When adding a record would take the active file beyond that limit, the database compacts the current file into a new segment before continuing the write.
+To control this growth, the database uses an active-file threshold. The current threshold is 1,024 bytes. Once the active file exceeds that threshold, it is renamed into a compaction snapshot and new writes use a fresh active file.
 
-Compaction performs the following steps:
+Background compaction performs the following steps:
 
 1. Create a segment data file and a matching binary `.hint` file.
 2. Copy the latest record for every key in the active index into the segment data file.
 3. Write each record's key, length, and offset to the hint file.
-4. Add those records to the segmented index.
-5. Truncate the active file and reset the active index.
+4. Publish the completed segment through a manifest.
+5. Replace the snapshot's index entries with the new segment entries and remove the snapshot.
 
 The segment data file contains the records themselves. The hint file contains fixed-size metadata entries, allowing the indexes to be reconstructed when the database is reopened without scanning every segment record.
 
-This is a simplified form of an LSM-style storage design: writes go to an active append-only file, and older data is periodically organized into immutable segments.
+Background compaction keeps foreground writes from waiting for all compaction work. It rewrites only the latest value for each key, and immutable segments are easier to read and validate. Hint files make index rebuilding cheaper because startup can find values without scanning every segment record.
+
+The costs are extra file management, duplicate temporary data during compaction, background I/O, and more complex recovery and lifecycle handling.
+
+### Manifest-based compaction recovery
+
+Compaction publishes data in an explicit sequence:
+
+1. Write data and hint files to temporary paths.
+2. Sync both files.
+3. Rename them to their final names.
+4. Record their names, sizes, and CRC in the manifest.
+5. Sync and publish the manifest.
+
+The manifest is the authoritative segment list. Startup ignores unlisted segment files and validates listed files before using them. `MANIFEST.prev` is a fallback: if the newest manifest is invalid, the previous valid manifest can be used.
+
+Pending `.compacting.*` snapshots cover another crash window. A crash can happen after the active file is moved but before compaction finishes and publishes a segment. Startup reads valid records from those snapshots, so those records are recovered instead of being lost.
+
+This protocol adds metadata, syncs, renames, cleanup, and validation work. In return, compaction publication is explicit and recoverable.
 
 ## Persistence and reopening
 
@@ -168,11 +216,21 @@ The database stores its active records in `data.txt` and its compacted records i
 
 This means ordinary shutdown and reopening preserve the database contents. The implementation also rejects malformed or truncated hint entries.
 
-This is not yet full crash recovery. For example, the implementation does not use a write-ahead log, atomic manifest updates, checksums, or a recovery protocol for partially completed compactions. Those are possible next steps.
+Recovery is layered:
 
-## Performance and the compaction tradeoff
+- Record headers and CRCs detect incomplete or corrupted records.
+- Valid prefixes of the active file are retained.
+- Damaged final records are truncated.
+- Middle-file corruption causes initialization to fail rather than silently hiding data.
+- Segment hints rebuild indexes without scanning all values.
+- Manifest validation protects against incomplete compaction publication.
+- `Repair` provides an explicit path for copying valid records into a new database.
 
-The database's speed depends heavily on both the active-file threshold and the amount of data being stored.
+The result is a practical recovery boundary: preserve data that can be validated safely, and fail loudly when a middle section cannot be trusted.
+
+## Performance and the durability tradeoff
+
+The database's speed depends heavily on both the active-file threshold and the amount of data being stored. It also depends on whether writes wait for durable storage.
 
 Larger datasets produce more total writes and therefore more opportunities to trigger compaction. A smaller active-file threshold causes compaction to happen more frequently, even when the database is not very large. Since compaction reads and rewrites records, these additional compactions directly impact write speed and overall throughput.
 
@@ -181,7 +239,11 @@ The threshold is therefore a tuning tradeoff:
 - A smaller threshold keeps the active file small but causes more frequent compactions.
 - A larger threshold reduces compaction frequency but allows the active file to grow larger before it is compacted.
 
-Reads are generally close to average-case `O(1)` after the indexes are built, but they still involve file I/O and may need to open a segment file. Writes are also usually efficient, but a write that triggers compaction is substantially more expensive than a normal append.
+Plain appends maximize speed but provide weaker durability. `Sync` improves durability but dominates write latency. Group commits recover throughput for concurrent and bursty writes, while background compaction prevents compaction from blocking normal writes. Reads remain comparatively stable because indexed lookup is unchanged.
+
+The crash-recovery benchmark shows the tradeoff: sequential `Set` changed from about 92,000 ops/s to about 103 ops/s, while `Get` moved only from about 13.4 to 14.2 us/op. Parallel writes benefit from batching but remain much slower than the non-durable baseline.
+
+Reads are generally close to average-case `O(1)` after the indexes are built, but they still involve file I/O and may need to open a segment file. A write that triggers compaction is also more expensive than a normal append, although background execution keeps that work off the foreground path.
 
 The latest benchmark results are documented in [BENCHMARKS.md](https://github.com/somtojf/lsm-tree/blob/main/BENCHMARKS.md). They show that the implementation performs differently depending on the workload, concurrency level, machine, data size, and compaction frequency. The numbers should therefore be treated as measurements of this implementation under specific test conditions, not as universal performance guarantees.
 
@@ -189,8 +251,6 @@ The latest benchmark results are documented in [BENCHMARKS.md](https://github.co
 
 This project currently demonstrates the core mechanics of an indexed append-only key-value store, but it is intentionally incomplete. Important next steps include:
 
-- crash-safe recovery and durability guarantees;
-- safer, atomic compaction and segment publication;
 - more efficient locking, such as separate read and write coordination;
 - configurable segment thresholds;
 - deletion and tombstone support;
