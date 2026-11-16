@@ -4,12 +4,12 @@ title: "Longest Substring Without Repeating Characters"
 url: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 difficulty: Medium
 tags: [Hash Table, String, Sliding Window]
-attempts: 1
+attempts: 2
 first_attempt: 2026-09-09
-last_attempt: 2026-09-09
-total_submissions: 1
-total_ac: 1
-total_runs: 3
+last_attempt: 2026-11-16
+total_submissions: 4
+total_ac: 2
+total_runs: 12
 ---
 
 # 3. Longest Substring Without Repeating Characters
@@ -94,6 +94,56 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >                 curr -= 1
 >
 >         return maxlen
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-11-16 Mon
+⏱ start 16:53 → first submit 17:07 · coding 14 min → AC 17:09 · 3 submits / 1 AC · 9 runs
+
+### ✅ Accepted · Python3 · 17:09 (328 ms · 19.9 MB)
+> [!success]- Code
+> ```python
+> class Solution:
+>     def lengthOfLongestSubstring(self, s: str) -> int:
+>         if len(s) < 2:
+>             return len(s)
+>
+>         # max tracker
+>         res = 1
+>         # curr tracker
+>         curr = 1
+>         fast = 1
+>         slow = 0
+>         track = set()
+>         track.add(s[slow])
+>
+>         while slow < (len(s) - res) and fast < (len(s)):
+>             fc = s[fast]
+>             sc = s[slow]
+>
+>             if fc not in track:
+>                 curr = curr + 1
+>                 res = max(curr, res)
+>                 fast = fast + 1
+>                 track.add(fc)
+>                 continue
+>
+>             slow = slow + 1
+>             curr = curr - 1
+>             track.remove(sc)
+>
+>
+>
+>         return res
 > ```
 
 ### 💭 Thoughts & insights
