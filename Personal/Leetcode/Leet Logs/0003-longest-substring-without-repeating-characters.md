@@ -107,7 +107,7 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 
 
 ## Attempt 2 · 2026-11-16 Mon
-⏱ start 16:53 → first submit 17:07 · coding 14 min → AC 17:09 · 3 submits / 1 AC · 9 runs
+⏱ start 16:53 → first submit 17:07 · coding 14 min → AC 17:09 · 3 submits / 1 AC · 9 runs · 20 min on problem
 
 ### ✅ Accepted · Python3 · 17:09 (328 ms · 19.9 MB)
 > [!success]- Code

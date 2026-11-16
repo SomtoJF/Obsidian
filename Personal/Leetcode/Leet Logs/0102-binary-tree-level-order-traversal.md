@@ -4,12 +4,12 @@ title: "Binary Tree Level Order Traversal"
 url: https://leetcode.com/problems/binary-tree-level-order-traversal/description/
 difficulty: Medium
 tags: [Tree, Breadth-First Search, Binary Tree]
-attempts: 2
+attempts: 3
 first_attempt: 2026-09-08
-last_attempt: 2026-09-09
-total_submissions: 1
-total_ac: 1
-total_runs: 18
+last_attempt: 2026-11-16
+total_submissions: 2
+total_ac: 2
+total_runs: 25
 ---
 
 # 102. Binary Tree Level Order Traversal
@@ -98,6 +98,53 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >                 if node.right:
 >                     q.append(node.right)
 >             res.append(curr)
+>
+>         return res
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 3 · 2026-11-16 Mon
+⏱ start 17:12 → first submit 17:34 · coding 22 min → AC 17:34 · 1 submit / 1 AC · 7 runs
+
+### ✅ Accepted · Python3 · 17:34 (0 ms · 19.7 MB)
+> [!success]- Code
+> ```python
+> # Definition for a binary tree node.
+> # class TreeNode:
+> #     def __init__(self, val=0, left=None, right=None):
+> #         self.val = val
+> #         self.left = left
+> #         self.right = right
+> class Solution:
+>     def levelOrder(self, root: TreeNode | None) -> list[list[int]]:
+>         if not root:
+>             return []
+>         q = deque()
+>         q.append(root)
+>         res = []
+>
+>         while q:
+>             level = []
+>             levelsize = len(q)
+>
+>             for i in range(levelsize):
+>                 node = q.popleft()
+>                 level.append(node.val)
+>
+>                 if node.left:
+>                     q.append(node.left)
+>                 if node.right:
+>                     q.append(node.right)
+>             res.append(level)
 >
 >         return res
 > ```
