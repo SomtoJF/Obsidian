@@ -4,12 +4,12 @@ title: "Validate Binary Search Tree"
 url: https://leetcode.com/problems/validate-binary-search-tree/description/
 difficulty: Medium
 tags: [Tree, Depth-First Search, Binary Search Tree, Binary Tree]
-attempts: 2
+attempts: 3
 first_attempt: 2026-09-13
-last_attempt: 2026-09-14
-total_submissions: 3
-total_ac: 1
-total_runs: 6
+last_attempt: 2026-11-20
+total_submissions: 6
+total_ac: 2
+total_runs: 15
 ---
 
 # 98. Validate Binary Search Tree
@@ -103,6 +103,48 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >             return False
 >
 >         return left and right
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 3 · 2026-11-20 Fri
+⏱ start 22:57 → first submit 23:03 · coding 6 min → AC 23:16 · 3 submits / 1 AC · 9 runs
+
+### ✅ Accepted · Python3 · 23:16 (0 ms · 20.9 MB)
+> [!success]- Code
+> ```python
+> # Definition for a binary tree node.
+> # class TreeNode:
+> #     def __init__(self, val=0, left=None, right=None):
+> #         self.val = val
+> #         self.left = left
+> #         self.right = right
+> class Solution:
+>     def isValidBST(self, root: TreeNode | None) -> bool:
+>         def validateBST(lower: int | None, upper: int | None, root: TreeNode | None) -> bool:
+>             if not root:
+>                 return True
+>
+>             if lower is not None:
+>                 if root.val <= lower: return False
+>             if upper is not None:
+>                 if root.val >= upper: return False
+>
+>             left = validateBST(lower, root.val, root.left)
+>             if not left: return False
+>
+>             right = validateBST(root.val, upper, root.right)
+>
+>             return left and right
+>         return validateBST(None, None, root)
 > ```
 
 ### 💭 Thoughts & insights
