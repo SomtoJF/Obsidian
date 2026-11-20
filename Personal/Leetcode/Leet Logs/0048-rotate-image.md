@@ -4,12 +4,12 @@ title: "Rotate Image"
 url: https://leetcode.com/problems/rotate-image/description/
 difficulty: Medium
 tags: [Array, Math, Matrix]
-attempts: 1
+attempts: 2
 first_attempt: 2026-09-11
-last_attempt: 2026-09-11
-total_submissions: 1
-total_ac: 1
-total_runs: 7
+last_attempt: 2026-11-16
+total_submissions: 2
+total_ac: 2
+total_runs: 13
 ---
 
 # 48. Rotate Image
@@ -77,6 +77,41 @@ Video solutions: [YouTube](https://www.youtube.com/results?search_query=leetcode
 >             matrix[i] = list(reversed(row))
 >             i += 1
 >
+>         return matrix
+> ```
+
+### 💭 Thoughts & insights
+-
+
+### 📚 What I learned (new functions / data structures / patterns)
+-
+
+### 🔀 Alternative solutions
+-
+
+
+## Attempt 2 · 2026-11-16 Mon
+⏱ start 17:37 → first submit 17:49 · coding 12 min → AC 17:49 · 1 submit / 1 AC · 6 runs · 14 min on problem
+
+### ✅ Accepted · Python3 · 17:49 (0 ms · 18.7 MB)
+> [!success]- Code
+> ```python
+> class Solution:
+>     def rotate(self, matrix: list[list[int]]) -> None:
+>         """
+>         Do not return anything, modify matrix in-place instead.
+>
+>         find the image of the matrix
+>         reverse each row
+>         """
+>         matrixsize = len(matrix)
+>
+>         for i in range(matrixsize):
+>             for j in range(i, matrixsize):
+>                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+>
+>         for i in range(matrixsize):
+>             matrix[i] = list(reversed(matrix[i]))
 >         return matrix
 > ```
 
